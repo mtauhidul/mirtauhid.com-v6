@@ -82,3 +82,20 @@
     color: var(--color-fg-subtle);
   }
 }
+
+@theme {
+  --animate-drift: drift 18s ease-in-out infinite alternate;
+  --animate-drift-slow: drift 28s ease-in-out infinite alternate-reverse;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes drift {
+    to {
+      transform: translate3d(6rem, 4rem, 0) scale(1.15);
+    }
+  }
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
