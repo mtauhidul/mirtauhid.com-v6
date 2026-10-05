@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import { profile } from "@/content/profile";
 import { buttonClasses } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { DotField } from "@/components/ui/dot-field";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -35,7 +34,6 @@ export function Hero() {
       id="top"
       className="relative flex min-h-svh flex-col justify-end pt-32 pb-12 md:pb-16"
     >
-      <DotField focus="60% 35%" />
       <Container>
         <motion.p {...fade(0.2)} className="label mb-8 flex items-center gap-3">
           <span className="bg-accent size-2" />
