@@ -56,8 +56,11 @@ export function GuideLines() {
           <SideHatch side="right" />
 
           <motion.div className="absolute inset-0" style={{ opacity: topLineOpacity }}>
-            <Plus className="left-0" top={`${TOP}%`} />
-            <Plus className="right-0" top={`${TOP}%`} />
+            <Plus className="left-0 mt-[0.5px] ml-[0.5px]" top={`${TOP}%`} />
+            <Plus
+              className="right-0 mt-[0.5px] mr-[0.5px] translate-x-1/2!"
+              top={`${TOP}%`}
+            />
           </motion.div>
 
           <div
