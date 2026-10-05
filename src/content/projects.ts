@@ -72,14 +72,14 @@ export const projects: CaseStudy[] = [
     live: "https://caresync-v2.vercel.app",
   },
   {
-    title: "Patient Check-In Kiosk",
+    title: "KIOSK",
     slug: "checkin-kiosk",
     kind: "Healthcare",
     context: "",
     role: "Frontend design engineer",
     year: "2025",
     summary:
-      "Self-service check-in for medical offices. Patients confirm details, snap their ID and sign.",
+      "Self-service check-in for clinics. Patients enter their details, add ID and sign on screen.",
     problem:
       "Front desks spend their time on paperwork and copies of ID and insurance cards.",
     solution:
