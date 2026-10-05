@@ -1,6 +1,3 @@
-"use client";
-
-import { motion, useScroll, useTransform } from "motion/react";
 import { SectionAnnotation } from "./section-annotation";
 
 /**
@@ -28,32 +25,18 @@ function SideHatch({ side }: { side: "left" | "right" }) {
 }
 
 const fade = "linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent)";
-const TOP = 10; // % of viewport where the top line sits (clear of the top corner links)
 
 /**
  * Two vertical hairlines framing the site, fading out toward the top and bottom of the screen,
- * plus a hairline near the top (between two crosshairs) that fades away once you scroll.
+ * with diagonal hatching in the margins outside them.
  */
 export function GuideLines() {
-  // the top line and its crosshairs fade out as soon as you start scrolling
-  const { scrollY } = useScroll();
-  const topLineOpacity = useTransform(scrollY, [0, 140], [1, 0]);
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
       <div className="mx-auto h-full max-w-6xl px-6 md:px-10">
         <div className="relative -mx-3 h-full md:-mx-5">
           <SideHatch side="left" />
           <SideHatch side="right" />
-
-          <motion.div className="absolute inset-0" style={{ opacity: topLineOpacity }}>
-            {/* solid hairline between the two crosshairs, same as the section dividers; fades out on scroll */}
-            <div className="bg-line absolute inset-x-0 h-px" style={{ top: `${TOP}%` }} />
-            <Plus className="left-0 mt-[0.5px] ml-[0.5px]" top={`${TOP}%`} />
-            <Plus
-              className="right-0 mt-[0.5px] mr-[0.5px] translate-x-1/2!"
-              top={`${TOP}%`}
-            />
-          </motion.div>
 
           <div
             className="absolute inset-0"
@@ -68,12 +51,11 @@ export function GuideLines() {
   );
 }
 
-function Plus({ className, top }: { className: string; top?: string }) {
+function Plus({ className }: { className: string }) {
   return (
     <span
       className={`text-fg-subtle absolute size-3.5 -translate-x-1/2 -translate-y-1/2 ${className}`}
       style={{
-        ...(top ? { top } : {}),
         backgroundImage:
           "linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor)",
         backgroundSize: "100% 1px, 1px 100%",
