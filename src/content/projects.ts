@@ -42,18 +42,18 @@ export const projects: CaseStudy[] = [
   {
     title: "CareSync",
     slug: "caresync",
-    kind: "Healthcare platform",
+    kind: "Healthcare system",
     context: "",
     role: "Frontend design engineer",
     year: "2026",
     summary:
-      "Coordinates patient care from scheduling to treatment, with real-time queues.",
+      "Management system for foot care clinics, with patient booking and a check-in kiosk.",
     problem:
-      "Patient visits pass through many steps, and staff need to see where each one stands.",
+      "Clinics need staff, patients and the waiting room working from the same live picture.",
     solution:
-      "A platform that tracks each encounter from appointment to completion, with check-in, a live waiting queue and treatment status.",
+      "Three connected parts: a staff portal with real-time room status and dashboards, a patient portal for booking and managing appointments, and a self-service check-in kiosk.",
     results: [],
-    stack: ["Next.js", "Firebase"],
+    stack: ["Next.js", "TypeScript", "Firebase"],
     live: "https://caresync-v2.vercel.app",
   },
   {
