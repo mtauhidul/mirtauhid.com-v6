@@ -28,10 +28,9 @@ No navbar. Floating wordmark (top-left) and "Contact" link (top-right), both `mi
 
 Blueprint layer, all low contrast and aligned to the real container edges:
 
-- **Guide lines** (`GuideLines`): two fixed hairlines just outside the content edges.
-- **Crosshairs** (`Crosshairs`, inside `Section`): a divider with a `+` where it meets each guide, at the top of every section, plus a live annotation (`SectionAnnotation`, md+): `02 — About / width × height · y offset`, measured from the real layout.
-- **Edge ruler** (`Ruler`, 1280px and up): a tick per section positioned by real scroll offset, a marker that follows scroll, and a `03/05` + percent readout. Ticks are links.
-- **Grid overlay** (`GridOverlay`): press `G` (or click the hint, bottom-right on md+) to show the 12-column grid (4 on mobile). All 12-column section grids use `md:gap-x-10` so the overlay matches the layout.
+- **Guide lines** (`GuideLines`): two fixed hairlines just outside the content edges, fading out toward the top and bottom of the screen. The right guide is also the scroll indicator: it fills with the accent as you scroll, with a notch per section.
+- **Crosshairs** (`Crosshairs`, inside `Section`): a divider with a `+` where it meets each guide, at the top of every section, plus a live annotation (`SectionAnnotation`, md+): `02 — About / width × height · y offset`.
+- **Grid overlay** (`GridOverlay`): press `G` (hinted in the footer, no on-screen button). Shows the 12-column grid (4 on mobile) as dashed columns, outlines every section and lights up the annotations. A small toast confirms on/off. All 12-column section grids use `md:gap-x-10` so it matches the layout.
 
 ## Motion
 

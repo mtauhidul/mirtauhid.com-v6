@@ -36,7 +36,7 @@ export function SectionAnnotation({ id }: { id: string }) {
     <span
       ref={ref}
       aria-hidden
-      className="text-fg-subtle ease-smooth absolute top-4 right-6 hidden font-mono text-[10px] leading-none tracking-wide whitespace-nowrap uppercase transition-opacity duration-700 md:right-8 md:block"
+      className="section-annotation text-fg-subtle ease-smooth absolute top-4 right-6 hidden font-mono text-[10px] leading-none tracking-wide whitespace-nowrap uppercase transition-opacity duration-700 md:right-8 md:block"
       style={{ opacity: dims ? 1 : 0 }}
     >
       <span className="text-accent">{String(Math.max(index, 0)).padStart(2, "0")}</span> —{" "}

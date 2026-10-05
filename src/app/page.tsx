@@ -1,7 +1,6 @@
 import { CornerLinks } from "@/components/corner-links";
 import { Footer } from "@/components/footer";
 import { GridOverlay } from "@/components/grid-overlay";
-import { Ruler } from "@/components/ruler";
 import { GuideLines } from "@/components/ui/guides";
 import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
@@ -15,7 +14,6 @@ export default function Home() {
     <>
       <GuideLines />
       <CornerLinks />
-      <Ruler />
       <GridOverlay />
       <main>
         <Hero />

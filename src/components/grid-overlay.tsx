@@ -1,30 +1,43 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 
-/** Press G (or click the hint) to overlay the 12-column layout grid. */
+/** Press G to overlay the 12-column grid and outline every section. No on-screen button. */
 export function GridOverlay() {
   const [on, setOn] = useState(false);
+  const [toast, setToast] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key.toLowerCase() !== "g" || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key.toLowerCase() !== "g" || e.metaKey || e.ctrlKey || e.altKey || e.repeat)
+        return;
       const t = e.target as HTMLElement | null;
       if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))
         return;
       setOn((v) => !v);
+      setToast(true);
+      clearTimeout(timer.current);
+      timer.current = setTimeout(() => setToast(false), 1600);
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      clearTimeout(timer.current);
+    };
   }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.grid = on ? "on" : "off";
+  }, [on]);
 
   return (
     <>
       <div
         aria-hidden
         className={cn(
-          "ease-smooth pointer-events-none fixed inset-0 z-[70] transition-opacity duration-500",
+          "ease-smooth pointer-events-none fixed inset-0 z-[70] transition-opacity duration-700",
           on ? "opacity-100" : "opacity-0",
         )}
       >
@@ -34,11 +47,15 @@ export function GridOverlay() {
               <div
                 key={i}
                 className={cn(
-                  "border-accent/25 bg-accent/[0.05] relative border-x",
+                  "border-accent/30 relative border-x border-dashed",
                   i >= 4 && "hidden md:block",
                 )}
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to bottom, rgba(198,244,50,0.07), rgba(198,244,50,0.015))",
+                }}
               >
-                <span className="text-accent/70 absolute top-20 left-1.5 font-mono text-[10px]">
+                <span className="text-accent/80 absolute top-20 left-1.5 font-mono text-[10px]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
@@ -47,23 +64,20 @@ export function GridOverlay() {
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={() => setOn((v) => !v)}
-        aria-pressed={on}
-        aria-label="Toggle layout grid overlay"
-        className="text-fg-subtle hover:text-fg fixed right-6 bottom-6 z-[60] hidden items-center gap-2 font-mono text-xs transition-colors md:right-10 md:inline-flex"
+      <div
+        role="status"
+        className={cn(
+          "ease-smooth bg-elevated border-line-strong fixed bottom-6 left-1/2 z-[80] flex -translate-x-1/2 items-center gap-3 rounded-[3px] border px-4 py-2.5 font-mono text-xs transition-all duration-500",
+          toast
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-3 opacity-0",
+        )}
       >
-        <kbd
-          className={cn(
-            "border-line-strong inline-flex size-5 items-center justify-center rounded-[3px] border transition-colors",
-            on && "bg-accent text-accent-ink border-accent",
-          )}
-        >
+        <kbd className="border-line-strong text-fg inline-flex size-5 items-center justify-center rounded-[3px] border">
           G
         </kbd>
-        grid {on ? "on" : "off"}
-      </button>
+        <span className="text-fg-muted">Grid overlay {on ? "on" : "off"}</span>
+      </div>
     </>
   );
 }

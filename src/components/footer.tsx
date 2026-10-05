@@ -80,7 +80,13 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>
-          <p>Designed &amp; built with Next.js, TypeScript and Tailwind</p>
+          <p className="hidden items-center gap-2 md:flex">
+            Press
+            <kbd className="border-line-strong text-fg-muted inline-flex size-5 items-center justify-center rounded-[3px] border">
+              G
+            </kbd>
+            for the grid
+          </p>
           <a
             href="#top"
             className="hover:text-fg group inline-flex items-center gap-2 transition-colors"

@@ -67,3 +67,21 @@
     line-height: 0.95;
   }
 }
+
+/* Grid mode (press G): outline sections and light up their annotations */
+section {
+  transition: outline-color 0.6s var(--ease-smooth);
+  outline: 1px dashed transparent;
+  outline-offset: -1px;
+}
+[data-grid="on"] section {
+  outline-color: color-mix(in srgb, var(--color-accent) 28%, transparent);
+}
+.section-annotation {
+  transition:
+    color 0.6s var(--ease-smooth),
+    opacity 0.7s var(--ease-smooth);
+}
+[data-grid="on"] .section-annotation {
+  color: var(--color-accent);
+}
