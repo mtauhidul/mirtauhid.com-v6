@@ -24,7 +24,7 @@ Hairlines are white at 9% / 19%. Corners are square (3px on buttons).
 
 ## Navigation
 
-No navbar. Floating wordmark (top-left), "Start a project" link (top-right), and an edge section index on screens 1280px and wider. Text uses `mix-blend-difference` so it stays legible over content.
+No navbar. Floating wordmark (top-left), "Contact" link (top-right), and an edge section index on screens 1280px and wider. Text uses `mix-blend-difference` so it stays legible over content.
 
 ## Motion
 

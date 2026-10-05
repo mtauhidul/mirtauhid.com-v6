@@ -33,7 +33,7 @@ export function EdgeIndex() {
         className="fixed top-6 right-6 z-50 font-mono text-sm text-white mix-blend-difference md:right-10"
       >
         <span className="decoration-white/60 underline-offset-4 hover:underline">
-          Start a project
+          Contact
         </span>{" "}
         →
       </a>

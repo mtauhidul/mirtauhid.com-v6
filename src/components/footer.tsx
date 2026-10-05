@@ -22,7 +22,7 @@ export function Footer() {
       <Container className="pt-16 md:pt-24">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="display text-3xl md:text-4xl">Have a project in mind?</p>
+            <p className="display text-3xl md:text-4xl">Thanks for stopping by.</p>
             <a
               href={`mailto:${profile.email}`}
               className="text-accent decoration-line-strong hover:text-fg mt-5 inline-flex items-center gap-2 font-mono text-base underline underline-offset-8 transition-colors"
@@ -62,11 +62,8 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="label mb-5">Status</p>
-            <p className="text-fg-muted flex items-start gap-2.5">
-              <span className="bg-accent mt-[0.55em] size-2 shrink-0" />
-              {profile.availability}
-            </p>
+            <p className="label mb-5">Based in</p>
+            <p className="text-fg-muted">{profile.location}</p>
             <p className="label mt-5 mb-1.5">Local time</p>
             <p className="font-mono text-sm">
               <LocalTime timeZone={profile.timezone} />

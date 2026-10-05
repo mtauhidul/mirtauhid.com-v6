@@ -4,18 +4,18 @@ Single-page, dark-only portfolio. All content is placeholder for now and lives i
 
 ## Goal
 
-Win client work from founders and startups (and stay open to full-time roles) by showing real developer work as case studies.
+A showcase of what I've built and accomplished. Not a sales page: no hire-me, availability or pricing language anywhere.
 
 ## Page structure
 
 | #   | Section    | Purpose                                                    | Content file    | Component                 |
 | --- | ---------- | ---------------------------------------------------------- | --------------- | ------------------------- |
-| 00  | Hero       | Who it's for, what you do, availability, CTA, proof        | `profile.ts`    | `sections/hero.tsx`       |
+| 00  | Hero       | Who I am, what I do, proof numbers                         | `profile.ts`    | `sections/hero.tsx`       |
 | 01  | Work       | Case studies: problem, what I built, results, stack, links | `projects.ts`   | `sections/work.tsx`       |
 | 02  | About      | Why work with you, quick facts                             | `profile.ts`    | `sections/about.tsx`      |
 | 03  | Experience | Roles with measurable highlights                           | `experience.ts` | `sections/experience.tsx` |
 | 04  | Stack      | Tools, plain lists                                         | `skills.ts`     | `sections/stack.tsx`      |
-| 05  | Contact    | Email, good-fit projects, reply time, socials, résumé      | `profile.ts`    | `sections/contact.tsx`    |
+| 05  | Contact    | Email, socials, résumé                                     | `profile.ts`    | `sections/contact.tsx`    |
 
 ## Motion principles
 

@@ -1,7 +1,7 @@
 export type CaseStudy = {
   title: string;
   slug: string;
-  client: string;
+  context: string;
   role: string;
   year: string;
   problem: string;

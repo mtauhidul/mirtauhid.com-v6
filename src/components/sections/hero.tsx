@@ -37,13 +37,13 @@ export function Hero() {
       <Container>
         <motion.p {...fade(0.2)} className="label mb-8 flex items-center gap-3">
           <span className="bg-accent size-2" />
-          {profile.availability}
+          {profile.role} · {profile.location}
         </motion.p>
 
         <h1 className="display text-[clamp(3.25rem,10.5vw,9.5rem)]">
           <Line delay={0.3}>Full-stack developer</Line>
           <Line delay={0.4}>
-            for startups that <span className="text-accent">need to ship.</span>
+            building for <span className="text-accent">the web.</span>
           </Line>
         </h1>
 
@@ -58,11 +58,16 @@ export function Hero() {
             {...fade(1)}
             className="flex flex-wrap gap-3 md:col-span-6 md:justify-end"
           >
-            <a href="#contact" className={buttonClasses("primary")}>
-              Start a project <span aria-hidden>→</span>
+            <a href="#work" className={buttonClasses("primary")}>
+              See selected work <span aria-hidden>↓</span>
             </a>
-            <a href="#work" className={buttonClasses("secondary")}>
-              See selected work
+            <a
+              href="https://github.com/mtauhidul"
+              target="_blank"
+              rel="noreferrer"
+              className={buttonClasses("secondary")}
+            >
+              GitHub <span aria-hidden>↗</span>
             </a>
           </motion.div>
         </div>

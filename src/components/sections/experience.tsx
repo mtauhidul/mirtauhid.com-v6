@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 export function Experience() {
   return (
-    <Section id="experience">
+    <Section id="experience" aria-label="Experience">
       <SectionHeading index="03" label="Experience" title="Where I've done the work." />
       <div>
         {experience.map((job) => (

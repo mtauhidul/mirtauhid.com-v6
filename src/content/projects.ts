@@ -4,7 +4,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Northwind Analytics",
     slug: "northwind-analytics",
-    client: "Northwind (SaaS, Series A)",
+    context: "Northwind (SaaS, Series A)",
     role: "Lead engineer",
     year: "2026",
     problem: "Reports took 9 seconds to load and the team stopped trusting the numbers.",
@@ -22,7 +22,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Atlas Health Portal",
     slug: "atlas-health",
-    client: "Atlas Clinics",
+    context: "Atlas Clinics",
     role: "Full-stack developer",
     year: "2025",
     problem: "14 clinics scheduled patients by phone and spreadsheet.",
@@ -38,7 +38,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Lumen Design Kit",
     slug: "lumen-kit",
-    client: "Open source",
+    context: "Open source",
     role: "Creator",
     year: "2025",
     problem: "Teams kept rebuilding the same accessible components from scratch.",
@@ -55,7 +55,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Pulse Mobile Banking",
     slug: "pulse-banking",
-    client: "Pulse (fintech)",
+    context: "Pulse (fintech)",
     role: "Frontend lead",
     year: "2024",
     problem: "Onboarding took 11 steps and half of new users dropped off.",

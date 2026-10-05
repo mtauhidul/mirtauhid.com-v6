@@ -4,31 +4,23 @@ export const profile = {
   role: "Full-stack developer",
   email: "hello@example.com",
   timezone: "UTC", // placeholder, e.g. "Asia/Dhaka"
-  availability: "Booking projects from Nov 2026",
+  location: "Your City, Country",
   intro:
-    "I take products from idea to production: sharp frontend, solid APIs, deployed and monitored. I work directly with founders and small teams.",
+    "A collection of the products, tools and open-source work I've built, from the first idea to production.",
   proof: [
     { value: "30+", label: "products shipped" },
-    { value: "<24h", label: "reply time" },
     { value: "6 yrs", label: "building for the web" },
+    { value: "2.4k", label: "open-source stars" },
   ],
   about: {
-    lead: "I'm a developer who treats your product like my own: scoped tightly, built fast, and shipped weekly so you see progress, not status updates.",
-    body: "I've worked across fintech, health and developer tools. I'm most useful early on, when one person who can design, build and deploy removes weeks of coordination.",
+    lead: "I'm a developer who enjoys the whole path from idea to production: interface details, APIs and the infrastructure underneath.",
+    body: "I've worked across fintech, health and developer tools. I like small scope, clear systems and shipping often.",
     facts: [
       { label: "Based in", value: "Your City, Country" },
-      { label: "Works with", value: "Founders, startups, small product teams" },
-      { label: "Timezone", value: "Flexible, overlaps EU / US mornings" },
-      { label: "Engagement", value: "Fixed-scope projects, retainers, full-time" },
+      { label: "Focus", value: "Web platforms and product engineering" },
+      { label: "Currently", value: "Building in public" },
+      { label: "Languages", value: "English, Bangla" },
     ],
-  },
-  fit: {
-    good: [
-      "MVPs and v1 products",
-      "Dashboards and internal tools",
-      "Rebuilds of slow or fragile apps",
-    ],
-    reply: "Within 24 hours",
   },
   socials: [
     { label: "GitHub", href: "https://github.com/mtauhidul" },

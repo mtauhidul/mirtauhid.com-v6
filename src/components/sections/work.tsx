@@ -6,12 +6,12 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 export function Work() {
   return (
-    <Section id="work">
+    <Section id="work" aria-label="Selected work">
       <SectionHeading
         index="01"
         label="Selected work"
-        title="Real products, measurable results."
-        description="Each case study: the problem, what I built, and what changed."
+        title="Things I've built."
+        description="The problem, how I built it, and what came out of it."
       />
       <div>
         {projects.map((p, i) => (
@@ -24,7 +24,7 @@ export function Work() {
                     · {p.year} · {p.role}
                   </p>
                   <h3 className="display text-4xl md:text-5xl">{p.title}</h3>
-                  <p className="text-fg-subtle mt-2 text-sm">{p.client}</p>
+                  <p className="text-fg-subtle mt-2 text-sm">{p.context}</p>
                 </div>
 
                 <dl className="space-y-5">

@@ -6,8 +6,8 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 export function About() {
   return (
-    <Section id="about">
-      <SectionHeading index="02" label="About" title="One developer, whole product." />
+    <Section id="about" aria-label="About">
+      <SectionHeading index="02" label="About" title="Developer, end to end." />
       <div className="grid gap-12 md:grid-cols-12 md:gap-16">
         <Reveal className="md:col-span-4">
           <PlaceholderImage label="portrait / 4×5" className="aspect-[4/5]" />
