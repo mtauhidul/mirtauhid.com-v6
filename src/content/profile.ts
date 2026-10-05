@@ -3,7 +3,7 @@ export const profile = {
   name: "Mir Tauhidul",
   fullName: "Mir Tauhidul Islam",
   role: "Frontend design engineer",
-  email: "hello@example.com",
+  email: "hello@mirtauhid.com",
   timezone: "Asia/Dhaka",
   location: "Dhaka, Bangladesh",
   intro:
