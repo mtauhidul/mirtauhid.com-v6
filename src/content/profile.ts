@@ -6,7 +6,7 @@ export const profile = {
   timezone: "UTC", // placeholder, e.g. "Asia/Dhaka"
   location: "Your City, Country",
   intro:
-    "I design and build fast, polished interfaces, working where design and code meet. Here's a collection of what I've built.",
+    "I transform raw concepts into functional, beautifully branded web applications. By bridging the gap between design intuition and production-ready code, I build complete digital products without the need for static Figma mockups.",
   proof: [
     { value: "30+", label: "products shipped" },
     { value: "6 yrs", label: "building for the web" },

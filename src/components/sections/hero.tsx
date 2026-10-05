@@ -57,13 +57,13 @@ export function Hero() {
         <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end md:gap-x-10">
           <motion.p
             {...fade(0.9)}
-            className="text-fg-muted text-lg md:col-span-6 md:text-xl"
+            className="text-fg-muted text-lg md:col-span-7 md:text-xl"
           >
             {profile.intro}
           </motion.p>
           <motion.div
             {...fade(1)}
-            className="flex flex-wrap gap-3 md:col-span-6 md:justify-end"
+            className="flex flex-wrap gap-3 md:col-span-5 md:justify-end"
           >
             <a href="#work" className={buttonClasses("primary")}>
               See selected work <span aria-hidden>↓</span>
