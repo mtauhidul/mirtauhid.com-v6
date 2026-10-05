@@ -66,10 +66,18 @@ export function GuideLines() {
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
+      {/* horizontal line across the whole viewport, level with where the scroll line starts */}
+      <div
+        className="bg-line-strong absolute inset-x-0 h-px"
+        style={{ top: `${TOP}%` }}
+      />
       <div className="mx-auto h-full max-w-6xl px-6 md:px-10">
         <div className="relative -mx-3 h-full md:-mx-5">
           <SideHatch side="left" />
           <SideHatch side="right" />
+
+          <Plus className="left-0" top={`${TOP}%`} />
+          <Plus className="right-0" top={`${TOP}%`} />
 
           <div
             className="absolute inset-0"
@@ -101,11 +109,12 @@ export function GuideLines() {
   );
 }
 
-function Plus({ className }: { className: string }) {
+function Plus({ className, top }: { className: string; top?: string }) {
   return (
     <span
       className={`text-fg-subtle absolute size-3.5 -translate-x-1/2 -translate-y-1/2 ${className}`}
       style={{
+        ...(top ? { top } : {}),
         backgroundImage:
           "linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor)",
         backgroundSize: "100% 1px, 1px 100%",
