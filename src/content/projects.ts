@@ -42,17 +42,24 @@ export const projects: CaseStudy[] = [
     title: "Niblet",
     slug: "niblet",
     kind: "Nutrition",
+    featured: true,
     context: "Portfolio project",
-    role: "Frontend design engineer",
+    role: "Full-stack developer",
     year: "2026",
     summary:
-      "AI nutrition coach that logs meals and macros from a chat message or photo.",
-    problem: "Food tracking apps make you search, weigh and type for every meal.",
+      "An AI nutrition coach you talk to. Say what you ate, or send a photo, and it logs the meal and does the macro maths.",
+    problem:
+      "Logging food is tedious. Most apps make you search, weigh and type in every item.",
     solution:
-      "A chat you talk to. Say what you ate, or send a photo, and a tool-using AI agent logs the meal, does the macro maths and can also fix entries, answer questions and log your weight.",
-    results: [],
-    stack: ["Next.js", "TypeScript", "OpenAI API"],
+      "A chat you talk to. A tool-using AI agent logs meals from a message or a photo, fixes or removes entries, answers questions about your day and logs your weight, all from one chat. I built it end to end: product design, a streaming agent with nine validated tools, the Firebase backend, tests and a production-hardened deploy.",
+    results: [
+      { value: "98", label: "Lighthouse, desktop" },
+      { value: "9", label: "validated AI tools" },
+      { value: "2", label: "AI providers, one switch" },
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase", "OpenAI API"],
     live: "https://niblet-ai.vercel.app",
+    liveLabel: "Live demo",
   },
   {
     title: "Draftboard",

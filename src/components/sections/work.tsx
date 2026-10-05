@@ -101,8 +101,9 @@ function FeaturedCaseStudy({ project }: { project: CaseStudy }) {
 }
 
 export function Work() {
-  const featured = projects.find((p) => p.featured) ?? projects[0];
-  const rest = projects.filter((p) => p !== featured);
+  const featured = projects.filter((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
+  const count = featured.length;
 
   return (
     <Section id="work" aria-label="Selected work">
@@ -110,9 +111,13 @@ export function Work() {
         index="01"
         label="Selected work"
         title="Things I've built."
-        description="One project in depth, and a few smaller ones."
+        description={`${count === 1 ? "One project" : "Two projects"} in depth, and a few smaller ones.`}
       />
-      <FeaturedCaseStudy project={featured} />
+      <div className="space-y-20 md:space-y-28">
+        {featured.map((p) => (
+          <FeaturedCaseStudy key={p.slug} project={p} />
+        ))}
+      </div>
 
       {rest.length > 0 && (
         <div className="mt-20 md:mt-28">
