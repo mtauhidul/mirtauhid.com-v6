@@ -35,7 +35,7 @@ export const projects: CaseStudy[] = [
     solution:
       "A chat you talk to. Say what you ate, or send a photo, and a tool-using AI agent logs the meal, does the macro maths and can also fix entries, answer questions and log your weight.",
     results: [],
-    stack: ["Next.js", "TypeScript", "AI API"],
+    stack: ["Next.js", "TypeScript", "OpenAI API"],
     live: "https://niblet-ai.vercel.app",
   },
   {
