@@ -40,23 +40,21 @@ export const projects: CaseStudy[] = [
     repo: "https://github.com/mtauhidul/draftboard",
   },
   {
-    title: "Lumen Design Kit",
-    slug: "lumen-kit",
-    kind: "Component library",
-    summary: "Open-source library of 60+ accessible, themeable components.",
-    context: "Open source",
-    role: "Creator",
-    year: "2025",
-    problem: "Teams kept rebuilding the same accessible components from scratch.",
+    title: "CareSync",
+    slug: "caresync",
+    kind: "Healthcare platform",
+    context: "",
+    role: "Frontend design engineer",
+    year: "2026",
+    summary:
+      "Coordinates patient care from scheduling to treatment, with real-time queues.",
+    problem:
+      "Patient visits pass through many steps, and staff need to see where each one stands.",
     solution:
-      "Published 60+ themeable, keyboard-accessible primitives with docs and a Storybook.",
-    results: [
-      { value: "AA", label: "WCAG contrast" },
-      { value: "60+", label: "components" },
-    ],
-    stack: ["Tailwind CSS", "Radix UI", "Storybook"],
-    live: "#",
-    repo: "#",
+      "A platform that tracks each encounter from appointment to completion, with check-in, a live waiting queue and treatment status.",
+    results: [],
+    stack: ["Next.js", "Firebase"],
+    live: "https://caresync-v2.vercel.app",
   },
   {
     title: "Pulse Mobile Banking",
