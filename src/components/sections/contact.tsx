@@ -1,11 +1,13 @@
 import { profile } from "@/content/profile";
 import { buttonClasses } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
+import { DotField } from "@/components/ui/dot-field";
 import { Section } from "@/components/ui/section";
 
 export function Contact() {
   return (
     <Section id="contact" aria-label="Contact">
+      <DotField focus="50% 55%" />
       <Reveal>
         <p className="label mb-6 flex items-center gap-3">
           <span className="text-accent">05</span>

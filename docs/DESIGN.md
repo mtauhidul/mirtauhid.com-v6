@@ -30,6 +30,7 @@ Blueprint layer, all low contrast and aligned to the real container edges:
 
 - **Guide lines** (`GuideLines`): two fixed hairlines just outside the content edges, fading out toward the top and bottom of the screen. The right guide is also the scroll indicator: it fills with the accent as you scroll, with a notch per section.
 - **Crosshairs** (`Crosshairs`, inside `Section`): a divider with a `+` where it meets each guide, at the top of every section, plus a live annotation (`SectionAnnotation`, md+): `02 — About / width × height · y offset`.
+- **Dot field** (`DotField`): a faint dot matrix between the guides, spaced 1/48 of the guide width so dots align with the frame, fading toward its edges. Used only in the hero and contact sections.
 - **Grid overlay** (`GridOverlay`): press `G` (hinted in the footer, no on-screen button). Shows the 12-column grid (4 on mobile) as dashed columns, outlines every section and lights up the annotations. A small toast confirms on/off. All 12-column section grids use `md:gap-x-10` so it matches the layout.
 
 ## Motion
