@@ -94,7 +94,7 @@ function Corner({ className }: { className: string }) {
   );
 }
 
-/** A compact small project: hairline frame with corner crosshairs, no screenshot. The whole card links to the live site. */
+/** A compact small project: hairline frame with corner crosshairs, no screenshot. Only the links inside are clickable. */
 function ProjectCard({ project }: { project: CaseStudy }) {
   return (
     <article className="group border-line ease-smooth hover:border-line-strong relative flex h-full flex-col border p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.025]">
@@ -111,14 +111,6 @@ function ProjectCard({ project }: { project: CaseStudy }) {
 
       <div className="text-fg-subtle flex items-center justify-between gap-3 font-mono text-[11px]">
         <span>{project.role}</span>
-        {project.live && (
-          <span
-            aria-hidden
-            className="ease-smooth group-hover:text-accent text-sm transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          >
-            ↗
-          </span>
-        )}
       </div>
 
       <h3 className="font-display mt-3 text-2xl leading-tight tracking-tight">
@@ -144,7 +136,7 @@ function ProjectCard({ project }: { project: CaseStudy }) {
           {project.live && (
             <a
               href={project.live}
-              className="hover:text-accent transition-colors after:absolute after:inset-0"
+              className="link-draw hover:text-accent transition-colors"
             >
               Live site <span aria-hidden>↗</span>
             </a>
@@ -152,7 +144,7 @@ function ProjectCard({ project }: { project: CaseStudy }) {
           {project.repo && (
             <a
               href={project.repo}
-              className="link-draw hover:text-accent relative z-10 transition-colors"
+              className="link-draw hover:text-accent transition-colors"
             >
               Source code <span aria-hidden>↗</span>
             </a>
