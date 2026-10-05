@@ -11,12 +11,22 @@ function Links({ project }: { project: CaseStudy }) {
   return (
     <div className="flex gap-6 text-sm font-medium">
       {project.live && (
-        <a href={project.live} className="link-draw hover:text-accent transition-colors">
+        <a
+          href={project.live}
+          target="_blank"
+          rel="noreferrer"
+          className="link-draw hover:text-accent transition-colors"
+        >
           Live site ↗
         </a>
       )}
       {project.repo && (
-        <a href={project.repo} className="link-draw hover:text-accent transition-colors">
+        <a
+          href={project.repo}
+          target="_blank"
+          rel="noreferrer"
+          className="link-draw hover:text-accent transition-colors"
+        >
           Source code ↗
         </a>
       )}

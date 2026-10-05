@@ -120,6 +120,8 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
           {project.live && (
             <a
               href={project.live}
+              target="_blank"
+              rel="noreferrer"
               className="link-draw hover:text-accent transition-colors"
             >
               Live site <span aria-hidden>↗</span>
@@ -128,6 +130,8 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
           {project.repo && (
             <a
               href={project.repo}
+              target="_blank"
+              rel="noreferrer"
               className="link-draw hover:text-accent transition-colors"
             >
               Source code <span aria-hidden>↗</span>
