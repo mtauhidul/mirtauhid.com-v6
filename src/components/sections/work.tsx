@@ -77,27 +77,86 @@ function FeaturedCaseStudy({ project }: { project: CaseStudy }) {
   );
 }
 
-/** A smaller project, shown as a card. */
-function ProjectCard({ project }: { project: CaseStudy }) {
+/** Small `+` mark centered on a card corner, like the section crosshairs. */
+function Corner({ className }: { className: string }) {
   return (
-    <article className="group border-line bg-surface ease-smooth hover:border-line-strong flex h-full flex-col overflow-hidden border transition-all duration-500 hover:-translate-y-1">
-      <div className="overflow-hidden">
-        <PlaceholderImage
-          mock
-          label={project.slug}
-          className="ease-smooth aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.04]"
-        />
-      </div>
-      <div className="flex flex-1 flex-col gap-4 p-6">
-        <div className="text-fg-subtle flex items-center justify-between font-mono text-xs">
-          <span>{project.role}</span>
-          <span>{project.year}</span>
+    <span
+      aria-hidden
+      className={`text-fg-subtle group-hover:text-accent absolute size-3.5 transition-colors duration-500 ${className}`}
+      style={{
+        backgroundImage:
+          "linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor)",
+        backgroundSize: "100% 1px, 1px 100%",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    />
+  );
+}
+
+/** Small geometric drawing for the top of a card. Purely decorative; varies per card. */
+function Motif({ index }: { index: number }) {
+  const common = {
+    viewBox: "0 0 64 64",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1,
+    "aria-hidden": true,
+    className:
+      "text-fg-subtle/60 group-hover:text-accent/80 size-14 shrink-0 transition-colors duration-500",
+  } as const;
+  const variant = index % 3;
+  if (variant === 0)
+    return (
+      <svg {...common}>
+        <circle cx="32" cy="32" r="22" />
+        <circle cx="32" cy="32" r="10" />
+        <path d="M32 4v56M4 32h56" />
+      </svg>
+    );
+  if (variant === 1)
+    return (
+      <svg {...common}>
+        <rect x="10" y="10" width="44" height="44" />
+        <path d="M10 10l44 44M54 10L10 54" />
+        <rect x="23" y="23" width="18" height="18" />
+      </svg>
+    );
+  return (
+    <svg {...common}>
+      <path d="M32 6l26 46H6z" />
+      <path d="M32 6v46M19 29h26" />
+      <circle cx="32" cy="38" r="5" />
+    </svg>
+  );
+}
+
+/** A smaller project: no screenshot, a hairline frame with corner crosshairs and a geometric drawing. */
+function ProjectCard({ project, index }: { project: CaseStudy; index: number }) {
+  return (
+    <article className="group border-line ease-smooth hover:border-line-strong relative flex h-full flex-col border p-6 transition-all duration-500 hover:bg-white/[0.02]">
+      <Corner className="-top-[0.5px] -left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
+      <Corner className="-top-[0.5px] -right-[0.5px] translate-x-1/2 -translate-y-1/2" />
+      <Corner className="-bottom-[0.5px] -left-[0.5px] -translate-x-1/2 translate-y-1/2" />
+      <Corner className="-right-[0.5px] -bottom-[0.5px] translate-x-1/2 translate-y-1/2" />
+
+      <div className="flex items-start justify-between gap-4">
+        <div className="font-mono text-xs leading-relaxed">
+          <p className="text-accent">{String(index + 1).padStart(2, "0")}</p>
+          <p className="text-fg-subtle mt-1">{project.year}</p>
         </div>
-        <h3 className="font-display text-2xl tracking-tight">{project.title}</h3>
+        <Motif index={index} />
+      </div>
+
+      <div className="border-line mt-6 flex flex-1 flex-col gap-3 border-t pt-6">
+        <h3 className="font-display text-3xl leading-tight tracking-tight">
+          {project.title}
+        </h3>
         <p className="text-fg-muted">{project.summary}</p>
-        <p className="text-fg-subtle mt-auto font-mono text-xs">
-          {project.stack.join(" / ")}
-        </p>
+      </div>
+
+      <div className="border-line mt-6 space-y-4 border-t pt-4">
+        <p className="text-fg-subtle font-mono text-xs">{project.stack.join(" / ")}</p>
         <Links project={project} />
       </div>
     </article>
@@ -123,11 +182,11 @@ export function Work() {
           <Reveal>
             <p className="label border-line mb-8 border-t pt-6">More projects</p>
           </Reveal>
-          <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((p, i) => (
               <li key={p.slug}>
                 <Reveal delay={(i % 3) * 0.08} className="h-full">
-                  <ProjectCard project={p} />
+                  <ProjectCard project={p} index={i} />
                 </Reveal>
               </li>
             ))}
