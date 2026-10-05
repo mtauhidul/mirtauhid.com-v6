@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/container";
+import { FooterWordmark } from "@/components/footer-wordmark";
 import { LocalTime } from "@/components/local-time";
 import { navItems, profile } from "@/content/profile";
 
@@ -72,24 +73,7 @@ export function Footer() {
         </div>
       </Container>
 
-      {/* full-bleed wordmark: top ~70% visible, bottom ~30% cut off by the bar below, fading out */}
-      <div
-        aria-hidden
-        className="[container-type:inline-size] mt-16 overflow-hidden md:mt-24"
-      >
-        <p
-          className="display h-[11.4cqw] text-center text-[17.8cqw] leading-[0.85] whitespace-nowrap select-none"
-          style={{
-            backgroundImage: "linear-gradient(to bottom, #f2f2ef59 0%, #f2f2ef08 90%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-            paddingInline: "0.1em",
-          }}
-        >
-          {profile.name}
-        </p>
-      </div>
+      <FooterWordmark text={profile.name} />
 
       <div className="border-line border-t">
         <Container className="text-fg-subtle flex flex-col items-start justify-between gap-3 py-6 font-mono text-xs md:flex-row md:items-center">
