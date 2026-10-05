@@ -71,7 +71,7 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
     <article
       onPointerEnter={onEnter}
       onPointerLeave={() => setEntry((cur) => (cur ? { ...cur, on: false } : cur))}
-      className="group border-line ease-smooth relative flex h-full cursor-pointer flex-col border p-5 transition-colors duration-500 hover:bg-white/[0.025]"
+      className="group border-line ease-smooth relative flex h-full flex-col border p-5 transition-colors duration-500 hover:bg-white/[0.025]"
     >
       <Corner className="-top-[0.5px] -left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
       <Corner className="-top-[0.5px] -right-[0.5px] translate-x-1/2 -translate-y-1/2" />
