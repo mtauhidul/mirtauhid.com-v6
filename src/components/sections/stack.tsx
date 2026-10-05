@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 export function Stack() {
   return (
     <Section id="stack" aria-label="Stack">
-      <SectionHeading index="04" label="Stack" title="Tools I ship with." />
+      <SectionHeading index="04" label="Stack" title="Skills and tools." />
       <div className="border-line grid border-t md:grid-cols-3">
         {skills.map((g, i) => (
           <Reveal key={g.title} delay={i * 0.08}>

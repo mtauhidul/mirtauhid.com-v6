@@ -2,7 +2,7 @@ import type { CaseStudy as CaseStudyData } from "@/types/content";
 import { Reveal } from "@/components/ui/reveal";
 import { ScreenshotFrame } from "./screenshot-frame";
 
-/** The large, in-depth project card: summary, proof, screenshots, ownership, features, stack. */
+/** The large, in-depth project card: summary, proof, screenshots and links, with the rest behind one Details toggle. */
 export function CaseStudy({ project }: { project: CaseStudyData }) {
   return (
     <Reveal>
@@ -46,50 +46,14 @@ export function CaseStudy({ project }: { project: CaseStudyData }) {
         )}
 
         <div
-          className={`mt-10 grid gap-8 md:mt-12 md:grid-cols-12 md:gap-x-10 ${project.results.length === 0 ? "border-line border-t pt-10 md:pt-12" : ""}`}
+          className={`mt-10 md:mt-12 ${project.results.length === 0 ? "border-line border-t pt-10 md:pt-12" : ""}`}
         >
-          <div className="md:col-span-8">
-            <ScreenshotFrame
-              shots={project.screenshots ?? []}
-              url={project.live}
-              name={project.slug}
-            />
-          </div>
-          {project.owned && (
-            <div className="md:col-span-4">
-              <p className="label mb-4">What I owned</p>
-              <dl>
-                {project.owned.map((o) => (
-                  <div key={o.area} className="border-line border-t py-3 last:border-b">
-                    <dt className="text-fg font-medium">{o.area}</dt>
-                    <dd className="text-fg-muted mt-0.5 text-sm leading-snug">
-                      {o.text}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          )}
+          <ScreenshotFrame
+            shots={project.screenshots ?? []}
+            url={project.live}
+            name={project.slug}
+          />
         </div>
-
-        {project.features && (
-          <div className="mt-10">
-            <p className="label mb-4">Key features</p>
-            <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
-              {project.features.map((f) => (
-                <li
-                  key={f}
-                  className="border-line text-fg-muted flex gap-3 border-t pt-4 text-sm leading-snug"
-                >
-                  <span aria-hidden className="text-accent">
-                    →
-                  </span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
 
         <div className="border-line mt-10 flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t pt-6">
           <p className="text-fg-subtle font-mono text-sm">{project.stack.join(" / ")}</p>
@@ -116,7 +80,7 @@ export function CaseStudy({ project }: { project: CaseStudyData }) {
 
         <details className="group border-line mt-6 border-t pt-4">
           <summary className="text-fg-muted hover:text-fg flex cursor-pointer list-none items-center justify-between gap-4 py-2 text-sm font-medium transition-colors [&::-webkit-details-marker]:hidden">
-            Read the full story
+            Details: problem, what I built, what I owned, features
             <span
               aria-hidden
               className="ease-smooth text-lg transition-transform duration-300 group-open:rotate-45"
@@ -124,14 +88,54 @@ export function CaseStudy({ project }: { project: CaseStudyData }) {
               +
             </span>
           </summary>
-          <div className="mt-6 grid gap-8 pb-4 md:grid-cols-12 md:gap-x-10">
-            <div className="md:col-span-5">
-              <p className="label mb-3">Problem</p>
-              <p className="text-fg-muted">{project.problem}</p>
+          <div className="mt-6 space-y-10 pb-4">
+            <div className="grid gap-8 md:grid-cols-12 md:gap-x-10">
+              <div className="md:col-span-5">
+                <p className="label mb-3">Problem</p>
+                <p className="text-fg-muted">{project.problem}</p>
+              </div>
+              <div className="md:col-span-7">
+                <p className="label mb-3">What I built</p>
+                <p className="text-fg-muted">{project.solution}</p>
+              </div>
             </div>
-            <div className="md:col-span-7">
-              <p className="label mb-3">What I built</p>
-              <p className="text-fg-muted">{project.solution}</p>
+            <div className="grid gap-8 md:grid-cols-12 md:gap-x-10">
+              {project.owned && (
+                <div className="md:col-span-5">
+                  <p className="label mb-4">What I owned</p>
+                  <dl>
+                    {project.owned.map((o) => (
+                      <div
+                        key={o.area}
+                        className="border-line border-t py-3 last:border-b"
+                      >
+                        <dt className="text-fg font-medium">{o.area}</dt>
+                        <dd className="text-fg-muted mt-0.5 text-sm leading-snug">
+                          {o.text}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              )}
+              {project.features && (
+                <div className="md:col-span-7">
+                  <p className="label mb-4">Key features</p>
+                  <ul>
+                    {project.features.map((f) => (
+                      <li
+                        key={f}
+                        className="border-line text-fg-muted flex gap-3 border-t py-3 text-sm leading-snug last:border-b"
+                      >
+                        <span aria-hidden className="text-accent">
+                          →
+                        </span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </details>

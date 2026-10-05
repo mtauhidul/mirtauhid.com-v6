@@ -13,7 +13,7 @@ export function Contact() {
           Contact
         </p>
         <h2 className="display text-[clamp(2.75rem,8vw,7.5rem)]">
-          <SplitReveal text="Say hello." />
+          <SplitReveal text="Get in touch." />
         </h2>
         <a
           href={`mailto:${profile.email}`}

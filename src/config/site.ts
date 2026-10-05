@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Mir Tauhidul",
-  title: "Mir Tauhidul — Frontend Design Engineer",
+  title: "Mir Tauhidul — Frontend design engineer",
   description:
     "Portfolio of Mir Tauhidul Islam, a frontend design engineer: selected work, experience and contact.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mirtauhid.com",

@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 export function About() {
   return (
     <Section id="about" aria-label="About">
-      <SectionHeading index="02" label="About" title="Where design meets code." />
+      <SectionHeading index="02" label="About" title="About me." />
       <div className="grid gap-12 md:grid-cols-12 md:gap-x-10">
         <Reveal className="md:col-span-4">
           <div className="border-line relative aspect-[4/5] overflow-hidden border">
