@@ -17,8 +17,20 @@ export type CaseStudy = {
   live?: string;
   /** text for the live link, default "Live site" (e.g. "Live demo") */
   liveLabel?: string;
-  /** screenshot for the large case study (falls back to a placeholder) */
-  image?: { src: string; width: number; height: number; alt: string };
+  /** screenshots for the large case study; several become tabs (empty shows a placeholder) */
+  screenshots?: {
+    label: string;
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+  }[];
+  /** short status pills on the large case study, e.g. "In production", "Solo build" */
+  status?: string[];
+  /** what the author personally owned, one short line per area */
+  owned?: { area: string; text: string }[];
+  /** four short, concrete things the product does */
+  features?: string[];
   repo?: string;
 };
 

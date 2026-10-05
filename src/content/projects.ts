@@ -31,12 +31,32 @@ export const projects: CaseStudy[] = [
     ],
     live: "https://ats-ui-test.vercel.app/ats",
     liveLabel: "Live demo",
-    image: {
-      src: "/images/arista-ats-dashboard.webp",
-      width: 1706,
-      height: 922,
-      alt: "Arista ATS hiring dashboard with candidate, client and open job totals and application and hiring trend charts",
-    },
+    status: ["In production", "Solo build"],
+    owned: [
+      { area: "Product", text: "Research, planning and the system design." },
+      {
+        area: "Interface",
+        text: "Designed and built in code, with a documented style guide.",
+      },
+      { area: "Backend", text: "Node and Express API, MongoDB and real-time updates." },
+      { area: "AI", text: "Resume parsing and scoring against each job." },
+      { area: "Ops", text: "Deployed it, and still maintain it." },
+    ],
+    features: [
+      "Drag-and-drop hiring pipeline for every job",
+      "AI reads and scores resumes against each job",
+      "Interview scheduling with Zoom links, scorecards and email in and out",
+      "8 user roles, each with their own permissions",
+    ],
+    screenshots: [
+      {
+        label: "Dashboard",
+        src: "/images/arista-ats-dashboard.webp",
+        width: 1706,
+        height: 922,
+        alt: "Arista ATS hiring dashboard with candidate, client and open job totals and application and hiring trend charts",
+      },
+    ],
   },
   {
     title: "Niblet",
@@ -60,6 +80,27 @@ export const projects: CaseStudy[] = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase", "OpenAI API"],
     live: "https://niblet-ai.vercel.app",
     liveLabel: "Live demo",
+    status: ["Live demo", "Solo build"],
+    owned: [
+      { area: "Product", text: "Designed the product and the chat experience." },
+      { area: "Interface", text: "Built the interface in code, mobile first." },
+      {
+        area: "Backend",
+        text: "Firebase backend with security rules, and every chat call is verified and rate limited.",
+      },
+      {
+        area: "AI",
+        text: "A streaming agent with nine validated tools on two AI providers.",
+      },
+      { area: "Quality", text: "Tests, and a production-hardened deploy." },
+    ],
+    features: [
+      "Chat-first logging: one message can log a meal and a weigh-in",
+      "Photo understanding: photos are resized in the browser and logged with a stated assumption",
+      "Switch between Claude and OpenAI with one setting",
+      "Export all your data, or delete the account and everything in it",
+    ],
+    screenshots: [],
   },
   {
     title: "Draftboard",
