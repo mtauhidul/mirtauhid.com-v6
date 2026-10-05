@@ -94,58 +94,31 @@ function Corner({ className }: { className: string }) {
   );
 }
 
-/** Small geometric drawing for the top of a card. Purely decorative; varies per card. */
-function Motif({ index }: { index: number }) {
-  const common = {
-    viewBox: "0 0 64 64",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1,
-    "aria-hidden": true,
-    className:
-      "text-fg-subtle/60 group-hover:text-accent/80 size-14 shrink-0 transition-colors duration-500",
-  } as const;
-  const variant = index % 3;
-  if (variant === 0)
-    return (
-      <svg {...common}>
-        <circle cx="32" cy="32" r="22" />
-        <circle cx="32" cy="32" r="10" />
-        <path d="M32 4v56M4 32h56" />
-      </svg>
-    );
-  if (variant === 1)
-    return (
-      <svg {...common}>
-        <rect x="10" y="10" width="44" height="44" />
-        <path d="M10 10l44 44M54 10L10 54" />
-        <rect x="23" y="23" width="18" height="18" />
-      </svg>
-    );
+/** A smaller project: a hairline frame with corner crosshairs, no screenshot. The whole card links to the live site. */
+function ProjectCard({ project }: { project: CaseStudy }) {
   return (
-    <svg {...common}>
-      <path d="M32 6l26 46H6z" />
-      <path d="M32 6v46M19 29h26" />
-      <circle cx="32" cy="38" r="5" />
-    </svg>
-  );
-}
-
-/** A smaller project: no screenshot, a hairline frame with corner crosshairs and a geometric drawing. */
-function ProjectCard({ project, index }: { project: CaseStudy; index: number }) {
-  return (
-    <article className="group border-line ease-smooth hover:border-line-strong relative flex h-full flex-col border p-6 transition-all duration-500 hover:bg-white/[0.02]">
+    <article className="group border-line ease-smooth hover:border-line-strong relative flex h-full flex-col border p-7 transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.025]">
       <Corner className="-top-[0.5px] -left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
       <Corner className="-top-[0.5px] -right-[0.5px] translate-x-1/2 -translate-y-1/2" />
       <Corner className="-bottom-[0.5px] -left-[0.5px] -translate-x-1/2 translate-y-1/2" />
       <Corner className="-right-[0.5px] -bottom-[0.5px] translate-x-1/2 translate-y-1/2" />
 
-      <div className="flex items-start justify-between gap-4">
-        <div className="font-mono text-xs leading-relaxed">
-          <p className="text-accent">{String(index + 1).padStart(2, "0")}</p>
-          <p className="text-fg-subtle mt-1">{project.year}</p>
-        </div>
-        <Motif index={index} />
+      {/* accent line that draws across the top edge on hover */}
+      <span
+        aria-hidden
+        className="bg-accent ease-smooth absolute inset-x-0 top-0 h-px origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"
+      />
+
+      <div className="text-fg-subtle flex items-center justify-between gap-4 font-mono text-xs">
+        <span>{project.role}</span>
+        {project.live && (
+          <span
+            aria-hidden
+            className="ease-smooth group-hover:text-accent text-base transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          >
+            ↗
+          </span>
+        )}
       </div>
 
       <div className="border-line mt-6 flex flex-1 flex-col gap-3 border-t pt-6">
@@ -155,10 +128,37 @@ function ProjectCard({ project, index }: { project: CaseStudy; index: number }) 
         <p className="text-fg-muted">{project.summary}</p>
       </div>
 
-      <div className="border-line mt-6 space-y-4 border-t pt-4">
-        <p className="text-fg-subtle font-mono text-xs">{project.stack.join(" / ")}</p>
-        <Links project={project} />
-      </div>
+      <ul className="mt-6 flex flex-wrap gap-2">
+        {project.stack.map((t) => (
+          <li
+            key={t}
+            className="border-line text-fg-muted rounded-[3px] border px-2.5 py-1 font-mono text-xs"
+          >
+            {t}
+          </li>
+        ))}
+      </ul>
+
+      {(project.live || project.repo) && (
+        <div className="border-line mt-6 flex items-center gap-6 border-t pt-4 text-sm font-medium">
+          {project.live && (
+            <a
+              href={project.live}
+              className="hover:text-accent transition-colors after:absolute after:inset-0"
+            >
+              Live site <span aria-hidden>↗</span>
+            </a>
+          )}
+          {project.repo && (
+            <a
+              href={project.repo}
+              className="link-draw hover:text-accent relative z-10 transition-colors"
+            >
+              Source code <span aria-hidden>↗</span>
+            </a>
+          )}
+        </div>
+      )}
     </article>
   );
 }
@@ -186,7 +186,7 @@ export function Work() {
             {rest.map((p, i) => (
               <li key={p.slug}>
                 <Reveal delay={(i % 3) * 0.08} className="h-full">
-                  <ProjectCard project={p} index={i} />
+                  <ProjectCard project={p} />
                 </Reveal>
               </li>
             ))}
