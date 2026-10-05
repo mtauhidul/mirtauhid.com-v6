@@ -10,16 +10,16 @@ export const profile = {
     "I turn rough ideas into working, on-brand web apps. I design directly in code, so there's no mockup stage, just the real product.",
   proof: [
     { value: "30+", label: "projects" },
-    { value: "3+ yrs", label: "building for the web" },
-    { value: "0", label: "static mockups" },
+    { value: "5+ yrs", label: "building for the web" },
+    { value: "800+", label: "candidates handled in my ATS" },
   ],
   about: {
     lead: "I'm Mir Tauhidul Islam, a frontend design engineer with some backend experience. I care about how a product looks and feels, and I build it myself.",
-    body: "I started building for the web in 2023 and have worked on 30+ projects since. I skip the static mockups and design directly in code, so what I show is what ships.",
+    body: "I started building for the web in 2021 as a freelancer, joined ProviderLINK in 2023, and have worked on 30+ projects since. I skip the static mockups and design directly in code, so what I show is what ships.",
     facts: [
       { label: "Based in", value: "Dhaka, Bangladesh" },
       { label: "Focus", value: "Interface design, design systems and responsive UI" },
-      { label: "Building since", value: "2023" },
+      { label: "Building since", value: "2021" },
     ],
   },
   socials: [

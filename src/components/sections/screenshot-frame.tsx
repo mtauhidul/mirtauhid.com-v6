@@ -35,14 +35,15 @@ export function ScreenshotFrame({
       </div>
 
       {shot ? (
-        <Image
-          src={shot.src}
-          alt={shot.alt}
-          width={shot.width}
-          height={shot.height}
-          sizes="(min-width: 1152px) 1072px, 100vw"
-          className="h-auto w-full"
-        />
+        <div className="relative aspect-[2000/1080]">
+          <Image
+            src={shot.src}
+            alt={shot.alt}
+            fill
+            sizes="(min-width: 1152px) 1072px, 100vw"
+            className="object-cover object-top"
+          />
+        </div>
       ) : (
         <PlaceholderImage
           label={`${name} / screenshot coming`}
