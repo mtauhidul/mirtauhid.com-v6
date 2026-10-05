@@ -31,19 +31,23 @@ export function CaseStudy({ project }: { project: CaseStudyData }) {
           )}
         </div>
 
-        <ul className="border-line mt-10 grid grid-cols-3 border-y md:mt-12">
-          {project.results.map((r, i) => (
-            <li
-              key={r.label}
-              className={`px-1 py-6 md:px-6 ${i > 0 ? "border-line border-l" : ""} ${i === 0 ? "md:pl-0" : ""}`}
-            >
-              <p className="display text-3xl md:text-5xl">{r.value}</p>
-              <p className="text-fg-subtle mt-2 text-xs md:text-sm">{r.label}</p>
-            </li>
-          ))}
-        </ul>
+        {project.results.length > 0 && (
+          <ul className="border-line mt-10 grid grid-cols-3 border-y md:mt-12">
+            {project.results.map((r, i) => (
+              <li
+                key={r.label}
+                className={`px-1 py-6 md:px-6 ${i > 0 ? "border-line border-l" : ""} ${i === 0 ? "md:pl-0" : ""}`}
+              >
+                <p className="display text-3xl md:text-5xl">{r.value}</p>
+                <p className="text-fg-subtle mt-2 text-xs md:text-sm">{r.label}</p>
+              </li>
+            ))}
+          </ul>
+        )}
 
-        <div className="mt-10 grid gap-8 md:mt-12 md:grid-cols-12 md:gap-x-10">
+        <div
+          className={`mt-10 grid gap-8 md:mt-12 md:grid-cols-12 md:gap-x-10 ${project.results.length === 0 ? "border-line border-t pt-10 md:pt-12" : ""}`}
+        >
           <div className="md:col-span-8">
             <ScreenshotFrame
               shots={project.screenshots ?? []}
@@ -100,6 +104,15 @@ export function CaseStudy({ project }: { project: CaseStudyData }) {
             </a>
           )}
         </div>
+
+        {project.demoLogin && (
+          <dl className="border-line mt-6 grid gap-x-8 gap-y-2 border-t pt-4 font-mono text-sm sm:grid-cols-[auto_1fr_auto_1fr] sm:items-baseline">
+            <dt className="text-fg-subtle">Demo admin login</dt>
+            <dd className="text-fg-muted select-all">{project.demoLogin.email}</dd>
+            <dt className="text-fg-subtle">Password</dt>
+            <dd className="text-fg-muted select-all">{project.demoLogin.password}</dd>
+          </dl>
+        )}
 
         <details className="group border-line mt-6 border-t pt-4">
           <summary className="text-fg-muted hover:text-fg flex cursor-pointer list-none items-center justify-between gap-4 py-2 text-sm font-medium transition-colors [&::-webkit-details-marker]:hidden">

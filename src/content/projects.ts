@@ -16,9 +16,9 @@ export const projects: CaseStudy[] = [
     solution:
       "I built it end to end: research, planning, architecture, the interface, the backend, AI-assisted development, deployment and ongoing maintenance. Recruiters move candidates through each job's pipeline, schedule interviews and send email from one app. AI reads and scores resumes against each job. Hired candidates carry over into client account management.",
     results: [
-      { value: "800+", label: "candidates handled" },
-      { value: "30+", label: "clients" },
-      { value: "50+", label: "jobs" },
+      { value: "800+", label: "candidates applied" },
+      { value: "30+", label: "clients registered" },
+      { value: "50+", label: "jobs posted" },
     ],
     stack: [
       "React",
@@ -31,6 +31,10 @@ export const projects: CaseStudy[] = [
     ],
     live: "https://ats-ui-test.vercel.app/ats",
     liveLabel: "Live demo",
+    demoLogin: {
+      email: "demo.admin@mirtauhid.com",
+      password: "Arista@Demo2026",
+    },
     status: ["In production", "Solo build"],
     owned: [
       { area: "Product", text: "Research, planning and the system design." },
@@ -123,16 +127,12 @@ export const projects: CaseStudy[] = [
     role: "Full-stack developer",
     year: "2026",
     summary:
-      "An AI nutrition coach you talk to. Say what you ate, or send a photo, and it logs the meal and does the macro maths.",
+      "An AI nutrition coach you talk to. Say what you ate, or send a photo, and it logs the meal and does the macro maths. Set a health goal and log your weight regularly to track progress.",
     problem:
-      "Logging food is tedious. Most apps make you search, weigh and type in every item.",
+      "Most food apps make you search, weigh and type in every item. It gets tiring and people give up. I wanted logging to feel like sending a text.",
     solution:
-      "A chat you talk to. A tool-using AI agent logs meals from a message or a photo, fixes or removes entries, answers questions about your day and logs your weight, all from one chat. I built it end to end: product design, a streaming agent with nine validated tools, the Firebase backend, tests and a production-hardened deploy.",
-    results: [
-      { value: "98", label: "Lighthouse, desktop" },
-      { value: "9", label: "validated AI tools" },
-      { value: "2", label: "AI providers, one switch" },
-    ],
+      "A chat you talk to. Say what you ate or send a photo and an AI agent logs the meal, fixes mistakes and answers questions about your day. You can set a health goal and track progress with regular food and weight logs. I built it end to end, from design to the Firebase backend and deploy.",
+    results: [],
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase", "OpenAI API"],
     live: "https://niblet-ai.vercel.app",
     liveLabel: "Live demo",
@@ -151,10 +151,10 @@ export const projects: CaseStudy[] = [
       { area: "Quality", text: "Tests, and a production-hardened deploy." },
     ],
     features: [
-      "Chat-first logging: one message can log a meal and a weigh-in",
-      "Photo understanding: photos are resized in the browser and logged with a stated assumption",
-      "Switch between Claude and OpenAI with one setting",
-      "Export all your data, or delete the account and everything in it",
+      "Log by chatting: one message can log a meal and your weight",
+      "Photo logging: snap your plate and get an estimate you can correct",
+      "Goals and progress: set a health goal and track your weight and calories",
+      "Private by design: export or delete all your data anytime",
     ],
     screenshots: [
       {

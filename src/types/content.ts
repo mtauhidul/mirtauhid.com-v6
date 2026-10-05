@@ -15,6 +15,8 @@ export type CaseStudy = {
   results: { value: string; label: string }[];
   stack: string[];
   live?: string;
+  /** demo account shown next to the live link on the large case study */
+  demoLogin?: { email: string; password: string };
   /** text for the live link, default "Live site" (e.g. "Live demo") */
   liveLabel?: string;
   /** screenshots for the large case study; several become tabs (empty shows a placeholder) */
