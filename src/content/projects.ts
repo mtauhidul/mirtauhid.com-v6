@@ -23,6 +23,22 @@ export const projects: CaseStudy[] = [
     repo: "#",
   },
   {
+    title: "Niblet",
+    slug: "niblet",
+    kind: "Nutrition",
+    context: "Portfolio project",
+    role: "Frontend design engineer",
+    year: "2026",
+    summary:
+      "AI nutrition coach that logs meals and macros from a chat message or photo.",
+    problem: "Food tracking apps make you search, weigh and type for every meal.",
+    solution:
+      "A chat you talk to. Say what you ate, or send a photo, and a tool-using AI agent logs the meal, does the macro maths and can also fix entries, answer questions and log your weight.",
+    results: [],
+    stack: ["Next.js", "TypeScript", "AI API"],
+    live: "https://niblet-ai.vercel.app",
+  },
+  {
     title: "Draftboard",
     slug: "draftboard",
     kind: "Productivity",
@@ -54,22 +70,6 @@ export const projects: CaseStudy[] = [
     results: [],
     stack: ["Next.js", "TypeScript", "Firebase"],
     live: "https://caresync-v2.vercel.app",
-  },
-  {
-    title: "Niblet",
-    slug: "niblet",
-    kind: "Nutrition",
-    context: "Portfolio project",
-    role: "Frontend design engineer",
-    year: "2026",
-    summary:
-      "AI nutrition coach that logs meals and macros from a chat message or photo.",
-    problem: "Food tracking apps make you search, weigh and type for every meal.",
-    solution:
-      "A chat you talk to. Say what you ate, or send a photo, and a tool-using AI agent logs the meal, does the macro maths and can also fix entries, answer questions and log your weight.",
-    results: [],
-    stack: ["Next.js", "OpenAI API", "Anthropic API"],
-    live: "https://niblet-ai.vercel.app",
   },
   {
     title: "Orbit CLI",
