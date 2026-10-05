@@ -2,23 +2,26 @@
 
 Single-page, dark-only portfolio. All content is placeholder for now and lives in `src/content/*` (data) and `src/components/sections/*` (UI), so each section can be edited on its own.
 
+## Goal
+
+Win client work from founders and startups (and stay open to full-time roles) by showing real developer work as case studies.
+
 ## Page structure
 
-| #   | Section    | Purpose for a recruiter                              | Content file    | Component                 |
-| --- | ---------- | ---------------------------------------------------- | --------------- | ------------------------- |
-| –   | Hero       | Who, what, availability and key numbers in 5 seconds | `profile.ts`    | `sections/hero.tsx`       |
-| 01  | About      | Personality, focus, quick facts                      | `profile.ts`    | `sections/about.tsx`      |
-| 02  | Projects   | Outcomes first: role, year, stack, result            | `projects.ts`   | `sections/projects.tsx`   |
-| 03  | Experience | Timeline of roles with measurable highlights         | `experience.ts` | `sections/experience.tsx` |
-| 04  | Skills     | Grouped toolkit                                      | `skills.ts`     | `sections/skills.tsx`     |
-| 05  | Contact    | One clear call to action: email, résumé, socials     | `profile.ts`    | `sections/contact.tsx`    |
+| #   | Section    | Purpose                                                    | Content file    | Component                 |
+| --- | ---------- | ---------------------------------------------------------- | --------------- | ------------------------- |
+| 00  | Hero       | Who it's for, what you do, availability, CTA, proof        | `profile.ts`    | `sections/hero.tsx`       |
+| 01  | Work       | Case studies: problem, what I built, results, stack, links | `projects.ts`   | `sections/work.tsx`       |
+| 02  | About      | Why work with you, quick facts                             | `profile.ts`    | `sections/about.tsx`      |
+| 03  | Experience | Roles with measurable highlights                           | `experience.ts` | `sections/experience.tsx` |
+| 04  | Stack      | Tools, plain lists                                         | `skills.ts`     | `sections/stack.tsx`      |
+| 05  | Contact    | Email, good-fit projects, reply time, socials, résumé      | `profile.ts`    | `sections/contact.tsx`    |
 
 ## Motion principles
 
-- Easing `cubic-bezier(0.22, 1, 0.36, 1)`; reveals 0.9s, hovers 300–500ms.
-- Hero lines slide up from a mask; sections fade, rise and unblur once on scroll.
-- Scroll progress bar, nav pill that follows the active section, cursor spotlight on cards.
-- `prefers-reduced-motion` is respected for CSS motion.
+- Easing `cubic-bezier(0.22, 1, 0.36, 1)`; reveals 0.8s.
+- Hero lines slide up from a mask; sections fade and rise once on scroll.
+- No navbar: floating wordmark, contact link and an edge section index.
 
 ## Edit order (one by one)
 

@@ -1,24 +1,22 @@
+import { EdgeIndex } from "@/components/edge-index";
 import { Footer } from "@/components/footer";
-import { Nav } from "@/components/nav";
-import { ScrollProgress } from "@/components/scroll-progress";
 import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
 import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
-import { Projects } from "@/components/sections/projects";
-import { Skills } from "@/components/sections/skills";
+import { Stack } from "@/components/sections/stack";
+import { Work } from "@/components/sections/work";
 
 export default function Home() {
   return (
     <>
-      <ScrollProgress />
-      <Nav />
+      <EdgeIndex />
       <main>
         <Hero />
+        <Work />
         <About />
-        <Projects />
         <Experience />
-        <Skills />
+        <Stack />
         <Contact />
       </main>
       <Footer />

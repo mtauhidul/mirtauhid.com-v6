@@ -1,33 +1,25 @@
 @import "tailwindcss";
 
-/*
- * Design tokens — dark only. See docs/DESIGN.md.
- * Contrast ratios are measured against --color-bg (#09090b).
- */
+/* Design tokens — dark only. See docs/DESIGN.md. Contrast measured against --color-bg. */
 @theme {
-  /* Surfaces: near-black with a faint cool tint, layered by elevation */
-  --color-bg: #09090b;
-  --color-surface: #101013;
-  --color-elevated: #17171c;
-  --color-line: #ffffff14; /* 8% white hairline */
-  --color-line-strong: #ffffff29; /* 16% white */
+  --color-bg: #0b0b0c;
+  --color-surface: #121213;
+  --color-elevated: #1a1a1c;
+  --color-line: #ffffff17;
+  --color-line-strong: #ffffff30;
 
-  /* Text: soft off-white, never pure #fff (less glare on black) */
-  --color-fg: #f4f4f5; /* 18:1 */
-  --color-fg-muted: #b4b4bd; /* 9.6:1 */
-  --color-fg-subtle: #8b8b96; /* 5.6:1 — AA for body text */
+  --color-fg: #f2f2ef; /* 17.5:1 */
+  --color-fg-muted: #b0b0aa; /* 9:1 */
+  --color-fg-subtle: #85857f; /* 5.2:1 */
 
-  /* Single accent: soft periwinkle, readable on black */
-  --color-accent: #9ca3ff; /* 8.6:1 */
-  --color-accent-strong: #b9bdff;
-  --color-accent-ink: #0b0b1a; /* text on accent fills */
-  --color-accent-soft: #9ca3ff1f; /* tinted fills */
+  --color-accent: #c6f432; /* 15:1 — used sparingly */
+  --color-accent-ink: #0b0b0c;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display:
+    var(--font-space-grotesk), var(--font-geist-sans), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
-  --radius-card: 1.25rem;
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -43,7 +35,7 @@
     color: var(--color-fg);
     font-family: var(--font-sans);
     font-size: 1.0625rem;
-    line-height: 1.7;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -57,7 +49,6 @@
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
-    border-radius: 4px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -74,28 +65,18 @@
 }
 
 @layer components {
-  .eyebrow {
+  .label {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--color-fg-subtle);
   }
-}
 
-@theme {
-  --animate-drift: drift 18s ease-in-out infinite alternate;
-  --animate-drift-slow: drift 28s ease-in-out infinite alternate-reverse;
-  --animate-marquee: marquee 40s linear infinite;
-
-  @keyframes drift {
-    to {
-      transform: translate3d(6rem, 4rem, 0) scale(1.15);
-    }
-  }
-  @keyframes marquee {
-    to {
-      transform: translateX(-50%);
-    }
+  .display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 0.95;
   }
 }

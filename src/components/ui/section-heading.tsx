@@ -2,26 +2,25 @@ import { Reveal } from "./reveal";
 
 export function SectionHeading({
   index,
-  eyebrow,
+  label,
   title,
   description,
 }: {
   index: string;
-  eyebrow: string;
-  title: React.ReactNode;
+  label: string;
+  title: string;
   description?: string;
 }) {
   return (
-    <Reveal className="mb-14 max-w-3xl space-y-5 md:mb-20">
-      <p className="eyebrow flex items-center gap-3">
+    <Reveal className="mb-12 md:mb-20">
+      <p className="label mb-6 flex items-center gap-3">
         <span className="text-accent">{index}</span>
-        <span className="bg-line-strong h-px w-8" />
-        {eyebrow}
+        {label}
       </p>
-      <h2 className="font-display text-5xl leading-[1.05] tracking-tight md:text-7xl">
-        {title}
-      </h2>
-      {description && <p className="text-fg-muted max-w-xl text-lg">{description}</p>}
+      <h2 className="display max-w-4xl text-[clamp(2.5rem,6vw,5rem)]">{title}</h2>
+      {description && (
+        <p className="text-fg-muted mt-6 max-w-xl text-lg">{description}</p>
+      )}
     </Reveal>
   );
 }

@@ -1,14 +1,13 @@
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.95rem] font-medium transition-all duration-300 ease-smooth active:scale-[0.98]";
+  "group inline-flex items-center justify-center gap-3 rounded-[3px] px-6 py-3.5 text-[0.95rem] font-medium transition-colors duration-300 ease-smooth";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-fg text-bg hover:bg-accent-strong",
-  secondary: "border border-line-strong text-fg hover:border-fg-subtle hover:bg-elevated",
-  ghost: "text-fg-muted hover:text-fg",
+  primary: "bg-accent text-accent-ink hover:bg-fg",
+  secondary: "border border-line-strong text-fg hover:border-fg hover:bg-elevated",
 };
 
 export function buttonClasses(variant: Variant = "primary", className?: string) {

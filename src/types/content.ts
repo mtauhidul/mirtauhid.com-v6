@@ -1,14 +1,15 @@
-export type Project = {
+export type CaseStudy = {
   title: string;
   slug: string;
-  summary: string;
+  client: string;
   role: string;
   year: string;
-  tags: string[];
-  href: string;
+  problem: string;
+  solution: string;
+  results: { value: string; label: string }[];
+  stack: string[];
+  live?: string;
   repo?: string;
-  featured?: boolean;
-  hue: number; // placeholder image tint, 0-360
 };
 
 export type Experience = {
@@ -16,12 +17,10 @@ export type Experience = {
   role: string;
   period: string;
   location: string;
-  summary: string;
   highlights: string[];
 };
 
 export type SkillGroup = {
   title: string;
-  description: string;
   items: string[];
 };

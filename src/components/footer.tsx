@@ -4,11 +4,11 @@ import { profile } from "@/content/profile";
 export function Footer() {
   return (
     <footer className="border-line border-t py-8">
-      <Container className="text-fg-subtle flex flex-col items-center justify-between gap-2 text-sm md:flex-row">
+      <Container className="text-fg-subtle flex flex-col justify-between gap-2 font-mono text-xs md:flex-row">
         <p>
-          © {new Date().getFullYear()} {profile.name}. All rights reserved.
+          © {new Date().getFullYear()} {profile.name}
         </p>
-        <p className="font-mono text-xs">Built with Next.js · Tailwind · Motion</p>
+        <p>Next.js · TypeScript · Tailwind</p>
       </Container>
     </footer>
   );
