@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { OPEN_PALETTE_EVENT } from "./command-palette";
 
-/** Top-right button (beside Contact) that opens the quick menu. The progress line starts below this row, so they never overlap. */
+/** Top-right button (beside Contact) that opens the quick menu. */
 export function PaletteTrigger() {
   const mod = useSyncExternalStore(
     () => () => {},

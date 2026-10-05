@@ -28,14 +28,14 @@ No navbar. Floating wordmark (top-left) and "Contact" link (top-right), both `mi
 
 Blueprint layer, all low contrast and aligned to the real container edges:
 
-- **Guide lines** (`GuideLines`): two fixed hairlines just outside the content edges, fading out toward the top and bottom of the screen. A faint dashed horizontal line crosses the screen where the scroll indicator starts (10% down), with a crosshair where it meets each guide; both fade out within the first 140px of scrolling. The right guide is also the scroll indicator: it fills with the accent as you scroll, with a notch per section.
+- **Guide lines** (`GuideLines`): two fixed hairlines just outside the content edges, fading out toward the top and bottom of the screen. A faint dashed horizontal line crosses the screen 10% down, below the corner links, with a crosshair where it meets each guide; both fade out within the first 140px of scrolling.
 - **Side hatching** (`SideHatch`, inside `GuideLines`): faint diagonal hatching in the margins outside the guides, strongest at the guide and fading outward and toward the screen top and bottom. Only visible when the viewport is wider than the content (about 1200px and up).
 - **Crosshairs** (`Crosshairs`, inside `Section`): a divider with a `+` where it meets each guide, at the top of every section, plus a live annotation (`SectionAnnotation`, md+): `02 — About / width × height · y offset`.
 - **Grid overlay** (`GridOverlay`): press `G` (hinted in the footer, no on-screen button). Shows the 12-column grid (4 on mobile) as dashed columns, outlines every section and lights up the annotations. A small toast confirms on/off. All 12-column section grids use `md:gap-x-10` so it matches the layout.
 
 ## Quick menu
 
-`CommandPalette` (`Cmd/Ctrl+K`, or `/`): jump to sections, copy the email, open GitHub, toggle the grid. The "Menu" button sits at the top right beside Contact. The right-hand progress line starts at 10% of the screen height, below that row, so they never overlap. It doubles as the mobile navigation.
+`CommandPalette` (`Cmd/Ctrl+K`, or `/`): jump to sections, copy the email, open GitHub, toggle the grid. The "Menu" button sits at the top right beside Contact. It doubles as the mobile navigation.
 
 ## Motion
 

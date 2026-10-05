@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useScroll, useSpring, useTransform } from "motion/react";
-import { navItems } from "@/content/profile";
+import { motion, useScroll, useTransform } from "motion/react";
 import { SectionAnnotation } from "./section-annotation";
 
 /**
@@ -30,46 +28,19 @@ function SideHatch({ side }: { side: "left" | "right" }) {
 }
 
 const fade = "linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent)";
-const TOP = 10; // % of viewport where the progress line starts (clear of the top corner links)
-const SPAN = 86; // % of viewport it travels
+const TOP = 10; // % of viewport where the dashed top line sits (clear of the top corner links)
 
 /**
- * Two vertical hairlines framing the site. They fade out toward the top and bottom of the screen.
- * The right guide doubles as the scroll indicator: it fills with the accent as you scroll,
- * with a notch per section.
+ * Two vertical hairlines framing the site, fading out toward the top and bottom of the screen,
+ * plus a dashed horizontal line near the top that fades away once you scroll.
  */
 export function GuideLines() {
-  const { scrollYProgress } = useScroll();
-  const p = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.4 });
-  const head = useTransform(p, (v) => `${TOP + v * SPAN}%`);
-  const fill = useTransform(p, (v) => `${v * SPAN}%`);
   // the top line and its crosshairs fade out as soon as you start scrolling
   const { scrollY } = useScroll();
   const topLineOpacity = useTransform(scrollY, [0, 140], [1, 0]);
-  const [ticks, setTicks] = useState<number[]>([]);
-
-  useEffect(() => {
-    const measure = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      if (max <= 0) return;
-      setTicks(
-        navItems
-          .filter((n) => n.id !== "top")
-          .map(({ id }) => {
-            const el = document.getElementById(id);
-            return el ? Math.min(1, Math.max(0, el.offsetTop / max)) : 0;
-          }),
-      );
-    };
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(document.body);
-    return () => ro.disconnect();
-  }, []);
-
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-      {/* dashed horizontal line across the whole viewport, level with where the scroll line starts; hides on scroll */}
+      {/* dashed horizontal line across the whole viewport, near the top, below the corner links; fades out on scroll */}
       <motion.div
         className="absolute inset-x-0 h-px"
         style={{
@@ -96,23 +67,6 @@ export function GuideLines() {
             <div className="bg-line absolute inset-y-0 left-0 w-px" />
             <div className="bg-line absolute inset-y-0 right-0 w-px" />
           </div>
-
-          {ticks.map((t, k) => (
-            <span
-              key={k}
-              className="bg-fg-subtle/50 absolute right-0 h-px w-2"
-              style={{ top: `${TOP + t * SPAN}%` }}
-            />
-          ))}
-
-          <motion.div
-            style={{ top: `${TOP}%`, height: fill }}
-            className="bg-accent/60 absolute right-0 w-px"
-          />
-          <motion.span
-            style={{ top: head }}
-            className="bg-accent absolute right-0 size-[5px] translate-x-1/2 -translate-y-1/2"
-          />
         </div>
       </div>
     </div>
