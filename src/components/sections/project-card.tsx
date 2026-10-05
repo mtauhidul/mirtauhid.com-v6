@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import type { CaseStudy } from "@/types/content";
+import { TechIcon, hasBrandIcon } from "@/components/ui/tech-icon";
+
+const MAX_CHIPS = 4;
 
 type Side = "top" | "right" | "bottom" | "left";
 type Entry = { side: Side; on: boolean };
@@ -86,24 +89,30 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
       <EdgeLine side="bottom" entry={entry} />
       <EdgeLine side="left" entry={entry} />
 
-      <div className="text-fg-subtle font-mono text-[11px]">{project.role}</div>
+      <div className="text-fg-subtle font-mono text-[11px]">{project.kind}</div>
 
       <h3 className="font-display mt-3 text-2xl leading-tight tracking-tight">
         {project.title}
       </h3>
-      <p className="text-fg-muted mt-1.5 flex-1 text-sm leading-snug">
+      <p className="text-fg-muted mt-1.5 line-clamp-2 flex-1 text-sm leading-snug">
         {project.summary}
       </p>
 
-      <ul className="mt-4 flex flex-wrap gap-1.5">
-        {project.stack.map((t) => (
+      <ul className="mt-4 flex flex-wrap gap-1">
+        {project.stack.slice(0, MAX_CHIPS).map((t) => (
           <li
             key={t}
-            className="border-line text-fg-muted rounded-[3px] border px-2 py-0.5 font-mono text-[11px]"
+            className="border-line text-fg-muted inline-flex items-center gap-1 rounded-[3px] border px-1.5 py-0.5 font-mono text-[11px]"
           >
+            {hasBrandIcon(t) && <TechIcon name={t} className="size-3" />}
             {t}
           </li>
         ))}
+        {project.stack.length > MAX_CHIPS && (
+          <li className="border-line text-fg-subtle rounded-[3px] border px-1.5 py-0.5 font-mono text-[11px]">
+            +{project.stack.length - MAX_CHIPS}
+          </li>
+        )}
       </ul>
 
       {(project.live || project.repo) && (

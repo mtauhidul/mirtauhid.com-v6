@@ -2,6 +2,8 @@ export type CaseStudy = {
   title: string;
   slug: string;
   context: string;
+  /** what it is, e.g. "Web app", "Dashboard", "CLI tool" */
+  kind: string;
   role: string;
   year: string;
   /** one line, used on the small cards */

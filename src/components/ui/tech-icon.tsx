@@ -1,13 +1,22 @@
 import {
   siAnthropic,
   siCloudinary,
+  siDocker,
   siExpress,
   siFirebase,
+  siGraphql,
   siJavascript,
   siMongodb,
   siNextdotjs,
   siNodedotjs,
+  siPostgresql,
+  siPrisma,
+  siPwa,
+  siRadixui,
   siReact,
+  siRedis,
+  siStorybook,
+  siSupabase,
   siTailwindcss,
   siTypescript,
   siVercel,
@@ -37,6 +46,15 @@ const icons: Record<string, { path: string }> = {
   "Express.js": siExpress,
   MongoDB: siMongodb,
   Firebase: siFirebase,
+  PostgreSQL: siPostgresql,
+  GraphQL: siGraphql,
+  Redis: siRedis,
+  Docker: siDocker,
+  Prisma: siPrisma,
+  Supabase: siSupabase,
+  Storybook: siStorybook,
+  "Radix UI": siRadixui,
+  PWA: siPwa,
   "Anthropic API": siAnthropic,
   Cloudinary: siCloudinary,
   Vercel: siVercel,
@@ -53,11 +71,20 @@ const monograms: Record<string, string> = {
  * Brand logo (monochrome, inherits the text color) or an initials tile.
  * Decorative: the tool name is always shown next to it.
  */
-export function TechIcon({ name }: { name: string }) {
+/** True when the tool has a real brand logo (as opposed to the initials tile). */
+export function hasBrandIcon(name: string): boolean {
+  return name in icons;
+}
+
+export function TechIcon({ name, className }: { name: string; className?: string }) {
   const icon = icons[name];
   if (icon) {
     return (
-      <svg viewBox="0 0 24 24" aria-hidden className="size-5 shrink-0 fill-current">
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden
+        className={`${className ?? "size-5"} shrink-0 fill-current`}
+      >
         <path d={icon.path} />
       </svg>
     );

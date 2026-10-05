@@ -4,6 +4,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Northwind Analytics",
     slug: "northwind-analytics",
+    kind: "Dashboard",
     summary: "Real-time analytics that turned 40M weekly events into decisions.",
     featured: true,
     context: "Northwind (SaaS, Series A)",
@@ -24,6 +25,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Atlas Health Portal",
     slug: "atlas-health",
+    kind: "Web app",
     summary: "Scheduling and records platform used by 14 clinics.",
     context: "Atlas Clinics",
     role: "Frontend design engineer",
@@ -41,6 +43,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Lumen Design Kit",
     slug: "lumen-kit",
+    kind: "Component library",
     summary: "Open-source library of 60+ accessible, themeable components.",
     context: "Open source",
     role: "Creator",
@@ -52,13 +55,14 @@ export const projects: CaseStudy[] = [
       { value: "AA", label: "WCAG contrast" },
       { value: "60+", label: "components" },
     ],
-    stack: ["Tailwind", "Radix", "Storybook"],
+    stack: ["Tailwind CSS", "Radix UI", "Storybook"],
     live: "#",
     repo: "#",
   },
   {
     title: "Pulse Mobile Banking",
     slug: "pulse-banking",
+    kind: "Mobile app",
     summary: "Cross-platform banking app with biometric sign-in.",
     context: "Pulse (fintech)",
     role: "Frontend lead",
@@ -70,12 +74,13 @@ export const projects: CaseStudy[] = [
       { value: "+48%", label: "onboarding completion" },
       { value: "4.8", label: "store rating" },
     ],
-    stack: ["React Native", "GraphQL", "Node.js"],
+    stack: ["React", "GraphQL", "Node.js"],
     live: "#",
   },
   {
     title: "Orbit CLI",
     slug: "orbit-cli",
+    kind: "CLI tool",
     context: "Open source",
     role: "Creator",
     year: "2024",
@@ -92,6 +97,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Fieldnotes",
     slug: "fieldnotes",
+    kind: "Web app",
     context: "Personal project",
     role: "Frontend design engineer",
     year: "2024",
@@ -100,13 +106,14 @@ export const projects: CaseStudy[] = [
     solution:
       "A local-first notes app that stores everything on the device and syncs later.",
     results: [{ value: "0", label: "lost notes" }],
-    stack: ["Next.js", "IndexedDB", "PWA"],
+    stack: ["Next.js", "Firebase", "PWA"],
     live: "#",
     repo: "#",
   },
   {
     title: "Ledger Lite",
     slug: "ledger-lite",
+    kind: "Web app",
     context: "Personal project",
     role: "Frontend design engineer",
     year: "2023",
