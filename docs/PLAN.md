@@ -1,6 +1,6 @@
 # Portfolio plan
 
-Single-page, dark-only portfolio. All content is placeholder for now and lives in `src/content/*` (data) and `src/components/sections/*` (UI), so each section can be edited on its own.
+Single-page, dark-only portfolio. Content lives in `src/content/*` (data) and `src/components/sections/*` (UI), so each section can be edited on its own.
 
 ## Goal
 
@@ -8,14 +8,14 @@ A showcase of what I've built and accomplished. Not a sales page: no hire-me, av
 
 ## Page structure
 
-| #   | Section    | Purpose                                                    | Content file    | Component                 |
-| --- | ---------- | ---------------------------------------------------------- | --------------- | ------------------------- |
-| 00  | Hero       | Who I am, what I do, proof numbers                         | `profile.ts`    | `sections/hero.tsx`       |
-| 01  | Work       | Case studies: problem, what I built, results, stack, links | `projects.ts`   | `sections/work.tsx`       |
-| 02  | About      | Why work with you, quick facts                             | `profile.ts`    | `sections/about.tsx`      |
-| 03  | Experience | Roles with measurable highlights                           | `experience.ts` | `sections/experience.tsx` |
-| 04  | Stack      | Tools, plain lists                                         | `skills.ts`     | `sections/stack.tsx`      |
-| 05  | Contact    | Email, socials, résumé                                     | `profile.ts`    | `sections/contact.tsx`    |
+| #   | Section    | Purpose                                                                                         | Content file    | Component                 |
+| --- | ---------- | ----------------------------------------------------------------------------------------------- | --------------- | ------------------------- |
+| 00  | Hero       | Who I am, what I do, proof numbers                                                              | `profile.ts`    | `sections/hero.tsx`       |
+| 01  | Work       | Two case studies (summary, stats, screenshots, links, a Details toggle) and small project cards | `projects.ts`   | `sections/work.tsx`       |
+| 02  | About      | Why work with you, quick facts                                                                  | `profile.ts`    | `sections/about.tsx`      |
+| 03  | Experience | Roles with measurable highlights                                                                | `experience.ts` | `sections/experience.tsx` |
+| 04  | Stack      | Tools, plain lists                                                                              | `skills.ts`     | `sections/stack.tsx`      |
+| 05  | Contact    | Email, socials, résumé                                                                          | `profile.ts`    | `sections/contact.tsx`    |
 
 ## Motion principles
 
@@ -23,15 +23,11 @@ A showcase of what I've built and accomplished. Not a sales page: no hire-me, av
 - Hero lines slide up from a mask; sections fade and rise once on scroll.
 - No navbar: floating wordmark, contact link and an edge section index.
 
-## Edit order (one by one)
+## Status
 
-1. Hero + profile data (name, role, intro, stats)
-2. About (copy, portrait)
-3. Projects (real projects, screenshots, links)
-4. Experience
-5. Skills
-6. Contact (email, résumé PDF, socials)
-7. Polish: SEO/OG image, favicon, analytics, deploy to Vercel, custom domain
+Hero, work, about, experience, stack and contact are written. SEO basics are in place: Open Graph and share image, icon, `robots.txt`, `sitemap.xml` and Person structured data.
+
+Open: résumé PDF (the Contact button still links to `#`), a custom 404, and a Lighthouse and accessibility pass.
 
 ## Later
 
