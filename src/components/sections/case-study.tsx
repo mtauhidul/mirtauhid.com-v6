@@ -98,7 +98,7 @@ export function CaseStudy({ project }: { project: CaseStudyData }) {
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              className="link-draw hover:text-accent text-sm font-medium transition-colors"
+              className="link-draw hover:text-accent -my-2 inline-block py-2 text-sm font-medium transition-colors"
             >
               {project.liveLabel ?? "Live site"} ↗
             </a>

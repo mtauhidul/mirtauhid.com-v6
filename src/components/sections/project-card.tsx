@@ -129,7 +129,7 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              className="link-draw hover:text-accent transition-colors"
+              className="link-draw hover:text-accent -my-2 inline-block py-2 transition-colors"
             >
               Live site <span aria-hidden>↗</span>
             </a>
@@ -139,7 +139,7 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
               href={project.repo}
               target="_blank"
               rel="noreferrer"
-              className="link-draw hover:text-accent transition-colors"
+              className="link-draw hover:text-accent -my-2 inline-block py-2 transition-colors"
             >
               Source code <span aria-hidden>↗</span>
             </a>

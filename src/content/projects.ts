@@ -73,7 +73,7 @@ export const projects: CaseStudy[] = [
       },
       {
         label: "Jobs",
-        src: "/images/arista-ats-jobs.webp",
+        src: "/images/arista-ats-jobs-2.webp",
         width: 2000,
         height: 1080,
         alt: "Jobs list beside the details of the selected job, with salary range, skills, tags and description",
@@ -218,10 +218,11 @@ export const projects: CaseStudy[] = [
     role: "Frontend design engineer",
     year: "2026",
     summary:
-      "A hospital staff workflow management system with live room status and separate role-based dashboards.",
+      "The v2 rebuild of a hospital staff workflow management system, with live room status and separate role-based dashboards.",
     problem:
-      "Clinics need staff, patients and the waiting room working from the same live picture.",
-    solution: "A staff portal with real-time room status and dashboards.",
+      "Hospital staff, patients and the waiting room need to work from the same live picture.",
+    solution:
+      "A staff portal with real-time room status and a separate dashboard for each role. The first version served 10k+ patients.",
     results: [],
     highlight: "v1 served 10k+ patients",
     stack: ["Next.js", "TypeScript", "Firebase"],

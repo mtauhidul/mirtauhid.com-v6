@@ -21,7 +21,7 @@ export const experience: Experience[] = [
     end: "2023",
     location: "Freelance",
     highlights: [
-      "I delivered 30+ web projects for clients around the world.",
+      "I delivered web projects for clients around the world.",
       "I built dashboards, admin panels and custom web apps on my own, from idea to launch.",
       "I worked directly with clients and turned their feedback into improvements.",
     ],

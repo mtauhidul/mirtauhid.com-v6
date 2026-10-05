@@ -11,7 +11,7 @@ export const profile = {
   proof: [
     { value: "40+", label: "projects" },
     { value: "5+ yrs", label: "building for the web" },
-    { value: "800+", label: "candidates handled in my ATS" },
+    { value: "800+", label: "candidates applied through my ATS" },
   ],
   about: {
     lead: "I'm Mir Tauhidul Islam, a frontend design engineer with some backend experience. I care about how a product looks and feels, and I build it myself.",

@@ -64,7 +64,7 @@ export function ScreenshotFrame({
               aria-selected={i === active}
               onClick={() => setActive(i)}
               className={cn(
-                "rounded-[3px] px-3 py-1.5 font-mono text-xs transition-colors",
+                "rounded-[3px] px-3 py-2 font-mono text-xs transition-colors",
                 i === active ? "text-fg bg-white/[0.08]" : "text-fg-subtle hover:text-fg",
               )}
             >
