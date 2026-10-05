@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/config/site";
 
@@ -5,16 +7,16 @@ export const alt = siteConfig.title;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const shot = await readFile(join(process.cwd(), "src/assets/og-dashboard.jpg"));
+  const src = `data:image/jpeg;base64,${shot.toString("base64")}`;
+
   return new ImageResponse(
     <div
       style={{
         width: "100%",
         height: "100%",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end",
-        padding: 72,
         background: "#0b0b0c",
         color: "#f2f2ef",
         fontFamily: "sans-serif",
@@ -23,28 +25,55 @@ export default function OpenGraphImage() {
       <div
         style={{
           display: "flex",
-          alignItems: "center",
-          gap: 16,
-          fontSize: 28,
-          color: "#b0b0aa",
+          flexDirection: "column",
+          justifyContent: "center",
+          width: 470,
+          paddingLeft: 64,
         }}
       >
-        <div style={{ width: 16, height: 16, background: "#c6f432" }} />
-        Frontend design engineer · Dhaka, Bangladesh
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            fontSize: 24,
+            color: "#b0b0aa",
+          }}
+        >
+          <div style={{ width: 14, height: 14, background: "#c6f432" }} />
+          Frontend design engineer
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            fontSize: 92,
+            fontWeight: 700,
+            lineHeight: 1.02,
+            letterSpacing: -3,
+            marginTop: 28,
+          }}
+        >
+          <div style={{ display: "flex" }}>Mir</div>
+          <div style={{ display: "flex" }}>Tauhidul</div>
+        </div>
+        <div style={{ display: "flex", fontSize: 32, marginTop: 28, color: "#c6f432" }}>
+          Building for the web.
+        </div>
       </div>
       <div
         style={{
           display: "flex",
-          fontSize: 120,
-          fontWeight: 700,
-          marginTop: 24,
-          letterSpacing: -4,
+          position: "absolute",
+          top: 110,
+          left: 500,
+          width: 760,
+          height: 410,
+          border: "1px solid rgba(255,255,255,0.22)",
+          overflow: "hidden",
         }}
       >
-        {siteConfig.name}
-      </div>
-      <div style={{ display: "flex", fontSize: 44, marginTop: 8, color: "#c6f432" }}>
-        Building for the web.
+        <img src={src} width={760} height={410} alt="" style={{ objectFit: "cover" }} />
       </div>
     </div>,
     size,
