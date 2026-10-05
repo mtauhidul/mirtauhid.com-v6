@@ -8,9 +8,9 @@ export const profile = {
   intro:
     "I turn rough ideas into working, on-brand web apps. I design directly in code, so there's no mockup stage, just the real product.",
   proof: [
-    { value: "30+", label: "products shipped" },
-    { value: "6 yrs", label: "building for the web" },
-    { value: "2.4k", label: "open-source stars" },
+    { value: "30+", label: "projects" },
+    { value: "3+ yrs", label: "building for the web" },
+    { value: "0", label: "static mockups" },
   ],
   about: {
     lead: "I'm a frontend design engineer: I care about the details people feel, like spacing, motion and clarity.",

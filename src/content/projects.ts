@@ -45,7 +45,7 @@ export const projects: CaseStudy[] = [
     solution:
       "Published 60+ themeable, keyboard-accessible primitives with docs and a Storybook.",
     results: [
-      { value: "2.4k", label: "GitHub stars" },
+      { value: "AA", label: "WCAG contrast" },
       { value: "60+", label: "components" },
     ],
     stack: ["Tailwind", "Radix", "Storybook"],
