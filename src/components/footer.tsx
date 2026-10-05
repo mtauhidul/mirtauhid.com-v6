@@ -74,7 +74,7 @@ export function Footer() {
         {/* oversized wordmark, fades out toward the bottom */}
         <p
           aria-hidden
-          className="display mt-16 text-center text-[clamp(3rem,14.5vw,15rem)] leading-[0.85] whitespace-nowrap select-none md:mt-24"
+          className="display mt-16 px-[0.1em] py-[0.08em] text-center text-[clamp(3rem,14.5vw,15rem)] leading-[0.85] whitespace-nowrap select-none md:mt-24"
           style={{
             backgroundImage: "linear-gradient(to bottom, #f2f2ef 0%, #f2f2ef1a 85%)",
             WebkitBackgroundClip: "text",
