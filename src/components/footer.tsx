@@ -72,18 +72,20 @@ export function Footer() {
         </div>
 
         {/* oversized wordmark, fades out toward the bottom */}
-        <p
-          aria-hidden
-          className="display mt-16 px-[0.1em] py-[0.08em] text-center text-[clamp(3rem,14.5vw,15rem)] leading-[0.85] whitespace-nowrap select-none md:mt-24"
-          style={{
-            backgroundImage: "linear-gradient(to bottom, #f2f2ef 0%, #f2f2ef1a 85%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          {profile.name}
-        </p>
+        <div className="[container-type:inline-size] mt-16 md:mt-24">
+          <p
+            aria-hidden
+            className="display px-[0.1em] py-[0.08em] text-center text-[17.5cqw] leading-[0.85] whitespace-nowrap select-none"
+            style={{
+              backgroundImage: "linear-gradient(to bottom, #f2f2ef 0%, #f2f2ef1a 85%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+          >
+            {profile.name}
+          </p>
+        </div>
       </Container>
 
       <div className="border-line border-t">
