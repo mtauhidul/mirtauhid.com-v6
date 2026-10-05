@@ -33,6 +33,11 @@ Blueprint layer, all low contrast and aligned to the real container edges:
 - **Crosshairs** (`Crosshairs`, inside `Section`): a divider with a `+` where it meets each guide, at the top of every section, plus a live annotation (`SectionAnnotation`, md+): `02 — About / width × height · y offset`.
 - **Grid overlay** (`GridOverlay`): press `G` (hinted in the footer, no on-screen button). Shows the 12-column grid (4 on mobile) as dashed columns, outlines every section and lights up the annotations. A small toast confirms on/off. All 12-column section grids use `md:gap-x-10` so it matches the layout.
 
+## Smooth scroll and heading reveals
+
+- **Smooth scroll:** Lenis inertial scrolling (`SmoothScroll`). In-page anchors, the footer's back-to-top and the quick menu all glide through `scrollToId` (`src/lib/scroll.ts`).
+- **Headings:** `SplitReveal` slides each word up out of a mask, staggered, once, when the heading scrolls into view. The in-view trigger sits on the unclipped outer element, because an observer on a clipped element never fires. Used by `SectionHeading` and the contact heading.
+
 ## Quick menu
 
 `CommandPalette` (`Cmd/Ctrl+K`, or `/`): jump to sections, copy the email, open GitHub, toggle the grid. The "Menu" button sits at the top right beside Contact. It doubles as the mobile navigation.

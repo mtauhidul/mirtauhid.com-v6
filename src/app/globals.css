@@ -27,7 +27,6 @@
   html {
     color-scheme: dark;
     background: var(--color-bg);
-    scroll-behavior: smooth;
   }
 
   body {
@@ -84,4 +83,19 @@ section {
 }
 [data-grid="on"] .section-annotation {
   color: var(--color-accent);
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

@@ -1,4 +1,5 @@
 import { Reveal } from "./reveal";
+import { SplitReveal } from "./split-reveal";
 
 export function SectionHeading({
   index,
@@ -17,7 +18,9 @@ export function SectionHeading({
         <span className="text-accent">{index}</span>
         {label}
       </p>
-      <h2 className="display max-w-4xl text-[clamp(2.5rem,6vw,5rem)]">{title}</h2>
+      <h2 className="display max-w-4xl text-[clamp(2.5rem,6vw,5rem)]">
+        <SplitReveal text={title} />
+      </h2>
       {description && (
         <p className="text-fg-muted mt-6 max-w-xl text-lg">{description}</p>
       )}

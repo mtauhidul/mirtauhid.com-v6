@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { navItems, profile } from "@/content/profile";
 import { cn } from "@/lib/cn";
+import { scrollToId } from "@/lib/scroll";
 
 export const OPEN_PALETTE_EVENT = "portfolio:open-palette";
 export const TOGGLE_GRID_EVENT = "portfolio:toggle-grid";
@@ -15,13 +16,6 @@ type Item = {
   hint?: string;
   run: () => void;
 };
-
-function goTo(id: string) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth" });
-  history.replaceState(null, "", id === "top" ? location.pathname : `#${id}`);
-}
 
 /** Cmd/Ctrl+K (or "/") opens a quick-jump menu. Also the mobile menu. */
 export function CommandPalette() {
@@ -45,7 +39,7 @@ export function CommandPalette() {
         group: "Sections" as const,
         label: n.label,
         hint: String(i).padStart(2, "0"),
-        run: () => goTo(n.id),
+        run: () => scrollToId(n.id),
       })),
       {
         id: "a-copy",

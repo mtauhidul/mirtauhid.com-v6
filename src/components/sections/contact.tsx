@@ -1,6 +1,7 @@
 import { profile } from "@/content/profile";
 import { buttonClasses } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
+import { SplitReveal } from "@/components/ui/split-reveal";
 import { Section } from "@/components/ui/section";
 
 export function Contact() {
@@ -11,7 +12,9 @@ export function Contact() {
           <span className="text-accent">05</span>
           Contact
         </p>
-        <h2 className="display text-[clamp(2.75rem,8vw,7.5rem)]">Say hello.</h2>
+        <h2 className="display text-[clamp(2.75rem,8vw,7.5rem)]">
+          <SplitReveal text="Say hello." />
+        </h2>
         <a
           href={`mailto:${profile.email}`}
           className="hover:text-accent ease-smooth decoration-line-strong mt-10 inline-block font-mono text-[clamp(1.1rem,3vw,2rem)] underline underline-offset-8 transition-colors duration-300"

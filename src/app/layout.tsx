@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { MotionProvider } from "@/components/motion-provider";
 import { Geist, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { siteConfig } from "@/config/site";
@@ -40,7 +41,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          <SmoothScroll />
+          {children}
+        </MotionProvider>
       </body>
     </html>
   );
