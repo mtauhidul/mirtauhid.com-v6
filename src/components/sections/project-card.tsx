@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { CaseStudy } from "@/types/content";
 
 type Side = "top" | "right" | "bottom" | "left";
-type Entry = { side: Side; x: number; y: number; on: boolean };
+type Entry = { side: Side; on: boolean };
 
 /** Small `+` mark centered on a card corner, like the section crosshairs. */
 function Corner({ className }: { className: string }) {
@@ -23,10 +23,9 @@ function Corner({ className }: { className: string }) {
   );
 }
 
-/** Accent line on one edge; grows outward from where the pointer entered. */
+/** Faint accent line on one edge. It appears and disappears instantly: nothing animates or moves. */
 function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
   const active = !!entry && entry.on && entry.side === side;
-  const horizontal = side === "top" || side === "bottom";
   const position =
     side === "top"
       ? "inset-x-0 top-0 h-px"
@@ -36,22 +35,11 @@ function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
           ? "inset-y-0 left-0 w-px"
           : "inset-y-0 right-0 w-px";
 
-  // grow from the entry point along the edge
-  const origin =
-    entry && entry.side === side
-      ? horizontal
-        ? `${entry.x}% 50%`
-        : `50% ${entry.y}%`
-      : "50% 50%";
-
   return (
     <span
       aria-hidden
-      className={`bg-accent/40 ease-smooth pointer-events-none absolute transition-transform duration-500 ${position}`}
-      style={{
-        transformOrigin: origin,
-        transform: horizontal ? `scaleX(${active ? 1 : 0})` : `scaleY(${active ? 1 : 0})`,
-      }}
+      className={`bg-accent/40 pointer-events-none absolute ${position}`}
+      style={{ opacity: active ? 1 : 0 }}
     />
   );
 }
@@ -59,7 +47,7 @@ function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
 /**
  * A compact small project: hairline frame with corner crosshairs, no screenshot.
  * The card is not a link; only the links inside are clickable.
- * On hover the card itself does not change; a faint accent line is drawn on the edge the pointer entered from.
+ * On hover the card does not move or animate; a faint accent line simply appears on the edge the pointer entered from.
  */
 export function ProjectCard({ project }: { project: CaseStudy }) {
   const [entry, setEntry] = useState<Entry | null>(null);
@@ -76,12 +64,7 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
       right: r.width - x,
     };
     const side = (Object.keys(d) as Side[]).reduce((a, b) => (d[a] <= d[b] ? a : b));
-    setEntry({
-      side,
-      x: Math.min(100, Math.max(0, (x / r.width) * 100)),
-      y: Math.min(100, Math.max(0, (y / r.height) * 100)),
-      on: true,
-    });
+    setEntry({ side, on: true });
   }
 
   return (
