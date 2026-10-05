@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { profile } from "@/content/profile";
-import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { Reveal } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -10,7 +10,15 @@ export function About() {
       <SectionHeading index="02" label="About" title="Where design meets code." />
       <div className="grid gap-12 md:grid-cols-12 md:gap-x-10">
         <Reveal className="md:col-span-4">
-          <PlaceholderImage label="portrait / 4×5" className="aspect-[4/5]" />
+          <div className="border-line relative aspect-[4/5] overflow-hidden border">
+            <Image
+              src="/images/portrait.jpg"
+              alt={`Portrait of ${profile.fullName}`}
+              fill
+              sizes="(min-width: 768px) 33vw, 100vw"
+              className="object-cover object-[50%_28%]"
+            />
+          </div>
         </Reveal>
         <div className="space-y-10 md:col-span-8">
           <Reveal className="space-y-6">
