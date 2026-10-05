@@ -24,8 +24,7 @@ export const profile = {
   },
   socials: [
     { label: "GitHub", href: "https://github.com/mtauhidul" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "X", href: "https://x.com" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/mirtauhid" },
   ],
 } as const;
 
