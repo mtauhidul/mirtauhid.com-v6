@@ -78,11 +78,12 @@ export const projects: CaseStudy[] = [
     context: "",
     role: "Frontend design engineer",
     year: "2025",
-    summary: "Touch-friendly self-service check-in with camera capture and e-signature.",
+    summary:
+      "Self-service check-in for medical offices. Patients confirm details, snap their ID and sign.",
     problem:
-      "Front desks spend time collecting forms and copies of ID and insurance cards.",
+      "Front desks spend their time on paperwork and copies of ID and insurance cards.",
     solution:
-      "A kiosk and tablet app that guides patients through demographics, insurance and ID capture, medical history, e-signature, a quick survey and a final review.",
+      "A touch-friendly app for kiosks and tablets. Patients confirm their details, photograph their ID and insurance card, fill in their medical, family, surgical and social history, sign, answer a short survey and review everything. A test mode lets it run offline as a demo.",
     results: [],
     stack: ["React", "MUI", "Cloudinary"],
     live: "https://kiosk-demo-beta.vercel.app",
