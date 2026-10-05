@@ -8,9 +8,10 @@ export const experience: Experience[] = [
     end: null,
     location: "Texas, USA · Remote",
     highlights: [
-      "I build web apps for healthcare businesses.",
-      "I use AI and code to solve real problems they run into.",
-      "What I make is offered to them as products and services.",
+      "I build and maintain web apps that healthcare and internal teams use every day.",
+      "I turn ideas and Figma designs into responsive, reusable interfaces that work across browsers.",
+      "I connect the frontend to backend services, APIs, authentication and real-time data.",
+      "I work with the team to fix problems, improve features and build new tools people need.",
     ],
   },
   {
@@ -20,8 +21,10 @@ export const experience: Experience[] = [
     end: "2023",
     location: "Freelance",
     highlights: [
-      "I built websites and web apps for clients around the world.",
-      "I took each client's idea and turned it into something that works.",
+      "I delivered 30+ web projects for clients in different countries.",
+      "I built dashboards, admin panels, websites and web apps from ideas, requirements and designs.",
+      "I handled projects on my own, from planning and development to testing, deployment and delivery.",
+      "I worked directly with clients to understand what they needed and turn their feedback into improvements.",
     ],
   },
 ];
