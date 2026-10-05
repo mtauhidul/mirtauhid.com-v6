@@ -22,9 +22,15 @@ Hairlines are white at 9% / 19%. Corners are square (3px on buttons).
 - **Geist**: body, 17px / 1.65.
 - **JetBrains Mono** (`.label`): small uppercase labels, stack, metadata.
 
-## Navigation
+## Navigation & blueprint layer
 
-No navbar. Floating wordmark (top-left), "Contact" link (top-right), and an edge section index on screens 1280px and wider. Text uses `mix-blend-difference` so it stays legible over content.
+No navbar. Floating wordmark (top-left) and "Contact" link (top-right), both `mix-blend-difference`.
+
+Blueprint layer, all low contrast and aligned to the real container edges:
+
+- **Guide lines** (`GuideLines`): two fixed hairlines just outside the content edges.
+- **Crosshairs** (`Crosshairs`, inside `Section`): a divider with a `+` where it meets each guide, at the top of every section.
+- **Edge ruler** (`Ruler`, 1280px and up): a tick per section positioned by real scroll offset, a marker that follows scroll, and a `03/05` + percent readout. Ticks are links.
 
 ## Motion
 

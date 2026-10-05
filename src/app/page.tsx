@@ -1,5 +1,7 @@
-import { EdgeIndex } from "@/components/edge-index";
+import { CornerLinks } from "@/components/corner-links";
 import { Footer } from "@/components/footer";
+import { Ruler } from "@/components/ruler";
+import { GuideLines } from "@/components/ui/guides";
 import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
 import { Experience } from "@/components/sections/experience";
@@ -10,7 +12,9 @@ import { Work } from "@/components/sections/work";
 export default function Home() {
   return (
     <>
-      <EdgeIndex />
+      <GuideLines />
+      <CornerLinks />
+      <Ruler />
       <main>
         <Hero />
         <Work />

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/cn";
+import { Crosshairs } from "./guides";
 import { Container } from "./container";
 
 export function Section({
@@ -7,7 +8,8 @@ export function Section({
   ...props
 }: React.ComponentPropsWithoutRef<"section">) {
   return (
-    <section className={cn("py-24 md:py-36", className)} {...props}>
+    <section className={cn("relative py-24 md:py-36", className)} {...props}>
+      <Crosshairs />
       <Container>{children}</Container>
     </section>
   );
