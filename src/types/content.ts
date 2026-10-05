@@ -17,9 +17,9 @@ export type Experience = {
   role: string;
   /** optional label shown after the company, e.g. "Contract" */
   employment?: string;
-  /** "YYYY-MM" */
+  /** "YYYY-MM", or "YYYY" when the month is unknown */
   start: string;
-  /** "YYYY-MM", or null while the role is current */
+  /** same format as start, or null while the role is current */
   end: string | null;
   location: string;
   highlights: string[];
