@@ -18,6 +18,16 @@ export function About() {
               sizes="(min-width: 768px) 33vw, 100vw"
               className="object-cover object-[50%_28%]"
             />
+            {/* darkening so the bright photo sits in the dark page: even tint + stronger fade from the bottom */}
+            <div aria-hidden className="bg-bg/[0.22] absolute inset-0" />
+            <div
+              aria-hidden
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to top, rgba(11,11,12,0.92) 0%, rgba(11,11,12,0.55) 35%, rgba(11,11,12,0) 70%)",
+              }}
+            />
           </div>
         </Reveal>
         <div className="space-y-10 md:col-span-8">
