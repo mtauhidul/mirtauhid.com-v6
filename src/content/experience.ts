@@ -3,7 +3,7 @@ import type { Experience } from "@/types/content";
 export const experience: Experience[] = [
   {
     company: "Company One",
-    role: "Senior Software Engineer",
+    role: "Senior Frontend Design Engineer",
     period: "2024 — Now",
     location: "Remote",
     highlights: [
@@ -14,7 +14,7 @@ export const experience: Experience[] = [
   },
   {
     company: "Company Two",
-    role: "Full-Stack Engineer",
+    role: "Frontend Engineer",
     period: "2021 — 2024",
     location: "Your City",
     highlights: [

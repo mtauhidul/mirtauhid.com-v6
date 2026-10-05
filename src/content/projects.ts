@@ -23,7 +23,7 @@ export const projects: CaseStudy[] = [
     title: "Atlas Health Portal",
     slug: "atlas-health",
     context: "Atlas Clinics",
-    role: "Full-stack developer",
+    role: "Frontend design engineer",
     year: "2025",
     problem: "14 clinics scheduled patients by phone and spreadsheet.",
     solution:

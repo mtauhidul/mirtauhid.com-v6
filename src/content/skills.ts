@@ -6,11 +6,18 @@ export const skills: SkillGroup[] = [
     items: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Motion", "Accessibility"],
   },
   {
-    title: "Backend",
-    items: ["Node.js", "PostgreSQL", "GraphQL", "Redis", "REST APIs", "Auth"],
+    title: "Design",
+    items: [
+      "Figma",
+      "Design systems",
+      "Prototyping",
+      "Typography",
+      "Interaction",
+      "UX writing",
+    ],
   },
   {
-    title: "Ship & run",
-    items: ["Vercel", "AWS", "Docker", "GitHub Actions", "Playwright", "Sentry"],
+    title: "Backend & ship",
+    items: ["Node.js", "PostgreSQL", "REST APIs", "Auth", "Vercel", "Docker"],
   },
 ];

@@ -45,12 +45,14 @@ export function Hero() {
           {profile.role} · {profile.location}
         </motion.p>
 
-        <h1 className="display text-[clamp(3.25rem,10.5vw,9.5rem)]">
-          <Line delay={0.3}>Full-stack developer</Line>
-          <Line delay={0.4}>
-            building for <span className="text-accent">the web.</span>
-          </Line>
-        </h1>
+        <div className="[container-type:inline-size]">
+          <h1 className="display text-[15cqw] md:text-[7.8cqw]">
+            <Line delay={0.3}>Frontend design engineer</Line>
+            <Line delay={0.4}>
+              with <span className="text-accent">backend experience.</span>
+            </Line>
+          </h1>
+        </div>
 
         <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end md:gap-x-10">
           <motion.p
