@@ -6,19 +6,18 @@ export const profile = {
   timezone: "UTC", // placeholder, e.g. "Asia/Dhaka"
   location: "Your City, Country",
   intro:
-    "I design and build fast, polished interfaces, and I'm comfortable on the backend when a product needs it. Here's a collection of what I've built.",
+    "I design and build fast, polished interfaces, working where design and code meet. Here's a collection of what I've built.",
   proof: [
     { value: "30+", label: "products shipped" },
     { value: "6 yrs", label: "building for the web" },
     { value: "2.4k", label: "open-source stars" },
   ],
   about: {
-    lead: "I'm a frontend design engineer: I care about the details people feel, like spacing, motion and clarity, and I can build the backend underneath when needed.",
-    body: "I work where design and code meet. I've shipped interfaces across fintech, health and developer tools, with some APIs, databases and deployment along the way.",
+    lead: "I'm a frontend design engineer: I care about the details people feel, like spacing, motion and clarity.",
+    body: "I work where design and code meet. I've shipped interfaces across fintech, health and developer tools.",
     facts: [
       { label: "Based in", value: "Your City, Country" },
       { label: "Focus", value: "Frontend, interaction and design systems" },
-      { label: "Also", value: "APIs, databases and deployment" },
       { label: "Currently", value: "Building in public" },
       { label: "Languages", value: "English, Bangla" },
     ],

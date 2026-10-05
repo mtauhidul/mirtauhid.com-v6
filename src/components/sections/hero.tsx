@@ -46,10 +46,10 @@ export function Hero() {
         </motion.p>
 
         <div className="[container-type:inline-size]">
-          <h1 className="display text-[15cqw] md:text-[7.8cqw]">
-            <Line delay={0.3}>Frontend design engineer</Line>
+          <h1 className="display text-[15cqw] md:text-[10cqw]">
+            <Line delay={0.3}>Design engineer</Line>
             <Line delay={0.4}>
-              with <span className="text-accent">backend experience.</span>
+              building for <span className="text-accent">the web.</span>
             </Line>
           </h1>
         </div>
