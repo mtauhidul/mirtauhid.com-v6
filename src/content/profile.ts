@@ -13,13 +13,12 @@ export const profile = {
     { value: "0", label: "static mockups" },
   ],
   about: {
-    lead: "I'm a frontend design engineer: I care about the details people feel, like spacing, motion and clarity.",
-    body: "I work where design and code meet. I've shipped interfaces across fintech, health and developer tools.",
+    lead: "I'm a design engineer. I care about how a product looks, moves and feels, and I build it myself.",
+    body: "I started building for the web in 2023 and have worked on 30+ projects since. I skip the static mockups and design directly in code, so what I show is what ships.",
     facts: [
       { label: "Based in", value: "Your City, Country" },
-      { label: "Focus", value: "Frontend, interaction and design systems" },
-      { label: "Currently", value: "Building in public" },
-      { label: "Languages", value: "English, Bangla" },
+      { label: "Focus", value: "Interfaces, motion and design systems" },
+      { label: "Building since", value: "2023" },
     ],
   },
   socials: [

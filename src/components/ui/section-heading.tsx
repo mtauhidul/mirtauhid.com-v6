@@ -18,7 +18,7 @@ export function SectionHeading({
         <span className="text-accent">{index}</span>
         {label}
       </p>
-      <h2 className="display max-w-4xl text-[clamp(2.5rem,6vw,5rem)]">
+      <h2 className="display max-w-6xl text-[clamp(2.5rem,6vw,5rem)]">
         <SplitReveal text={title} />
       </h2>
       {description && (
