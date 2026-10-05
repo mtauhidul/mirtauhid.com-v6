@@ -23,9 +23,10 @@ function Corner({ className }: { className: string }) {
   );
 }
 
-/** Faint accent line on one edge. It appears and disappears instantly: nothing animates or moves. */
+/** Faint accent line on one edge. It expands from the middle of the edge out to both ends, and collapses back on leave. */
 function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
   const active = !!entry && entry.on && entry.side === side;
+  const horizontal = side === "top" || side === "bottom";
   const position =
     side === "top"
       ? "inset-x-0 top-0 h-px"
@@ -38,8 +39,10 @@ function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
   return (
     <span
       aria-hidden
-      className={`bg-accent/40 pointer-events-none absolute ${position}`}
-      style={{ opacity: active ? 1 : 0 }}
+      className={`bg-accent/40 ease-smooth pointer-events-none absolute origin-center transition-transform duration-500 ${position}`}
+      style={{
+        transform: horizontal ? `scaleX(${active ? 1 : 0})` : `scaleY(${active ? 1 : 0})`,
+      }}
     />
   );
 }
@@ -47,7 +50,7 @@ function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
 /**
  * A compact small project: hairline frame with corner crosshairs, no screenshot.
  * The card is not a link; only the links inside are clickable.
- * On hover the card never moves: its background lightens softly and a faint accent line appears on the edge the pointer entered from.
+ * On hover the card never moves: its background lightens softly and a faint accent line expands from the middle of the edge the pointer entered through.
  */
 export function ProjectCard({ project }: { project: CaseStudy }) {
   const [entry, setEntry] = useState<Entry | null>(null);
