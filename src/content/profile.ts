@@ -3,6 +3,7 @@ export const profile = {
   name: "Mir Tauhidul",
   role: "Full-stack developer",
   email: "hello@example.com",
+  timezone: "UTC", // placeholder, e.g. "Asia/Dhaka"
   availability: "Booking projects from Nov 2026",
   intro:
     "I take products from idea to production: sharp frontend, solid APIs, deployed and monitored. I work directly with founders and small teams.",
