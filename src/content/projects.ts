@@ -47,11 +47,11 @@ export const projects: CaseStudy[] = [
     role: "Frontend design engineer",
     year: "2026",
     summary:
-      "Management system for foot care clinics, with patient booking and a check-in kiosk.",
+      "Management system with real-time room status, dashboards and a check-in kiosk.",
     problem:
       "Clinics need staff, patients and the waiting room working from the same live picture.",
     solution:
-      "Three connected parts: a staff portal with real-time room status and dashboards, a patient portal for booking and managing appointments, and a self-service check-in kiosk.",
+      "A staff portal with real-time room status and dashboards, plus a self-service check-in kiosk for the waiting area.",
     results: [],
     stack: ["Next.js", "TypeScript", "Firebase"],
     live: "https://caresync-v2.vercel.app",
