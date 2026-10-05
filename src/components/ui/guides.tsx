@@ -28,11 +28,11 @@ function SideHatch({ side }: { side: "left" | "right" }) {
 }
 
 const fade = "linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent)";
-const TOP = 10; // % of viewport where the dashed top line sits (clear of the top corner links)
+const TOP = 10; // % of viewport where the top line sits (clear of the top corner links)
 
 /**
  * Two vertical hairlines framing the site, fading out toward the top and bottom of the screen,
- * plus a dashed horizontal line near the top that fades away once you scroll.
+ * plus a hairline near the top (between two crosshairs) that fades away once you scroll.
  */
 export function GuideLines() {
   // the top line and its crosshairs fade out as soon as you start scrolling
@@ -46,15 +46,8 @@ export function GuideLines() {
           <SideHatch side="right" />
 
           <motion.div className="absolute inset-0" style={{ opacity: topLineOpacity }}>
-            {/* dashed line between the two crosshairs, like the section dividers; fades out on scroll */}
-            <div
-              className="absolute inset-x-0 h-px"
-              style={{
-                top: `${TOP}%`,
-                backgroundImage:
-                  "repeating-linear-gradient(to right, rgba(255,255,255,0.14) 0 6px, transparent 6px 12px)",
-              }}
-            />
+            {/* solid hairline between the two crosshairs, same as the section dividers; fades out on scroll */}
+            <div className="bg-line absolute inset-x-0 h-px" style={{ top: `${TOP}%` }} />
             <Plus className="left-0 mt-[0.5px] ml-[0.5px]" top={`${TOP}%`} />
             <Plus
               className="right-0 mt-[0.5px] mr-[0.5px] translate-x-1/2!"
