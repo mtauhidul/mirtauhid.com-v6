@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useRef, useState } from "react";
 import Image from "next/image";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { cn } from "@/lib/cn";
@@ -18,6 +18,26 @@ export function ScreenshotFrame({
   name: string;
 }) {
   const [active, setActive] = useState(0);
+  const uid = useId();
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  function onKeyDown(e: React.KeyboardEvent) {
+    const last = shots.length - 1;
+    const next =
+      e.key === "ArrowRight"
+        ? (active + 1) % shots.length
+        : e.key === "ArrowLeft"
+          ? (active - 1 + shots.length) % shots.length
+          : e.key === "Home"
+            ? 0
+            : e.key === "End"
+              ? last
+              : null;
+    if (next === null) return;
+    e.preventDefault();
+    setActive(next);
+    tabRefs.current[next]?.focus();
+  }
   const shot = shots[active];
   const host = url ? url.replace(/^https?:\/\//, "").replace(/\/$/, "") : "";
 
@@ -35,7 +55,12 @@ export function ScreenshotFrame({
       </div>
 
       {shot ? (
-        <div className="relative aspect-[2000/1080]">
+        <div
+          role={shots.length > 1 ? "tabpanel" : undefined}
+          id={`${uid}-panel`}
+          aria-labelledby={shots.length > 1 ? `${uid}-tab-${active}` : undefined}
+          className="relative aspect-[2000/1080]"
+        >
           <Image
             src={shot.src}
             alt={shot.alt}
@@ -55,13 +80,20 @@ export function ScreenshotFrame({
         <div
           role="tablist"
           aria-label={`${name} screenshots`}
+          onKeyDown={onKeyDown}
           className="border-line flex flex-wrap gap-1 border-t p-2"
         >
           {shots.map((s, i) => (
             <button
               key={s.label}
+              ref={(el) => {
+                tabRefs.current[i] = el;
+              }}
+              id={`${uid}-tab-${i}`}
               role="tab"
               aria-selected={i === active}
+              aria-controls={`${uid}-panel`}
+              tabIndex={i === active ? 0 : -1}
               onClick={() => setActive(i)}
               className={cn(
                 "rounded-[3px] px-3 py-2 font-mono text-xs transition-colors",

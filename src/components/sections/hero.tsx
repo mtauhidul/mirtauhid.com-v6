@@ -86,7 +86,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-svh flex-col justify-end pt-32 pb-12 md:pb-16"
+      className="relative flex min-h-[85svh] flex-col justify-center pt-32 pb-16 md:pb-20"
     >
       {/* top divider with crosshairs, below the corner links; scrolls away with the page like the section dividers */}
       <div aria-hidden className="absolute inset-x-0 top-[5.5rem]">
@@ -109,7 +109,7 @@ export function Hero() {
 
         <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end md:gap-x-10">
           <motion.p
-            {...fade(0.9)}
+            {...fade(0.6)}
             className="text-fg-muted text-base md:col-span-7 md:text-xl"
           >
             {profile.intro}
@@ -131,18 +131,6 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-
-        <motion.dl
-          {...fade(1.15)}
-          className="border-line mt-14 grid grid-cols-3 gap-6 border-t pt-6 md:mt-20"
-        >
-          {profile.proof.map((p) => (
-            <div key={p.label}>
-              <dd className="display text-3xl md:text-5xl">{p.value}</dd>
-              <dt className="label mt-2">{p.label}</dt>
-            </div>
-          ))}
-        </motion.dl>
       </Container>
     </section>
   );

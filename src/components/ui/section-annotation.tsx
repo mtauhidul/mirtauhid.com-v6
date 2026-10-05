@@ -44,7 +44,7 @@ export function SectionAnnotation({ id }: { id: string }) {
       {dims && (
         <>
           {" "}
-          / {dims.w} × {dims.h} <span className="opacity-60">· y {dims.y}</span>
+          / {dims.w} × {dims.h} <span>· y {dims.y}</span>
         </>
       )}
     </span>

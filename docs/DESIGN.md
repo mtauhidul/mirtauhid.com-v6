@@ -51,7 +51,6 @@ Easing `cubic-bezier(0.22, 1, 0.36, 1)`. Hero lines slide up from a mask; sectio
 
 - **Case studies** (`CaseStudy`): header and summary, stats (when the project has them), a browser-style `ScreenshotFrame` with tabs, then one line with stack, live link and optional demo login. Problem, what I built, what I owned and key features sit behind one Details toggle.
 - **Small cards** (`ProjectCard`): hairline frame with corner crosshairs, one optional `highlight` badge, no screenshot. The "More projects" block has a fine horizontal-rule background from its divider to the end of the section.
-- **Flags:** the Upwork entry lists client countries with SVG flags (`country-flag-icons`), not emoji, so they render on Windows.
 
 ## SEO
 

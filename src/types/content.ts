@@ -10,7 +10,6 @@ export type CaseStudy = {
   summary: string;
   /** the large inline case study at the top of Work */
   featured?: boolean;
-  problem: string;
   solution: string;
   results: { value: string; label: string }[];
   stack: string[];
@@ -31,8 +30,8 @@ export type CaseStudy = {
   }[];
   /** short status pills on the large case study, e.g. "In production", "Solo build" */
   status?: string[];
-  /** what the author personally owned, one short line per area */
-  owned?: { area: string; text: string }[];
+  /** one plain line on what the author did, e.g. "Solo build: design, code and deployment." */
+  owned?: string;
   /** four short, concrete things the product does */
   features?: string[];
   repo?: string;
@@ -49,8 +48,6 @@ export type Experience = {
   end: string | null;
   location: string;
   highlights: string[];
-  /** countries the clients were in, ordered by region; `code` is the ISO 3166-1 alpha-2 flag code */
-  clients?: { name: string; code: string }[];
 };
 
 export type SkillGroup = {

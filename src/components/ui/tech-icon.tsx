@@ -19,6 +19,7 @@ import {
   siRedis,
   siRedux,
   siStorybook,
+  siSocketdotio,
   siSupabase,
   siTailwindcss,
   siTypescript,
@@ -64,11 +65,16 @@ const icons: Record<string, { path: string }> = {
   "Anthropic API": siAnthropic,
   Cloudinary: siCloudinary,
   Vercel: siVercel,
+  "Socket.IO": siSocketdotio,
+};
+
+/** Logos too large to inline (served from /public/icons and painted as a mask so they take the text color). */
+const iconFiles: Record<string, string> = {
+  Zustand: "/icons/zustand.svg",
 };
 
 /** Initials shown in an outlined tile for rows that are not brands (so there is no logo). */
 const monograms: Record<string, string> = {
-  Accessibility: "a11y",
   "REST APIs": "API",
   Authentication: "ID",
 };
@@ -79,11 +85,30 @@ const monograms: Record<string, string> = {
  */
 /** True when the tool has a real brand logo (as opposed to the initials tile). */
 export function hasBrandIcon(name: string): boolean {
-  return name in icons;
+  return name in icons || name in iconFiles;
 }
 
 export function TechIcon({ name, className }: { name: string; className?: string }) {
   const icon = icons[name];
+  const file = iconFiles[name];
+  if (file) {
+    return (
+      <span
+        aria-hidden
+        className={`${className ?? "size-5"} inline-block shrink-0 bg-current`}
+        style={{
+          maskImage: `url(${file})`,
+          WebkitMaskImage: `url(${file})`,
+          maskSize: "contain",
+          WebkitMaskSize: "contain",
+          maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
+          maskPosition: "center",
+          WebkitMaskPosition: "center",
+        }}
+      />
+    );
+  }
   if (icon) {
     return (
       <svg

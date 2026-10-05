@@ -8,21 +8,15 @@ export const profile = {
   location: "Dhaka, Bangladesh",
   intro:
     "I turn rough ideas into working, on-brand web apps. I design directly in code, so there's no mockup stage, just the real product.",
-  proof: [
-    { value: "40+", label: "projects" },
-    { value: "5+ yrs", label: "building for the web" },
-    { value: "800+", label: "candidates applied through my ATS" },
-  ],
   about: {
-    lead: "I'm Mir Tauhidul Islam, a frontend design engineer with some backend experience. I care about how a product looks and feels, and I build it myself.",
-    body: "I started building for the web in 2021 as a freelance developer, joined ProviderLINK in 2023, and have worked on 40+ projects since. Along the way I have built dashboards, hiring tools and AI-powered apps, from the interface to the simple backend.",
+    lead: "I'm Mir Tauhidul Islam, a frontend design engineer who can also build the simple backend. I care about how a product looks and feels, and I build it myself.",
+    body: "In 2021, I started working as a freelance developer and joined ProviderLINK full-time (remote) in 2023. Since then I have built dashboards, hiring tools, landing pages, various custom and AI-powered apps.",
     facts: [
       { label: "Based in", value: "Dhaka, Bangladesh" },
       {
         label: "Focus",
         value: "Building intelligent web applications with modern UI/UX",
       },
-      { label: "Building since", value: "2021" },
     ],
   },
   socials: [

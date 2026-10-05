@@ -11,10 +11,8 @@ export const projects: CaseStudy[] = [
     year: "2026",
     summary:
       "An applicant tracking and client management platform, used in production by a US company that hires global virtual assistants.",
-    problem:
-      "The company hires candidates from around the world for its US clients' virtual assistant jobs. Hundreds of applicants, many clients and open jobs, interviews and emails all needed to live in one place.",
     solution:
-      "I built it end to end: research, planning, architecture, the interface, the backend, AI-assisted development, deployment and ongoing maintenance. Recruiters move candidates through each job's pipeline, schedule interviews and send email from one app. AI reads and scores resumes against each job. Hired candidates carry over into client account management.",
+      "I built the whole platform on my own. Recruiters move candidates through each job's hiring steps, book interviews and send email, all in one app. AI reads each resume and scores it against the job. Once someone is hired, they move into client account management.",
     results: [
       { value: "800+", label: "candidates applied" },
       { value: "30+", label: "clients registered" },
@@ -23,8 +21,9 @@ export const projects: CaseStudy[] = [
     stack: [
       "React",
       "TypeScript",
+      "Zustand",
       "Node.js",
-      "Express",
+      "Express.js",
       "MongoDB",
       "Socket.IO",
       "Tailwind CSS",
@@ -35,14 +34,8 @@ export const projects: CaseStudy[] = [
       email: "demo.admin@mirtauhid.com",
       password: "Arista@Demo2026",
     },
-    status: ["In production", "Solo build"],
-    owned: [
-      { area: "Product", text: "Research, planning and system design." },
-      { area: "Interface", text: "Designed and built in code." },
-      { area: "Backend", text: "API, database and live updates." },
-      { area: "AI", text: "Resume reading and scoring." },
-      { area: "Ops", text: "Deployed it and still maintain it." },
-    ],
+    status: ["In production"],
+    owned: "Solo build: research, design, code, AI and deployment. I still maintain it.",
     features: [
       "Drag-and-drop hiring pipeline for every job",
       "AI reads and scores resumes against each job",
@@ -99,20 +92,6 @@ export const projects: CaseStudy[] = [
         height: 1080,
         alt: "Candidate profile with AI score, summary, skills, certifications and work experience",
       },
-      {
-        label: "Team",
-        src: "/images/arista-ats-team.webp",
-        width: 2000,
-        height: 1080,
-        alt: "Team table with each member's role, status and app access",
-      },
-      {
-        label: "Settings",
-        src: "/images/arista-ats-settings.webp",
-        width: 2000,
-        height: 1080,
-        alt: "General settings for the workspace, email sender and AI features",
-      },
     ],
   },
   {
@@ -125,22 +104,14 @@ export const projects: CaseStudy[] = [
     year: "2026",
     summary:
       "An AI nutrition coach you talk to. Say what you ate, or send a photo, and it logs the meal and does the macro maths. Set a health goal and log your weight regularly to track progress.",
-    problem:
-      "Most food apps make you search, weigh and type in every item. It gets tiring and people give up. I wanted logging to feel like sending a text.",
     solution:
-      "A chat you talk to. Say what you ate or send a photo and an AI agent logs the meal, fixes mistakes and answers questions about your day. You can set a health goal and track progress with regular food and weight logs. I built it end to end, from design to the Firebase backend and deploy.",
+      "A chat you talk to. Say what you ate or send a photo, and the AI logs the meal, fixes mistakes and answers questions about your day. You can set a health goal and track it by logging your food and weight. I built it all on my own, from the design to the Firebase backend.",
     results: [],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase", "OpenAI API"],
+    stack: ["TypeScript", "Next.js", "Tailwind CSS", "Firebase", "OpenAI API"],
     live: "https://niblet-ai.vercel.app",
     liveLabel: "Live demo",
-    status: ["Live demo", "Solo build"],
-    owned: [
-      { area: "Product", text: "Designed the app and the chat." },
-      { area: "Interface", text: "Built in code, mobile first." },
-      { area: "Backend", text: "Firebase, with a secured, rate-limited chat API." },
-      { area: "AI", text: "An agent that logs and edits meals, on Claude or OpenAI." },
-      { area: "Quality", text: "Automated tests and a live deploy." },
-    ],
+    status: ["Live demo"],
+    owned: "Solo build: design, code, the AI agent, tests and deployment.",
     features: [
       "Log by chatting: one message can log a meal and your weight",
       "Photo logging: snap your plate and get an estimate you can correct",
@@ -199,9 +170,7 @@ export const projects: CaseStudy[] = [
     context: "Personal project",
     role: "Frontend design engineer",
     year: "2026",
-    summary:
-      "A private sketch board that works offline. Boards stay on your device, and you can install it as an app.",
-    problem: "Sketch tools usually want an account and a connection.",
+    summary: "A private sketch board that works offline, built on Excalidraw.",
     solution:
       "A board manager around the Excalidraw canvas. Boards save in the browser, export to one JSON file, and the app can be installed.",
     results: [],
@@ -217,10 +186,7 @@ export const projects: CaseStudy[] = [
     context: "",
     role: "Frontend design engineer",
     year: "2026",
-    summary:
-      "The v2 rebuild of a hospital staff workflow management system, with live room status and separate role-based dashboards.",
-    problem:
-      "Hospital staff, patients and the waiting room need to work from the same live picture.",
+    summary: "A hospital app for managing rooms, tasks, and workflows.",
     solution:
       "A staff portal with real-time room status and a separate dashboard for each role. The first version served 10k+ patients.",
     results: [],
@@ -235,10 +201,7 @@ export const projects: CaseStudy[] = [
     context: "",
     role: "Frontend design engineer",
     year: "2025",
-    summary:
-      "A self-service check-in app for patients to enter health details, photograph their ID and e-sign. Clinics run it on kiosks or tablets.",
-    problem:
-      "Front desks spend their time on paperwork and copies of ID and insurance cards.",
+    summary: "A simple patient check-in app for forms and health details.",
     solution:
       "A touch-friendly app for kiosks and tablets. Patients confirm their details, photograph their ID and insurance card, fill in their medical, family, surgical and social history, sign, answer a short survey and review everything. A test mode lets it run offline as a demo.",
     results: [],
@@ -252,10 +215,7 @@ export const projects: CaseStudy[] = [
     context: "Personal project",
     role: "Frontend design engineer",
     year: "2026",
-    summary:
-      "A fun AI-built project in vanilla JavaScript: a lofi night animation with configurable audio, made for deep late-night work and focus.",
-    problem:
-      "I wanted to see how far plain JavaScript could go, with no libraries and no audio files.",
+    summary: "A lofi workspace for late-night focus, music, and calm.",
     solution:
       "A single HTML file. The view from an empty chair looking out over a rainy city at night is drawn on canvas, and the lofi beat (piano, pad, bass, melody and soft drums) is generated live with the Web Audio API.",
     results: [],
@@ -270,9 +230,7 @@ export const projects: CaseStudy[] = [
     context: "Concept project",
     role: "Frontend design engineer",
     year: "2026",
-    summary:
-      "A landing page concept for an AI email assistant, with scroll animations and light and dark themes.",
-    problem: "I wanted to design and build a polished landing page end to end.",
+    summary: "An AI email assistant landing page with light and dark themes.",
     solution:
       "A single-page landing site for an imaginary AI email assistant: hero, features, demo and pricing sections, a small design system with shared components and animation presets, scroll animations with subtle parallax, and a responsive layout with light and dark themes.",
     results: [],
@@ -287,10 +245,7 @@ export const projects: CaseStudy[] = [
     context: "Concept project",
     role: "Frontend design engineer",
     year: "2026",
-    summary:
-      "A dark security dashboard concept for tracking findings, compliance frameworks and controls.",
-    problem:
-      "Security teams juggle findings, frameworks and controls across scattered tools and spreadsheets.",
+    summary: "A dashboard for tracking security findings and compliance work.",
     solution:
       "A dashboard interface designed and built from a concept, iterating in code with no mockups. It shows KPI metrics, a findings table with severity colours, framework status for SOC2, ISO27001, GDPR, HIPAA and PCI-DSS, and a control list. The UI is the focus: the data is sample data.",
     results: [],
