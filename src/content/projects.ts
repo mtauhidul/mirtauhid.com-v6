@@ -89,20 +89,22 @@ export const projects: CaseStudy[] = [
     live: "https://kiosk-demo-beta.vercel.app",
   },
   {
-    title: "Fieldnotes",
-    slug: "fieldnotes",
-    kind: "Productivity",
+    title: "Night Shift",
+    slug: "night-shift",
+    kind: "Creative",
     context: "Personal project",
     role: "Frontend design engineer",
-    year: "2024",
-    summary: "A markdown notes app that keeps working offline.",
-    problem: "Notes apps lose your work when the connection drops.",
+    year: "2026",
+    summary:
+      "Animated rainy city at night, with lofi music generated live in the browser.",
+    problem:
+      "I wanted to see how far plain JavaScript could go, with no libraries and no audio files.",
     solution:
-      "A local-first notes app that stores everything on the device and syncs later.",
-    results: [{ value: "0", label: "lost notes" }],
-    stack: ["Next.js", "Firebase", "PWA"],
-    live: "#",
-    repo: "#",
+      "A single HTML file. The view from an empty chair looking out over a rainy city at night is drawn on canvas, and the lofi beat (piano, pad, bass, melody and soft drums) is generated live with the Web Audio API.",
+    results: [],
+    stack: ["JavaScript", "Canvas", "Web Audio"],
+    live: "https://night-lofi-anim.vercel.app",
+    repo: "https://github.com/mtauhidul/night-lofi-anim",
   },
   {
     title: "Ledger Lite",
