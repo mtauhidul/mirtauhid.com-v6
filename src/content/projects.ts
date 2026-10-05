@@ -31,6 +31,12 @@ export const projects: CaseStudy[] = [
     ],
     live: "https://ats-ui-test.vercel.app/ats",
     liveLabel: "Live demo",
+    image: {
+      src: "/images/arista-ats-dashboard.png",
+      width: 2000,
+      height: 980,
+      alt: "Arista ATS hiring dashboard with candidate, client and open job totals and application and hiring trend charts",
+    },
   },
   {
     title: "Niblet",

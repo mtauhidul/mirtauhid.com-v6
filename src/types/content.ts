@@ -17,6 +17,8 @@ export type CaseStudy = {
   live?: string;
   /** text for the live link, default "Live site" (e.g. "Live demo") */
   liveLabel?: string;
+  /** screenshot for the large case study (falls back to a placeholder) */
+  image?: { src: string; width: number; height: number; alt: string };
   repo?: string;
 };
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { projects } from "@/content/projects";
 import type { CaseStudy } from "@/types/content";
 import { ProjectCard } from "./project-card";
@@ -51,11 +52,22 @@ function FeaturedCaseStudy({ project }: { project: CaseStudy }) {
           {project.summary}
         </p>
 
-        <PlaceholderImage
-          mock
-          label={`${project.slug} / 1600×900`}
-          className="mt-10 aspect-[16/9] md:mt-14"
-        />
+        {project.image ? (
+          <Image
+            src={project.image.src}
+            alt={project.image.alt}
+            width={project.image.width}
+            height={project.image.height}
+            sizes="(min-width: 1152px) 1072px, 100vw"
+            className="border-line mt-10 h-auto w-full border md:mt-14"
+          />
+        ) : (
+          <PlaceholderImage
+            mock
+            label={`${project.slug} / 1600×900`}
+            className="mt-10 aspect-[16/9] md:mt-14"
+          />
+        )}
 
         <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-12 md:gap-x-10">
           <div className="md:col-span-4">
