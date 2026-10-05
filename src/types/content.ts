@@ -15,6 +15,8 @@ export type CaseStudy = {
   results: { value: string; label: string }[];
   stack: string[];
   live?: string;
+  /** text for the live link, default "Live site" (e.g. "Live demo") */
+  liveLabel?: string;
   repo?: string;
 };
 

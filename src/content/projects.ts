@@ -2,25 +2,35 @@ import type { CaseStudy } from "@/types/content";
 
 export const projects: CaseStudy[] = [
   {
-    title: "Northwind Analytics",
-    slug: "northwind-analytics",
-    kind: "Analytics",
-    summary: "Real-time analytics that turned 40M weekly events into decisions.",
+    title: "Arista ATS",
+    slug: "arista-ats",
+    kind: "Hiring",
     featured: true,
-    context: "Northwind (SaaS, Series A)",
-    role: "Lead engineer",
+    context: "Running in production at a US-based company",
+    role: "Full-stack developer",
     year: "2026",
-    problem: "Reports took 9 seconds to load and the team stopped trusting the numbers.",
+    summary:
+      "An applicant tracking and client management platform, used in production by a US company that hires global virtual assistants.",
+    problem:
+      "The company hires candidates from around the world for its US clients' virtual assistant jobs. Hundreds of applicants, many clients and open jobs, interviews and emails all needed to live in one place.",
     solution:
-      "Moved event storage to ClickHouse, built a streaming ingestion pipeline and rebuilt the dashboard with server rendering and cached aggregates.",
+      "I built it end to end: research, planning, architecture, the interface, the backend, AI-assisted development, deployment and ongoing maintenance. Recruiters move candidates through each job's pipeline, schedule interviews and send email from one app. AI reads and scores resumes against each job. Hired candidates carry over into client account management.",
     results: [
-      { value: "600ms", label: "report load, from 9s" },
-      { value: "40M", label: "events per week" },
-      { value: "-35%", label: "infra cost" },
+      { value: "800+", label: "candidates handled" },
+      { value: "30+", label: "clients" },
+      { value: "50+", label: "jobs" },
     ],
-    stack: ["Next.js", "TypeScript", "ClickHouse", "AWS"],
-    live: "#",
-    repo: "#",
+    stack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "Tailwind CSS",
+    ],
+    live: "https://ats-ui-test.vercel.app/ats",
+    liveLabel: "Live demo",
   },
   {
     title: "Niblet",

@@ -17,7 +17,7 @@ function Links({ project }: { project: CaseStudy }) {
           rel="noreferrer"
           className="link-draw hover:text-accent transition-colors"
         >
-          Live site ↗
+          {project.liveLabel ?? "Live site"} ↗
         </a>
       )}
       {project.repo && (
