@@ -34,7 +34,7 @@ export const projects: CaseStudy[] = [
     image: {
       src: "/images/arista-ats-dashboard.png",
       width: 2000,
-      height: 980,
+      height: 1081,
       alt: "Arista ATS hiring dashboard with candidate, client and open job totals and application and hiring trend charts",
     },
   },
