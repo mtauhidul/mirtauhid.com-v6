@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
+import { TOGGLE_GRID_EVENT } from "./command-palette";
 
 /** Press G to overlay the 12-column grid and outline every section. No on-screen button. */
 export function GridOverlay() {
@@ -10,20 +11,25 @@ export function GridOverlay() {
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
+    const toggle = () => {
+      setOn((v) => !v);
+      setToast(true);
+      clearTimeout(timer.current);
+      timer.current = setTimeout(() => setToast(false), 1600);
+    };
     const onKey = (e: KeyboardEvent) => {
       if (e.key.toLowerCase() !== "g" || e.metaKey || e.ctrlKey || e.altKey || e.repeat)
         return;
       const t = e.target as HTMLElement | null;
       if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))
         return;
-      setOn((v) => !v);
-      setToast(true);
-      clearTimeout(timer.current);
-      timer.current = setTimeout(() => setToast(false), 1600);
+      toggle();
     };
     window.addEventListener("keydown", onKey);
+    window.addEventListener(TOGGLE_GRID_EVENT, toggle);
     return () => {
       window.removeEventListener("keydown", onKey);
+      window.removeEventListener(TOGGLE_GRID_EVENT, toggle);
       clearTimeout(timer.current);
     };
   }, []);

@@ -1,4 +1,6 @@
-/** Floating text chrome instead of a navbar: wordmark (left) and contact link (right). */
+import { PaletteTrigger } from "./palette-trigger";
+
+/** Floating text chrome instead of a navbar: wordmark (left), menu and contact (right). */
 export function CornerLinks() {
   return (
     <>
@@ -8,15 +10,15 @@ export function CornerLinks() {
       >
         mir.tauhidul
       </a>
-      <a
-        href="#contact"
-        className="fixed top-6 right-6 z-50 font-mono text-sm text-white mix-blend-difference md:right-10"
-      >
-        <span className="decoration-white/60 underline-offset-4 hover:underline">
-          Contact
-        </span>{" "}
-        →
-      </a>
+      <div className="fixed top-6 right-6 z-50 flex items-center gap-6 font-mono text-sm text-white mix-blend-difference md:right-10">
+        <PaletteTrigger />
+        <a href="#contact">
+          <span className="decoration-white/60 underline-offset-4 hover:underline">
+            Contact
+          </span>{" "}
+          →
+        </a>
+      </div>
     </>
   );
 }

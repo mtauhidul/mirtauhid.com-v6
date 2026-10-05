@@ -1,3 +1,4 @@
+import { CommandPalette } from "@/components/command-palette";
 import { CornerLinks } from "@/components/corner-links";
 import { Footer } from "@/components/footer";
 import { GridOverlay } from "@/components/grid-overlay";
@@ -15,6 +16,7 @@ export default function Home() {
       <GuideLines />
       <CornerLinks />
       <GridOverlay />
+      <CommandPalette />
       <main>
         <Hero />
         <Work />

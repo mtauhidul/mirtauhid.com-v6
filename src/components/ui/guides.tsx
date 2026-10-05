@@ -30,8 +30,8 @@ function SideHatch({ side }: { side: "left" | "right" }) {
 }
 
 const fade = "linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent)";
-const TOP = 4; // % of viewport where the progress head starts
-const SPAN = 92; // % of viewport it travels
+const TOP = 10; // % of viewport where the progress line starts (clear of the top corner links)
+const SPAN = 86; // % of viewport it travels
 
 /**
  * Two vertical hairlines framing the site. They fade out toward the top and bottom of the screen.
@@ -42,6 +42,7 @@ export function GuideLines() {
   const { scrollYProgress } = useScroll();
   const p = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.4 });
   const head = useTransform(p, (v) => `${TOP + v * SPAN}%`);
+  const fill = useTransform(p, (v) => `${v * SPAN}%`);
   const [ticks, setTicks] = useState<number[]>([]);
 
   useEffect(() => {
@@ -87,8 +88,8 @@ export function GuideLines() {
           ))}
 
           <motion.div
-            style={{ height: head }}
-            className="bg-accent/60 absolute top-0 right-0 w-px"
+            style={{ top: `${TOP}%`, height: fill }}
+            className="bg-accent/60 absolute right-0 w-px"
           />
           <motion.span
             style={{ top: head }}

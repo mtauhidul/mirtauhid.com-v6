@@ -85,7 +85,11 @@ export function Footer() {
             <kbd className="border-line-strong text-fg-muted inline-flex size-5 items-center justify-center rounded-[3px] border">
               G
             </kbd>
-            for the grid
+            for the grid ·
+            <kbd className="border-line-strong text-fg-muted inline-flex h-5 items-center justify-center rounded-[3px] border px-1.5">
+              ⌘ K
+            </kbd>
+            for the menu
           </p>
           <a
             href="#top"

@@ -34,6 +34,10 @@ Blueprint layer, all low contrast and aligned to the real container edges:
 - **Dot field** (`DotField`): a faint dot matrix between the guides, spaced 1/48 of the guide width so dots align with the frame, fading toward its edges. Used only in the hero and contact sections.
 - **Grid overlay** (`GridOverlay`): press `G` (hinted in the footer, no on-screen button). Shows the 12-column grid (4 on mobile) as dashed columns, outlines every section and lights up the annotations. A small toast confirms on/off. All 12-column section grids use `md:gap-x-10` so it matches the layout.
 
+## Quick menu
+
+`CommandPalette` (`Cmd/Ctrl+K`, or `/`): jump to sections, copy the email, open GitHub, toggle the grid. The "Menu" button sits at the top right beside Contact. The right-hand progress line starts at 10% of the screen height, below that row, so they never overlap. It doubles as the mobile navigation.
+
 ## Motion
 
 Easing `cubic-bezier(0.22, 1, 0.36, 1)`. Hero lines slide up from a mask; sections fade and rise once. Hovers 300-700ms. Animations always play (reduced-motion handling intentionally disabled).
