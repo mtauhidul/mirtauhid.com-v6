@@ -109,12 +109,12 @@ export const projects: CaseStudy[] = [
   {
     title: "MailForge AI",
     slug: "mailforge-ai",
-    kind: "SaaS",
+    kind: "Landing",
     context: "Concept project",
     role: "Frontend design engineer",
     year: "2026",
     summary: "Dark, motion-led landing page for an AI email writing assistant concept.",
-    problem: "I wanted to design and build a polished SaaS landing page end to end.",
+    problem: "I wanted to design and build a polished landing page end to end.",
     solution:
       "A single-page landing site for an imaginary AI email assistant: hero, features, demo and pricing sections, a small design system with shared components and animation presets, scroll animations with subtle parallax, and a responsive layout with light and dark themes.",
     results: [],
