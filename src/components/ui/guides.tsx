@@ -1,3 +1,5 @@
+import { SectionAnnotation } from "./section-annotation";
+
 /**
  * Blueprint layer. Lines sit just outside the content edges (same container math as <Container>),
  * so every mark lines up with the real layout.
@@ -30,13 +32,14 @@ function Plus({ className }: { className: string }) {
 }
 
 /** Section divider: hairline between the guides, with a crosshair where it meets each guide. */
-export function Crosshairs() {
+export function Crosshairs({ id }: { id?: string }) {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-0">
       <div className="relative mx-auto h-0 max-w-6xl">
         <div className="bg-line absolute inset-x-3 h-px md:inset-x-5" />
         <Plus className="top-0 left-3 md:left-5" />
         <Plus className="top-0 right-3 translate-x-1/2! md:right-5" />
+        {id && <SectionAnnotation id={id} />}
       </div>
     </div>
   );

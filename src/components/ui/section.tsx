@@ -9,7 +9,7 @@ export function Section({
 }: React.ComponentPropsWithoutRef<"section">) {
   return (
     <section className={cn("relative py-24 md:py-36", className)} {...props}>
-      <Crosshairs />
+      <Crosshairs id={props.id} />
       <Container>{children}</Container>
     </section>
   );
