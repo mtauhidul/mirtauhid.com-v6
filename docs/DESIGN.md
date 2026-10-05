@@ -28,4 +28,4 @@ No navbar. Floating wordmark (top-left), "Contact" link (top-right), and an edge
 
 ## Motion
 
-Easing `cubic-bezier(0.22, 1, 0.36, 1)`. Hero lines slide up from a mask; sections fade and rise once. Hovers 300-700ms. CSS motion respects reduced-motion.
+Easing `cubic-bezier(0.22, 1, 0.36, 1)`. Hero lines slide up from a mask; sections fade and rise once. Hovers 300-700ms. Animations always play (reduced-motion handling intentionally disabled).
