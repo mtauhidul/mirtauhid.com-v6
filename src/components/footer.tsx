@@ -78,7 +78,7 @@ export function Footer() {
       <div className="border-line border-t">
         <Container className="text-fg-subtle flex flex-col items-start justify-between gap-3 py-6 font-mono text-xs md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} {profile.name}. All rights reserved.
+            © {new Date().getFullYear()} {profile.fullName}. All rights reserved.
           </p>
           <p className="hidden items-center gap-2 md:flex">
             Press
