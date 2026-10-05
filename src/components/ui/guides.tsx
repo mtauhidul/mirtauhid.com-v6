@@ -10,6 +10,25 @@ import { SectionAnnotation } from "./section-annotation";
  * so every mark lines up with the real layout.
  */
 
+const hatch =
+  "repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 1px, transparent 1px 9px)";
+
+/** Diagonal hatching in the margin outside a guide, fading out away from it and toward the screen's top/bottom. */
+function SideHatch({ side }: { side: "left" | "right" }) {
+  const outward = `linear-gradient(to ${side === "left" ? "left" : "right"}, #000 0%, transparent 100%)`;
+  return (
+    <div
+      className={`absolute inset-y-0 w-[min(30vw,28rem)] ${side === "left" ? "right-full" : "left-full"}`}
+      style={{ maskImage: outward, WebkitMaskImage: outward }}
+    >
+      <div
+        className="h-full"
+        style={{ backgroundImage: hatch, maskImage: fade, WebkitMaskImage: fade }}
+      />
+    </div>
+  );
+}
+
 const fade = "linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent)";
 const TOP = 4; // % of viewport where the progress head starts
 const SPAN = 92; // % of viewport it travels
@@ -48,6 +67,9 @@ export function GuideLines() {
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
       <div className="mx-auto h-full max-w-6xl px-6 md:px-10">
         <div className="relative -mx-3 h-full md:-mx-5">
+          <SideHatch side="left" />
+          <SideHatch side="right" />
+
           <div
             className="absolute inset-0"
             style={{ maskImage: fade, WebkitMaskImage: fade }}
