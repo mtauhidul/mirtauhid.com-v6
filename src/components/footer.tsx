@@ -70,23 +70,26 @@ export function Footer() {
             </p>
           </div>
         </div>
-
-        {/* oversized wordmark, fades out toward the bottom */}
-        <div className="[container-type:inline-size] mt-16 md:mt-24">
-          <p
-            aria-hidden
-            className="display px-[0.1em] py-[0.08em] text-center text-[17.5cqw] leading-[0.85] whitespace-nowrap select-none"
-            style={{
-              backgroundImage: "linear-gradient(to bottom, #f2f2ef 0%, #f2f2ef1a 85%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            {profile.name}
-          </p>
-        </div>
       </Container>
+
+      {/* full-bleed wordmark: top ~70% visible, bottom ~30% cut off by the bar below, fading out */}
+      <div
+        aria-hidden
+        className="[container-type:inline-size] mt-16 overflow-hidden md:mt-24"
+      >
+        <p
+          className="display h-[11.4cqw] text-center text-[17.8cqw] leading-[0.85] whitespace-nowrap select-none"
+          style={{
+            backgroundImage: "linear-gradient(to bottom, #f2f2ef59 0%, #f2f2ef08 90%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+            paddingInline: "0.1em",
+          }}
+        >
+          {profile.name}
+        </p>
+      </div>
 
       <div className="border-line border-t">
         <Container className="text-fg-subtle flex flex-col items-start justify-between gap-3 py-6 font-mono text-xs md:flex-row md:items-center">
