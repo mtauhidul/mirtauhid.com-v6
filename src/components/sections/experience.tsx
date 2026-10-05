@@ -10,7 +10,7 @@ export function Experience() {
       <div>
         {experience.map((job) => (
           <Reveal key={job.company}>
-            <div className="border-line grid gap-4 border-t py-8 md:grid-cols-12 md:gap-10 md:py-10">
+            <div className="border-line grid gap-4 border-t py-8 md:grid-cols-12 md:gap-x-10 md:py-10">
               <p className="label pt-1.5 md:col-span-3">{job.period}</p>
               <div className="md:col-span-4">
                 <h3 className="font-display text-2xl tracking-tight">{job.role}</h3>

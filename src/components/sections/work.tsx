@@ -16,7 +16,7 @@ export function Work() {
       <div>
         {projects.map((p, i) => (
           <Reveal key={p.slug}>
-            <article className="border-line grid gap-8 border-t py-12 md:grid-cols-12 md:gap-12 md:py-16">
+            <article className="border-line grid gap-8 border-t py-12 md:grid-cols-12 md:gap-x-10 md:py-16">
               <div className="space-y-8 md:col-span-5">
                 <div>
                   <p className="label mb-4">

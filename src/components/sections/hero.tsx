@@ -47,7 +47,7 @@ export function Hero() {
           </Line>
         </h1>
 
-        <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end">
+        <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end md:gap-x-10">
           <motion.p
             {...fade(0.9)}
             className="text-fg-muted text-lg md:col-span-6 md:text-xl"

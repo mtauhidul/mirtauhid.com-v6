@@ -21,7 +21,7 @@ export function Footer() {
   return (
     <footer className="border-line relative overflow-hidden border-t">
       <Container className="pt-16 md:pt-24">
-        <div className="grid gap-14 md:grid-cols-12">
+        <div className="grid gap-14 md:grid-cols-12 md:gap-x-10">
           <div className="md:col-span-5">
             <p className="display text-3xl md:text-4xl">Thanks for stopping by.</p>
             <a
