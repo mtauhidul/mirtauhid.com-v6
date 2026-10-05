@@ -94,10 +94,10 @@ function Corner({ className }: { className: string }) {
   );
 }
 
-/** A smaller project: a hairline frame with corner crosshairs, no screenshot. The whole card links to the live site. */
+/** A compact small project: hairline frame with corner crosshairs, no screenshot. The whole card links to the live site. */
 function ProjectCard({ project }: { project: CaseStudy }) {
   return (
-    <article className="group border-line ease-smooth hover:border-line-strong relative flex h-full flex-col border p-7 transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.025]">
+    <article className="group border-line ease-smooth hover:border-line-strong relative flex h-full flex-col border p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.025]">
       <Corner className="-top-[0.5px] -left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
       <Corner className="-top-[0.5px] -right-[0.5px] translate-x-1/2 -translate-y-1/2" />
       <Corner className="-bottom-[0.5px] -left-[0.5px] -translate-x-1/2 translate-y-1/2" />
@@ -109,30 +109,30 @@ function ProjectCard({ project }: { project: CaseStudy }) {
         className="bg-accent ease-smooth absolute inset-x-0 top-0 h-px origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"
       />
 
-      <div className="text-fg-subtle flex items-center justify-between gap-4 font-mono text-xs">
+      <div className="text-fg-subtle flex items-center justify-between gap-3 font-mono text-[11px]">
         <span>{project.role}</span>
         {project.live && (
           <span
             aria-hidden
-            className="ease-smooth group-hover:text-accent text-base transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            className="ease-smooth group-hover:text-accent text-sm transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           >
             ↗
           </span>
         )}
       </div>
 
-      <div className="border-line mt-6 flex flex-1 flex-col gap-3 border-t pt-6">
-        <h3 className="font-display text-3xl leading-tight tracking-tight">
-          {project.title}
-        </h3>
-        <p className="text-fg-muted">{project.summary}</p>
-      </div>
+      <h3 className="font-display mt-3 text-2xl leading-tight tracking-tight">
+        {project.title}
+      </h3>
+      <p className="text-fg-muted mt-1.5 flex-1 text-sm leading-snug">
+        {project.summary}
+      </p>
 
-      <ul className="mt-6 flex flex-wrap gap-2">
+      <ul className="mt-4 flex flex-wrap gap-1.5">
         {project.stack.map((t) => (
           <li
             key={t}
-            className="border-line text-fg-muted rounded-[3px] border px-2.5 py-1 font-mono text-xs"
+            className="border-line text-fg-muted rounded-[3px] border px-2 py-0.5 font-mono text-[11px]"
           >
             {t}
           </li>
@@ -140,7 +140,7 @@ function ProjectCard({ project }: { project: CaseStudy }) {
       </ul>
 
       {(project.live || project.repo) && (
-        <div className="border-line mt-6 flex items-center gap-6 border-t pt-4 text-sm font-medium">
+        <div className="border-line mt-4 flex items-center gap-5 border-t pt-3 text-xs font-medium">
           {project.live && (
             <a
               href={project.live}
@@ -182,7 +182,7 @@ export function Work() {
           <Reveal>
             <p className="label border-line mb-8 border-t pt-6">More projects</p>
           </Reveal>
-          <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((p, i) => (
               <li key={p.slug}>
                 <Reveal delay={(i % 3) * 0.08} className="h-full">
