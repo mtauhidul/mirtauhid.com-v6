@@ -1,5 +1,6 @@
 import { projects } from "@/content/projects";
 import type { CaseStudy } from "@/types/content";
+import { ProjectCard } from "./project-card";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { Reveal } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
@@ -74,84 +75,6 @@ function FeaturedCaseStudy({ project }: { project: CaseStudy }) {
         </div>
       </article>
     </Reveal>
-  );
-}
-
-/** Small `+` mark centered on a card corner, like the section crosshairs. */
-function Corner({ className }: { className: string }) {
-  return (
-    <span
-      aria-hidden
-      className={`text-fg-subtle group-hover:text-accent absolute size-3.5 transition-colors duration-500 ${className}`}
-      style={{
-        backgroundImage:
-          "linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor)",
-        backgroundSize: "100% 1px, 1px 100%",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    />
-  );
-}
-
-/** A compact small project: hairline frame with corner crosshairs, no screenshot. Only the links inside are clickable. */
-function ProjectCard({ project }: { project: CaseStudy }) {
-  return (
-    <article className="group border-line ease-smooth hover:border-line-strong relative flex h-full flex-col border p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.025]">
-      <Corner className="-top-[0.5px] -left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
-      <Corner className="-top-[0.5px] -right-[0.5px] translate-x-1/2 -translate-y-1/2" />
-      <Corner className="-bottom-[0.5px] -left-[0.5px] -translate-x-1/2 translate-y-1/2" />
-      <Corner className="-right-[0.5px] -bottom-[0.5px] translate-x-1/2 translate-y-1/2" />
-
-      {/* accent line that draws across the top edge on hover */}
-      <span
-        aria-hidden
-        className="bg-accent ease-smooth absolute inset-x-0 top-0 h-px origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"
-      />
-
-      <div className="text-fg-subtle flex items-center justify-between gap-3 font-mono text-[11px]">
-        <span>{project.role}</span>
-      </div>
-
-      <h3 className="font-display mt-3 text-2xl leading-tight tracking-tight">
-        {project.title}
-      </h3>
-      <p className="text-fg-muted mt-1.5 flex-1 text-sm leading-snug">
-        {project.summary}
-      </p>
-
-      <ul className="mt-4 flex flex-wrap gap-1.5">
-        {project.stack.map((t) => (
-          <li
-            key={t}
-            className="border-line text-fg-muted rounded-[3px] border px-2 py-0.5 font-mono text-[11px]"
-          >
-            {t}
-          </li>
-        ))}
-      </ul>
-
-      {(project.live || project.repo) && (
-        <div className="border-line mt-4 flex items-center gap-5 border-t pt-3 text-xs font-medium">
-          {project.live && (
-            <a
-              href={project.live}
-              className="link-draw hover:text-accent transition-colors"
-            >
-              Live site <span aria-hidden>↗</span>
-            </a>
-          )}
-          {project.repo && (
-            <a
-              href={project.repo}
-              className="link-draw hover:text-accent transition-colors"
-            >
-              Source code <span aria-hidden>↗</span>
-            </a>
-          )}
-        </div>
-      )}
-    </article>
   );
 }
 
