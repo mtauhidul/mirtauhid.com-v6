@@ -15,7 +15,7 @@ export type CaseStudy = {
 export type Experience = {
   company: string;
   role: string;
-  /** e.g. "Part-time" */
+  /** optional label shown after the company, e.g. "Contract" */
   employment?: string;
   /** "YYYY-MM" */
   start: string;

@@ -4,7 +4,6 @@ export const experience: Experience[] = [
   {
     company: "ProviderLINK",
     role: "Frontend Developer",
-    employment: "Part-time",
     start: "2023-07",
     end: null,
     location: "Katy, TX, USA · Remote",
