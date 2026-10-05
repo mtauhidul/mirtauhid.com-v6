@@ -40,22 +40,21 @@ export function GuideLines() {
   const topLineOpacity = useTransform(scrollY, [0, 140], [1, 0]);
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-      {/* dashed horizontal line across the whole viewport, near the top, below the corner links; fades out on scroll */}
-      <motion.div
-        className="absolute inset-x-0 h-px"
-        style={{
-          top: `${TOP}%`,
-          opacity: topLineOpacity,
-          backgroundImage:
-            "repeating-linear-gradient(to right, rgba(255,255,255,0.14) 0 6px, transparent 6px 12px)",
-        }}
-      />
       <div className="mx-auto h-full max-w-6xl px-6 md:px-10">
         <div className="relative -mx-3 h-full md:-mx-5">
           <SideHatch side="left" />
           <SideHatch side="right" />
 
           <motion.div className="absolute inset-0" style={{ opacity: topLineOpacity }}>
+            {/* dashed line between the two crosshairs, like the section dividers; fades out on scroll */}
+            <div
+              className="absolute inset-x-0 h-px"
+              style={{
+                top: `${TOP}%`,
+                backgroundImage:
+                  "repeating-linear-gradient(to right, rgba(255,255,255,0.14) 0 6px, transparent 6px 12px)",
+              }}
+            />
             <Plus className="left-0 mt-[0.5px] ml-[0.5px]" top={`${TOP}%`} />
             <Plus
               className="right-0 mt-[0.5px] mr-[0.5px] translate-x-1/2!"
