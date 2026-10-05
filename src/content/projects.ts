@@ -4,6 +4,8 @@ export const projects: CaseStudy[] = [
   {
     title: "Northwind Analytics",
     slug: "northwind-analytics",
+    summary: "Real-time analytics that turned 40M weekly events into decisions.",
+    featured: true,
     context: "Northwind (SaaS, Series A)",
     role: "Lead engineer",
     year: "2026",
@@ -22,6 +24,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Atlas Health Portal",
     slug: "atlas-health",
+    summary: "Scheduling and records platform used by 14 clinics.",
     context: "Atlas Clinics",
     role: "Frontend design engineer",
     year: "2025",
@@ -38,6 +41,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Lumen Design Kit",
     slug: "lumen-kit",
+    summary: "Open-source library of 60+ accessible, themeable components.",
     context: "Open source",
     role: "Creator",
     year: "2025",
@@ -55,6 +59,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Pulse Mobile Banking",
     slug: "pulse-banking",
+    summary: "Cross-platform banking app with biometric sign-in.",
     context: "Pulse (fintech)",
     role: "Frontend lead",
     year: "2024",

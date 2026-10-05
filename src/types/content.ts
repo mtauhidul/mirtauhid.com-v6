@@ -4,6 +4,10 @@ export type CaseStudy = {
   context: string;
   role: string;
   year: string;
+  /** one line, used on the small cards */
+  summary: string;
+  /** the large inline case study at the top of Work */
+  featured?: boolean;
   problem: string;
   solution: string;
   results: { value: string; label: string }[];

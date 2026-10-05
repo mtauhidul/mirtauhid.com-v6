@@ -1,83 +1,139 @@
 import { projects } from "@/content/projects";
+import type { CaseStudy } from "@/types/content";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { Reveal } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 
+function Links({ project }: { project: CaseStudy }) {
+  if (!project.live && !project.repo) return null;
+  return (
+    <div className="flex gap-6 text-sm font-medium">
+      {project.live && (
+        <a href={project.live} className="link-draw hover:text-accent transition-colors">
+          Live site ↗
+        </a>
+      )}
+      {project.repo && (
+        <a href={project.repo} className="link-draw hover:text-accent transition-colors">
+          Source code ↗
+        </a>
+      )}
+    </div>
+  );
+}
+
+/** The one large, in-depth project: problem, what was built, results. */
+function FeaturedCaseStudy({ project }: { project: CaseStudy }) {
+  return (
+    <Reveal>
+      <article className="border-line border-t pt-10 md:pt-14">
+        <div className="label flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+          <span>
+            <span className="text-accent">Featured case study</span> · {project.year}
+          </span>
+          <span>{project.role}</span>
+        </div>
+
+        <h3 className="display mt-6 text-[clamp(2.5rem,7vw,6rem)]">{project.title}</h3>
+        <p className="text-fg-muted mt-5 max-w-2xl text-lg md:text-xl">
+          {project.summary}
+        </p>
+
+        <PlaceholderImage
+          mock
+          label={`${project.slug} / 1600×900`}
+          className="mt-10 aspect-[16/9] md:mt-14"
+        />
+
+        <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-12 md:gap-x-10">
+          <div className="md:col-span-4">
+            <p className="label mb-3">Problem</p>
+            <p className="text-fg-muted">{project.problem}</p>
+          </div>
+          <div className="md:col-span-4">
+            <p className="label mb-3">What I built</p>
+            <p className="text-fg-muted">{project.solution}</p>
+          </div>
+          <div className="md:col-span-4">
+            <p className="label mb-3">Result</p>
+            <ul className="space-y-5">
+              {project.results.map((r) => (
+                <li key={r.label} className="flex items-baseline gap-4">
+                  <span className="display text-4xl md:text-5xl">{r.value}</span>
+                  <span className="text-fg-subtle text-sm">{r.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-line mt-12 flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t pt-6">
+          <p className="text-fg-subtle font-mono text-sm">{project.stack.join(" / ")}</p>
+          <Links project={project} />
+        </div>
+      </article>
+    </Reveal>
+  );
+}
+
+/** A smaller project, shown as a card. */
+function ProjectCard({ project }: { project: CaseStudy }) {
+  return (
+    <article className="group border-line bg-surface ease-smooth hover:border-line-strong flex h-full flex-col overflow-hidden border transition-all duration-500 hover:-translate-y-1">
+      <div className="overflow-hidden">
+        <PlaceholderImage
+          mock
+          label={project.slug}
+          className="ease-smooth aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+      <div className="flex flex-1 flex-col gap-4 p-6">
+        <div className="text-fg-subtle flex items-center justify-between font-mono text-xs">
+          <span>{project.role}</span>
+          <span>{project.year}</span>
+        </div>
+        <h3 className="font-display text-2xl tracking-tight">{project.title}</h3>
+        <p className="text-fg-muted">{project.summary}</p>
+        <p className="text-fg-subtle mt-auto font-mono text-xs">
+          {project.stack.join(" / ")}
+        </p>
+        <Links project={project} />
+      </div>
+    </article>
+  );
+}
+
 export function Work() {
+  const featured = projects.find((p) => p.featured) ?? projects[0];
+  const rest = projects.filter((p) => p !== featured);
+
   return (
     <Section id="work" aria-label="Selected work">
       <SectionHeading
         index="01"
         label="Selected work"
         title="Things I've built."
-        description="The problem, how I built it, and what came out of it."
+        description="One project in depth, and a few smaller ones."
       />
-      <div>
-        {projects.map((p, i) => (
-          <Reveal key={p.slug}>
-            <article className="border-line grid gap-8 border-t py-12 md:grid-cols-12 md:gap-x-10 md:py-16">
-              <div className="space-y-8 md:col-span-5">
-                <div>
-                  <p className="label mb-4">
-                    <span className="text-accent">{String(i + 1).padStart(2, "0")}</span>{" "}
-                    · {p.year} · {p.role}
-                  </p>
-                  <h3 className="display text-4xl md:text-5xl">{p.title}</h3>
-                  <p className="text-fg-subtle mt-2 text-sm">{p.context}</p>
-                </div>
+      <FeaturedCaseStudy project={featured} />
 
-                <dl className="space-y-5">
-                  <div>
-                    <dt className="label mb-1.5">Problem</dt>
-                    <dd className="text-fg-muted">{p.problem}</dd>
-                  </div>
-                  <div>
-                    <dt className="label mb-1.5">What I built</dt>
-                    <dd className="text-fg-muted">{p.solution}</dd>
-                  </div>
-                </dl>
-
-                <ul className="border-line flex gap-8 border-t pt-6">
-                  {p.results.map((r) => (
-                    <li key={r.label}>
-                      <p className="display text-3xl md:text-4xl">{r.value}</p>
-                      <p className="text-fg-subtle mt-1 text-sm">{r.label}</p>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="text-fg-subtle font-mono text-sm">{p.stack.join(" / ")}</p>
-
-                <div className="flex gap-6 text-sm font-medium">
-                  {p.live && (
-                    <a href={p.live} className="hover:text-accent transition-colors">
-                      Live site ↗
-                    </a>
-                  )}
-                  {p.repo && (
-                    <a href={p.repo} className="hover:text-accent transition-colors">
-                      Source code ↗
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              <a
-                href={p.live ?? "#"}
-                aria-label={`${p.title} screenshot`}
-                className="group block overflow-hidden md:col-span-7"
-              >
-                <PlaceholderImage
-                  mock
-                  label={`${p.slug} / 1600×1000`}
-                  className="ease-smooth aspect-[16/11] transition-transform duration-700 group-hover:scale-[1.02]"
-                />
-              </a>
-            </article>
+      {rest.length > 0 && (
+        <div className="mt-20 md:mt-28">
+          <Reveal>
+            <p className="label border-line mb-8 border-t pt-6">More projects</p>
           </Reveal>
-        ))}
-      </div>
+          <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {rest.map((p, i) => (
+              <li key={p.slug}>
+                <Reveal delay={(i % 3) * 0.08} className="h-full">
+                  <ProjectCard project={p} />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </Section>
   );
 }
