@@ -4,7 +4,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Northwind Analytics",
     slug: "northwind-analytics",
-    kind: "Dashboard",
+    kind: "Analytics",
     summary: "Real-time analytics that turned 40M weekly events into decisions.",
     featured: true,
     context: "Northwind (SaaS, Series A)",
@@ -25,7 +25,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Draftboard",
     slug: "draftboard",
-    kind: "Web app",
+    kind: "Productivity",
     context: "Personal project",
     role: "Frontend design engineer",
     year: "2026",
@@ -42,7 +42,7 @@ export const projects: CaseStudy[] = [
   {
     title: "CareSync",
     slug: "caresync",
-    kind: "Healthcare system",
+    kind: "Healthcare",
     context: "",
     role: "Frontend design engineer",
     year: "2026",
@@ -58,7 +58,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Pulse Mobile Banking",
     slug: "pulse-banking",
-    kind: "Mobile app",
+    kind: "Fintech",
     summary: "Cross-platform banking app with biometric sign-in.",
     context: "Pulse (fintech)",
     role: "Frontend lead",
@@ -76,7 +76,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Orbit CLI",
     slug: "orbit-cli",
-    kind: "CLI tool",
+    kind: "Devtools",
     context: "Open source",
     role: "Creator",
     year: "2024",
@@ -93,7 +93,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Fieldnotes",
     slug: "fieldnotes",
-    kind: "Web app",
+    kind: "Productivity",
     context: "Personal project",
     role: "Frontend design engineer",
     year: "2024",
@@ -109,7 +109,7 @@ export const projects: CaseStudy[] = [
   {
     title: "Ledger Lite",
     slug: "ledger-lite",
-    kind: "Web app",
+    kind: "Finance",
     context: "Personal project",
     role: "Frontend design engineer",
     year: "2023",

@@ -2,7 +2,7 @@ export type CaseStudy = {
   title: string;
   slug: string;
   context: string;
-  /** what it is, e.g. "Web app", "Dashboard", "CLI tool" */
+  /** one-word category shown on the card, e.g. "Productivity", "Healthcare", "Fintech" */
   kind: string;
   role: string;
   year: string;
