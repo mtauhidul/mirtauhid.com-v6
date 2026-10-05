@@ -47,7 +47,7 @@ function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
 /**
  * A compact small project: hairline frame with corner crosshairs, no screenshot.
  * The card is not a link; only the links inside are clickable.
- * On hover the card does not move or animate; a faint accent line simply appears on the edge the pointer entered from.
+ * On hover the card never moves: its background lightens softly and a faint accent line appears on the edge the pointer entered from.
  */
 export function ProjectCard({ project }: { project: CaseStudy }) {
   const [entry, setEntry] = useState<Entry | null>(null);
@@ -71,7 +71,7 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
     <article
       onPointerEnter={onEnter}
       onPointerLeave={() => setEntry((cur) => (cur ? { ...cur, on: false } : cur))}
-      className="group border-line relative flex h-full flex-col border p-5"
+      className="group border-line ease-smooth relative flex h-full cursor-pointer flex-col border p-5 transition-colors duration-500 hover:bg-white/[0.025]"
     >
       <Corner className="-top-[0.5px] -left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
       <Corner className="-top-[0.5px] -right-[0.5px] translate-x-1/2 -translate-y-1/2" />
