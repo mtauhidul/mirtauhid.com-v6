@@ -3,7 +3,7 @@ export const profile = {
   name: "Mir Tauhidul",
   fullName: "Mir Tauhidul Islam",
   role: "Frontend design engineer",
-  email: "hello@mirtauhid.com",
+  email: "mir.tauhidul@protonmail.com",
   timezone: "Asia/Dhaka",
   location: "Dhaka, Bangladesh",
   intro:
@@ -15,10 +15,13 @@ export const profile = {
   ],
   about: {
     lead: "I'm Mir Tauhidul Islam, a frontend design engineer with some backend experience. I care about how a product looks and feels, and I build it myself.",
-    body: "I started building for the web in 2021 as a freelancer, joined ProviderLINK in 2023, and have worked on 40+ projects since. I skip the static mockups and design directly in code, so what I show is what ships.",
+    body: "I started building for the web in 2021 as a freelance developer, joined ProviderLINK in 2023, and have worked on 40+ projects since. I skip the static mockups and design directly in code, so what I show is what ships.",
     facts: [
       { label: "Based in", value: "Dhaka, Bangladesh" },
-      { label: "Focus", value: "Interface design, design systems and responsive UI" },
+      {
+        label: "Focus",
+        value: "Building intelligent web applications with modern UI/UX",
+      },
       { label: "Building since", value: "2021" },
     ],
   },

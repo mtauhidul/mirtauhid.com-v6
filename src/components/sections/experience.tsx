@@ -1,3 +1,4 @@
+import * as flags from "country-flag-icons/react/3x2";
 import { experience } from "@/content/experience";
 import { formatDuration, formatPeriod } from "@/lib/dates";
 import { Reveal } from "@/components/ui/reveal";
@@ -37,6 +38,31 @@ export function Experience() {
                       {h}
                     </li>
                   ))}
+                  {job.clients && (
+                    <li className="flex gap-3">
+                      <span aria-hidden className="text-fg-subtle">
+                        —
+                      </span>
+                      <div>
+                        <p>I worked with clients in:</p>
+                        <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
+                          {job.clients.map((c) => {
+                            const Flag = flags[c.code as keyof typeof flags];
+                            return (
+                              <li key={c.code} className="inline-flex items-center gap-2">
+                                <Flag
+                                  title=""
+                                  aria-hidden
+                                  className="h-3 w-[18px] shrink-0 rounded-[2px]"
+                                />
+                                {c.name}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </li>
+                  )}
                 </ul>
               </div>
             </Reveal>

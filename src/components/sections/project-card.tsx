@@ -77,7 +77,7 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
     <article
       onPointerEnter={onEnter}
       onPointerLeave={() => setEntry((cur) => (cur ? { ...cur, on: false } : cur))}
-      className="group border-line ease-smooth relative flex h-full flex-col border p-5 transition-colors duration-500 hover:bg-white/[0.025]"
+      className="group border-line bg-bg ease-smooth hover:bg-surface relative flex h-full flex-col border p-5 transition-colors duration-500"
     >
       <Corner className="-top-[0.5px] -left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
       <Corner className="-top-[0.5px] -right-[0.5px] translate-x-1/2 -translate-y-1/2" />
@@ -89,12 +89,19 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
       <EdgeLine side="bottom" entry={entry} />
       <EdgeLine side="left" entry={entry} />
 
-      <div className="text-fg-subtle font-mono text-[11px]">{project.kind}</div>
+      <div className="flex items-center justify-between gap-3">
+        <span className="text-fg-subtle font-mono text-[11px]">{project.kind}</span>
+        {project.highlight && (
+          <span className="border-accent/40 text-accent rounded-[3px] border px-1.5 py-0.5 font-mono text-[11px]">
+            {project.highlight}
+          </span>
+        )}
+      </div>
 
       <h3 className="font-display mt-3 text-2xl leading-tight tracking-tight">
         {project.title}
       </h3>
-      <p className="text-fg-muted mt-1.5 line-clamp-2 flex-1 text-sm leading-snug">
+      <p className="text-fg-muted mt-1.5 flex-1 text-sm leading-snug">
         {project.summary}
       </p>
 

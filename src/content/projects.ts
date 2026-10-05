@@ -37,14 +37,11 @@ export const projects: CaseStudy[] = [
     },
     status: ["In production", "Solo build"],
     owned: [
-      { area: "Product", text: "Research, planning and the system design." },
-      {
-        area: "Interface",
-        text: "Designed and built in code, with a documented style guide.",
-      },
-      { area: "Backend", text: "Node and Express API, MongoDB and real-time updates." },
-      { area: "AI", text: "Resume parsing and scoring against each job." },
-      { area: "Ops", text: "Deployed it, and still maintain it." },
+      { area: "Product", text: "Research, planning and system design." },
+      { area: "Interface", text: "Designed and built in code." },
+      { area: "Backend", text: "API, database and live updates." },
+      { area: "AI", text: "Resume reading and scoring." },
+      { area: "Ops", text: "Deployed it and still maintain it." },
     ],
     features: [
       "Drag-and-drop hiring pipeline for every job",
@@ -138,17 +135,11 @@ export const projects: CaseStudy[] = [
     liveLabel: "Live demo",
     status: ["Live demo", "Solo build"],
     owned: [
-      { area: "Product", text: "Designed the product and the chat experience." },
-      { area: "Interface", text: "Built the interface in code, mobile first." },
-      {
-        area: "Backend",
-        text: "Firebase backend with security rules, and every chat call is verified and rate limited.",
-      },
-      {
-        area: "AI",
-        text: "A streaming agent with nine validated tools on two AI providers.",
-      },
-      { area: "Quality", text: "Tests, and a production-hardened deploy." },
+      { area: "Product", text: "Designed the app and the chat." },
+      { area: "Interface", text: "Built in code, mobile first." },
+      { area: "Backend", text: "Firebase, with a secured, rate-limited chat API." },
+      { area: "AI", text: "An agent that logs and edits meals, on Claude or OpenAI." },
+      { area: "Quality", text: "Automated tests and a live deploy." },
     ],
     features: [
       "Log by chatting: one message can log a meal and your weight",
@@ -209,11 +200,12 @@ export const projects: CaseStudy[] = [
     role: "Frontend design engineer",
     year: "2026",
     summary:
-      "A private sketch board that works offline. Everything stays on your device.",
+      "A private sketch board that works offline. Boards stay on your device, and you can install it as an app.",
     problem: "Sketch tools usually want an account and a connection.",
     solution:
       "A board manager around the Excalidraw canvas. Boards save in the browser, export to one JSON file, and the app can be installed.",
     results: [],
+    highlight: "Works offline",
     stack: ["Next.js", "TypeScript", "Excalidraw"],
     live: "https://draftboard-canvas.vercel.app",
     repo: "https://github.com/mtauhidul/draftboard",
@@ -226,11 +218,12 @@ export const projects: CaseStudy[] = [
     role: "Frontend design engineer",
     year: "2026",
     summary:
-      "Healthcare management system with real-time room status and live dashboards.",
+      "A hospital staff workflow management system with live room status and separate role-based dashboards.",
     problem:
       "Clinics need staff, patients and the waiting room working from the same live picture.",
     solution: "A staff portal with real-time room status and dashboards.",
     results: [],
+    highlight: "v1 served 10k+ patients",
     stack: ["Next.js", "TypeScript", "Firebase"],
     live: "https://caresync-v2.vercel.app",
   },
@@ -242,7 +235,7 @@ export const projects: CaseStudy[] = [
     role: "Frontend design engineer",
     year: "2025",
     summary:
-      "Self-service check-in for clinics. Patients enter their details, add ID and sign on screen.",
+      "A self-service check-in app for patients to enter health details, photograph their ID and e-sign. Clinics run it on kiosks or tablets.",
     problem:
       "Front desks spend their time on paperwork and copies of ID and insurance cards.",
     solution:
@@ -259,7 +252,7 @@ export const projects: CaseStudy[] = [
     role: "Frontend design engineer",
     year: "2026",
     summary:
-      "Animated rainy city at night, with lofi music generated live in the browser.",
+      "A fun AI-built project in vanilla JavaScript: a lofi night animation with configurable audio, made for deep late-night work and focus.",
     problem:
       "I wanted to see how far plain JavaScript could go, with no libraries and no audio files.",
     solution:
@@ -276,7 +269,8 @@ export const projects: CaseStudy[] = [
     context: "Concept project",
     role: "Frontend design engineer",
     year: "2026",
-    summary: "Dark, motion-led landing page for an AI email writing assistant concept.",
+    summary:
+      "A landing page concept for an AI email assistant, with scroll animations and light and dark themes.",
     problem: "I wanted to design and build a polished landing page end to end.",
     solution:
       "A single-page landing site for an imaginary AI email assistant: hero, features, demo and pricing sections, a small design system with shared components and animation presets, scroll animations with subtle parallax, and a responsive layout with light and dark themes.",
@@ -293,7 +287,7 @@ export const projects: CaseStudy[] = [
     role: "Frontend design engineer",
     year: "2026",
     summary:
-      "Dark-mode dashboard UI for tracking security findings and compliance frameworks.",
+      "A dark security dashboard concept for tracking findings, compliance frameworks and controls.",
     problem:
       "Security teams juggle findings, frameworks and controls across scattered tools and spreadsheets.",
     solution:

@@ -17,6 +17,8 @@ export type CaseStudy = {
   live?: string;
   /** demo account shown next to the live link on the large case study */
   demoLogin?: { email: string; password: string };
+  /** one real proof point shown as a badge on the small card */
+  highlight?: string;
   /** text for the live link, default "Live site" (e.g. "Live demo") */
   liveLabel?: string;
   /** screenshots for the large case study; several become tabs (empty shows a placeholder) */
@@ -47,6 +49,8 @@ export type Experience = {
   end: string | null;
   location: string;
   highlights: string[];
+  /** countries the clients were in, ordered by region; `code` is the ISO 3166-1 alpha-2 flag code */
+  clients?: { name: string; code: string }[];
 };
 
 export type SkillGroup = {
