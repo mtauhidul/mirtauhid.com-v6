@@ -11,7 +11,7 @@ function Corner({ className }: { className: string }) {
   return (
     <span
       aria-hidden
-      className={`text-fg-subtle group-hover:text-accent absolute size-3.5 transition-colors duration-500 ${className}`}
+      className={`text-fg-subtle absolute size-3.5 ${className}`}
       style={{
         backgroundImage:
           "linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor)",
@@ -47,7 +47,7 @@ function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
   return (
     <span
       aria-hidden
-      className={`bg-accent ease-smooth pointer-events-none absolute transition-transform duration-500 ${position}`}
+      className={`bg-accent/40 ease-smooth pointer-events-none absolute transition-transform duration-500 ${position}`}
       style={{
         transformOrigin: origin,
         transform: horizontal ? `scaleX(${active ? 1 : 0})` : `scaleY(${active ? 1 : 0})`,
@@ -59,7 +59,7 @@ function EdgeLine({ side, entry }: { side: Side; entry: Entry | null }) {
 /**
  * A compact small project: hairline frame with corner crosshairs, no screenshot.
  * The card is not a link; only the links inside are clickable.
- * On hover, an accent line is drawn on the edge the pointer entered from.
+ * On hover the card itself does not change; a faint accent line is drawn on the edge the pointer entered from.
  */
 export function ProjectCard({ project }: { project: CaseStudy }) {
   const [entry, setEntry] = useState<Entry | null>(null);
@@ -88,7 +88,7 @@ export function ProjectCard({ project }: { project: CaseStudy }) {
     <article
       onPointerEnter={onEnter}
       onPointerLeave={() => setEntry((cur) => (cur ? { ...cur, on: false } : cur))}
-      className="group border-line ease-smooth hover:border-line-strong relative flex h-full flex-col border p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.025]"
+      className="group border-line relative flex h-full flex-col border p-5"
     >
       <Corner className="-top-[0.5px] -left-[0.5px] -translate-x-1/2 -translate-y-1/2" />
       <Corner className="-top-[0.5px] -right-[0.5px] translate-x-1/2 -translate-y-1/2" />
