@@ -43,6 +43,9 @@ export function GuideLines() {
   const p = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.4 });
   const head = useTransform(p, (v) => `${TOP + v * SPAN}%`);
   const fill = useTransform(p, (v) => `${v * SPAN}%`);
+  // the top line and its crosshairs fade out as soon as you start scrolling
+  const { scrollY } = useScroll();
+  const topLineOpacity = useTransform(scrollY, [0, 140], [1, 0]);
   const [ticks, setTicks] = useState<number[]>([]);
 
   useEffect(() => {
@@ -66,18 +69,25 @@ export function GuideLines() {
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-      {/* horizontal line across the whole viewport, level with where the scroll line starts */}
-      <div
-        className="bg-line-strong absolute inset-x-0 h-px"
-        style={{ top: `${TOP}%` }}
+      {/* dashed horizontal line across the whole viewport, level with where the scroll line starts; hides on scroll */}
+      <motion.div
+        className="absolute inset-x-0 h-px"
+        style={{
+          top: `${TOP}%`,
+          opacity: topLineOpacity,
+          backgroundImage:
+            "repeating-linear-gradient(to right, rgba(255,255,255,0.14) 0 6px, transparent 6px 12px)",
+        }}
       />
       <div className="mx-auto h-full max-w-6xl px-6 md:px-10">
         <div className="relative -mx-3 h-full md:-mx-5">
           <SideHatch side="left" />
           <SideHatch side="right" />
 
-          <Plus className="left-0" top={`${TOP}%`} />
-          <Plus className="right-0" top={`${TOP}%`} />
+          <motion.div className="absolute inset-0" style={{ opacity: topLineOpacity }}>
+            <Plus className="left-0" top={`${TOP}%`} />
+            <Plus className="right-0" top={`${TOP}%`} />
+          </motion.div>
 
           <div
             className="absolute inset-0"
