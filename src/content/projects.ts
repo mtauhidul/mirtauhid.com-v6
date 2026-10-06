@@ -33,7 +33,7 @@ export const projects: CaseStudy[] = [
       "Visit timing reports: waiting, doctor, and staff time per patient",
       "Keyboard shortcuts and accessibility improvements",
     ],
-    // Demo data only: every screenshot below has had personal emails and patient names removed.
+    // Demo data only: every screenshot below has had personal emails removed. All names are fake.
     // Never add a screenshot that shows real patient or staff details.
     screenshots: [
       {
