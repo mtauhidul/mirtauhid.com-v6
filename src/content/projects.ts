@@ -22,8 +22,8 @@ export const projects: CaseStudy[] = [
     live: "https://caresync-v2.vercel.app",
     liveLabel: "Live demo",
     demoLogin: {
-      email: "DEMO_EMAIL",
-      password: "DEMO_PASSWORD",
+      email: "admin@caresync.com",
+      password: "cs@admin",
     },
     status: ["In production"],
     owned: "Solo build: design, code, data model, and deployment. I still maintain it.",
