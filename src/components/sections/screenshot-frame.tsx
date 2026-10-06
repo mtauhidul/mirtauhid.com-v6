@@ -5,7 +5,13 @@ import Image from "next/image";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { cn } from "@/lib/cn";
 
-type Shot = { label: string; src: string; width: number; height: number; alt: string };
+type Shot = {
+  label: string;
+  src?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+};
 
 /** Browser-style frame around a project screenshot. Several screenshots become tabs. */
 export function ScreenshotFrame({
@@ -59,15 +65,22 @@ export function ScreenshotFrame({
           role={shots.length > 1 ? "tabpanel" : undefined}
           id={`${uid}-panel`}
           aria-labelledby={shots.length > 1 ? `${uid}-tab-${active}` : undefined}
-          className="relative aspect-[2000/1080]"
+          className={shot.src ? "relative aspect-[2000/1080]" : undefined}
         >
-          <Image
-            src={shot.src}
-            alt={shot.alt}
-            fill
-            sizes="(min-width: 1152px) 1072px, 100vw"
-            className="object-cover object-top"
-          />
+          {shot.src ? (
+            <Image
+              src={shot.src}
+              alt={shot.alt ?? `${name} ${shot.label} screenshot`}
+              fill
+              sizes="(min-width: 1152px) 1072px, 100vw"
+              className="object-cover object-top"
+            />
+          ) : (
+            <PlaceholderImage
+              label={`${shot.label} screenshot coming`}
+              className="aspect-[2000/1080] border-0"
+            />
+          )}
         </div>
       ) : (
         <PlaceholderImage

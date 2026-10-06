@@ -20,13 +20,17 @@ export type CaseStudy = {
   highlight?: string;
   /** text for the live link, default "Live site" (e.g. "Live demo") */
   liveLabel?: string;
-  /** screenshots for the large case study; several become tabs (empty shows a placeholder) */
+  /**
+   * Screenshots for the large case study; several become tabs. A slot without `src` shows a
+   * placeholder until the image is added. Screenshots must show demo data only, never real
+   * patient or candidate names.
+   */
   screenshots?: {
     label: string;
-    src: string;
-    width: number;
-    height: number;
-    alt: string;
+    src?: string;
+    width?: number;
+    height?: number;
+    alt?: string;
   }[];
   /** short status pills on the large case study, e.g. "In production", "Solo build" */
   status?: string[];

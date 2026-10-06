@@ -2,6 +2,50 @@ import type { CaseStudy } from "@/types/content";
 
 export const projects: CaseStudy[] = [
   {
+    title: "CareSync",
+    slug: "caresync",
+    kind: "Healthcare",
+    featured: true,
+    context: "Running in production",
+    role: "Full-stack developer",
+    year: "2026",
+    summary:
+      "A real-time clinic operations platform that tracks patients through rooms and visit workflows, used daily by doctors, assistants, receptionists, and admins.",
+    solution:
+      "I built both versions on my own. v1 has run in production for 3 years. v2 is a full redesign and rebuild, migrated from JavaScript, React, Redux, and MUI to TypeScript, Next.js, Zustand, and shadcn/ui, and is production-ready.",
+    results: [
+      { value: "3", label: "years in production" },
+      { value: "10,000+", label: "patients tracked" },
+      { value: "4", label: "role-based dashboards" },
+    ],
+    stack: ["Next.js", "TypeScript", "Zustand", "Firebase", "shadcn/ui"],
+    live: "https://caresync-v2.vercel.app",
+    liveLabel: "Live demo",
+    demoLogin: {
+      email: "DEMO_EMAIL",
+      password: "DEMO_PASSWORD",
+    },
+    status: ["In production"],
+    owned: "Solo build: design, code, data model, and deployment. I still maintain it.",
+    features: [
+      "Live room board with timers, emergency flags, and custom statuses",
+      "CSV/Excel appointment import with kiosk and manual check-in",
+      "Visit timing reports: waiting, doctor, and staff time per patient",
+      "Keyboard shortcuts and accessibility improvements",
+    ],
+    // Placeholders until the images are added. Screenshots must show demo data only,
+    // never real patient names.
+    screenshots: [
+      { label: "Landing" },
+      { label: "Dashboard" },
+      { label: "Patients" },
+      { label: "Reports" },
+      { label: "Roles" },
+      { label: "Status" },
+      { label: "Resources" },
+    ],
+  },
+  {
     title: "Arista ATS",
     slug: "arista-ats",
     kind: "Hiring",
@@ -178,21 +222,6 @@ export const projects: CaseStudy[] = [
     stack: ["Next.js", "TypeScript", "Excalidraw"],
     live: "https://draftboard-canvas.vercel.app",
     repo: "https://github.com/mtauhidul/draftboard",
-  },
-  {
-    title: "CareSync",
-    slug: "caresync",
-    kind: "Healthcare",
-    context: "",
-    role: "Frontend design engineer",
-    year: "2026",
-    summary: "A hospital app for managing rooms, tasks, and workflows.",
-    solution:
-      "A staff portal with real-time room status and a separate dashboard for each role. The first version served 10k+ patients.",
-    results: [],
-    highlight: "v1 served 10k+ patients",
-    stack: ["Next.js", "TypeScript", "Firebase"],
-    live: "https://caresync-v2.vercel.app",
   },
   {
     title: "KIOSK",
