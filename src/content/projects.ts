@@ -33,16 +33,58 @@ export const projects: CaseStudy[] = [
       "Visit timing reports: waiting, doctor, and staff time per patient",
       "Keyboard shortcuts and accessibility improvements",
     ],
-    // Placeholders until the images are added. Screenshots must show demo data only,
-    // never real patient names.
+    // Demo data only: every screenshot below has had personal emails and patient names removed.
+    // Never add a screenshot that shows real patient or staff details.
     screenshots: [
-      { label: "Landing" },
-      { label: "Dashboard" },
-      { label: "Patients" },
-      { label: "Reports" },
-      { label: "Roles" },
-      { label: "Status" },
-      { label: "Resources" },
+      {
+        label: "Landing",
+        src: "/images/caresync-landing.webp",
+        width: 2000,
+        height: 1079,
+        alt: "CareSync sign-in page: Welcome to CareSync, with role choices for administrator, doctor, assistant and receptionist",
+      },
+      {
+        label: "Dashboard",
+        src: "/images/caresync-dashboard.png",
+        width: 2000,
+        height: 1081,
+        alt: "Live room board grouped by doctor, with a status, a timer and a patient count for each room",
+      },
+      {
+        label: "Patients",
+        src: "/images/caresync-patients.png",
+        width: 2000,
+        height: 1084,
+        alt: "Patients page with an uploaded appointment file and a table of check-in status and visit times",
+      },
+      {
+        label: "Reports",
+        src: "/images/caresync-reports.png",
+        width: 2000,
+        height: 1087,
+        alt: "Bar chart of average time per patient comparing total visit, waiting, doctor and staff time",
+      },
+      {
+        label: "Roles",
+        src: "/images/caresync-roles.png",
+        width: 2000,
+        height: 1079,
+        alt: "Roles page listing doctors with their rooms and assistants, and counts of doctors, assistants and receptionists",
+      },
+      {
+        label: "Status",
+        src: "/images/caresync-status.png",
+        width: 2000,
+        height: 1081,
+        alt: "Status types page with custom statuses such as Assistant IN, Cleaning, Doctor IN and Patient IN",
+      },
+      {
+        label: "Resources",
+        src: "/images/caresync-resources.png",
+        width: 2000,
+        height: 1082,
+        alt: "Resources page for assigning rooms to doctors, with a card for each room and its doctors",
+      },
     ],
   },
   {
