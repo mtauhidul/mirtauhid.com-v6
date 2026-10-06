@@ -93,9 +93,13 @@ export function Hero() {
         <Crosshairs />
       </div>
       <Container>
-        <motion.p {...fade(0.2)} className="label mb-8 flex items-center gap-3">
-          <span className="bg-accent size-2" />
-          <RotatingRole /> · {profile.location}
+        <motion.p
+          {...fade(0.2)}
+          className="label mb-8 flex items-center gap-3 whitespace-nowrap max-[360px]:text-[11px]"
+        >
+          <span className="bg-accent size-2 shrink-0" />
+          <RotatingRole />
+          <span className="shrink-0">· {profile.location}</span>
         </motion.p>
 
         <div className="[container-type:inline-size]">
