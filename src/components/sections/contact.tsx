@@ -39,7 +39,12 @@ export function Contact() {
               </li>
             ))}
           </ul>
-          <a href="#" className={buttonClasses("secondary", "md:ml-auto")}>
+          <a
+            href="/Mir_Tauhidul_Islam_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className={buttonClasses("secondary", "md:ml-auto")}
+          >
             Résumé (PDF)
           </a>
         </div>
