@@ -12,7 +12,7 @@ export const profile = {
     lead: "I'm Mir Tauhidul Islam, a frontend design engineer who can also build the simple backend. I care about how a product looks and feels, and I build it myself.",
     body: "In 2021, I started working as a freelance developer and joined ProviderLINK full-time (remote) in 2023. Since then I have built dashboards, hiring tools, landing pages, various custom and AI-powered apps.",
     facts: [
-      { label: "Based in", value: "Dhaka, Bangladesh" },
+      { label: "Based in", value: "Dhaka, Bangladesh", flag: "bd" },
       {
         label: "Focus",
         value: "Building intelligent web applications with modern UI/UX",

@@ -45,7 +45,18 @@ export function About() {
                   className="border-line grid grid-cols-3 gap-4 border-t py-4 last:border-b"
                 >
                   <dt className="label pt-1">{f.label}</dt>
-                  <dd className="col-span-2">{f.value}</dd>
+                  <dd className="col-span-2">
+                    {f.value}
+                    {"flag" in f && f.flag === "bd" && (
+                      <span
+                        role="img"
+                        aria-label="Bangladesh flag"
+                        className="ml-2 align-middle text-xl leading-none"
+                      >
+                        🇧🇩
+                      </span>
+                    )}
+                  </dd>
                 </div>
               ))}
             </dl>

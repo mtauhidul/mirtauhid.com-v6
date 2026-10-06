@@ -11,7 +11,7 @@ export type CaseStudy = {
   /** the large inline case study at the top of Work */
   featured?: boolean;
   solution: string;
-  results: { value: string; label: string }[];
+  results: { value: string; shortValue?: string; label: string }[];
   stack: string[];
   live?: string;
   /** demo account shown next to the live link on the large case study */

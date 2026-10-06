@@ -15,7 +15,7 @@ export const projects: CaseStudy[] = [
       "I built both versions on my own. v1 has run in production for 3 years. v2 is a full redesign and rebuild, migrated from JavaScript, React, Redux, and MUI to TypeScript, Next.js, Zustand, and shadcn/ui, and is production-ready.",
     results: [
       { value: "3", label: "years in production" },
-      { value: "10,000+", label: "patients tracked" },
+      { value: "10,000+", shortValue: "10k+", label: "patients tracked" },
       { value: "4", label: "role-based dashboards" },
     ],
     stack: ["Next.js", "TypeScript", "Zustand", "Firebase", "shadcn/ui"],

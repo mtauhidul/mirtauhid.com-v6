@@ -41,9 +41,18 @@ export function CaseStudy({ project }: { project: CaseStudyData }) {
               {project.results.map((r, i) => (
                 <li
                   key={r.label}
-                  className={`px-1 py-6 md:px-6 ${i > 0 ? "border-line border-l" : ""} ${i === 0 ? "md:pl-0" : ""}`}
+                  className={`min-w-0 px-1 py-6 md:px-6 ${i > 0 ? "border-line border-l" : ""} ${i === 0 ? "md:pl-0" : ""}`}
                 >
-                  <p className="display text-3xl md:text-5xl">{r.value}</p>
+                  <p className="display text-3xl md:text-4xl lg:text-5xl">
+                    {r.shortValue ? (
+                      <>
+                        <span className="sm:hidden">{r.shortValue}</span>
+                        <span className="max-sm:hidden">{r.value}</span>
+                      </>
+                    ) : (
+                      r.value
+                    )}
+                  </p>
                   <p className="text-fg-subtle mt-2 text-xs md:text-sm">{r.label}</p>
                 </li>
               ))}

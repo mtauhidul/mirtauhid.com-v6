@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { profile } from "@/content/profile";
 import { buttonClasses } from "@/components/ui/button";
 import { Crosshairs } from "@/components/ui/guides";
 import { Container } from "@/components/ui/container";
 
-const roles = ["Frontend Developer", "Design Engineer", "Solo Builder"];
+const roles = ["Frontend Focused", "Product Minded", "Solo Builder"];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -32,19 +32,9 @@ const fade = (delay: number) => ({
   transition: { duration: 0.8, delay, ease },
 });
 
-/** Cycles through the roles. They are stacked in one grid cell, and the box eases to the width of the visible one so the location stays close. */
+/** Cycles through the roles. They are stacked in one grid cell, so the box is always as wide as the longest one and the location never moves. */
 function RotatingRole() {
   const [i, setI] = useState(0);
-  const [widths, setWidths] = useState<number[]>([]);
-  const refs = useRef<(HTMLSpanElement | null)[]>([]);
-
-  useEffect(() => {
-    const measure = () => setWidths(refs.current.map((el) => el?.offsetWidth ?? 0));
-    measure();
-    document.fonts?.ready.then(measure);
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
 
   useEffect(() => {
     const id = setInterval(() => setI((n) => (n + 1) % roles.length), 2800);
@@ -54,19 +44,11 @@ function RotatingRole() {
   const prev = (i + roles.length - 1) % roles.length;
 
   return (
-    <motion.span
-      className="inline-grid overflow-hidden whitespace-nowrap"
-      initial={false}
-      animate={widths.length ? { width: widths[i] } : undefined}
-      transition={{ duration: 0.6, ease }}
-    >
+    <span className="inline-grid overflow-hidden whitespace-nowrap">
       {roles.map((r, idx) => (
         <motion.span
           key={r}
           aria-hidden={idx !== i}
-          ref={(el) => {
-            refs.current[idx] = el;
-          }}
           className="w-max [grid-area:1/1]"
           initial={false}
           animate={{
@@ -78,7 +60,7 @@ function RotatingRole() {
           {r}
         </motion.span>
       ))}
-    </motion.span>
+    </span>
   );
 }
 
@@ -98,8 +80,11 @@ export function Hero() {
           className="label mb-8 flex items-center gap-3 whitespace-nowrap max-[360px]:text-[11px]"
         >
           <span className="bg-accent size-2 shrink-0" />
+          <span className="shrink-0 max-[329px]:hidden">{profile.location}</span>
+          <span aria-hidden className="shrink-0 max-[329px]:hidden">
+            ·
+          </span>
           <RotatingRole />
-          <span className="shrink-0">· {profile.location}</span>
         </motion.p>
 
         <div className="[container-type:inline-size]">
