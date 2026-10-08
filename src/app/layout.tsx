@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { MotionProvider } from "@/components/motion-provider";
 import { Geist, JetBrains_Mono, Space_Grotesk } from "next/font/google";
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <SmoothScroll />
           {children}
         </MotionProvider>
+        <Analytics />
       </body>
     </html>
   );
