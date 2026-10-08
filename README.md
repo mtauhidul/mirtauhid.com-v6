@@ -1,8 +1,12 @@
-# mirtauhid.com (v6)
+# mirtauhid.com
 
-Personal portfolio. Next.js · TypeScript · Tailwind CSS.
+Portfolio of Mir Tauhidul Islam, a frontend engineer. Live at [mirtauhid.com](https://mirtauhid.com).
 
-## Getting started
+Built with Next.js, TypeScript, Tailwind CSS v4 and Motion. Dark only, with a blueprint-style layout and smooth scrolling.
+
+## Run it
+
+Needs Node (see `.nvmrc`) and pnpm.
 
 ```bash
 pnpm install
@@ -10,15 +14,16 @@ cp .env.example .env.local
 pnpm dev
 ```
 
-## Scripts
+Run `pnpm check` (lint, typecheck, format) before pushing.
 
-| Script        | Purpose                         |
-| ------------- | ------------------------------- |
-| `pnpm dev`    | Start dev server                |
-| `pnpm build`  | Production build                |
-| `pnpm check`  | Lint + typecheck + format check |
-| `pnpm format` | Format with Prettier            |
+## Where things are
 
-## Structure
+- `src/content`: all the text and project data. Most edits start here.
+- `src/components/sections`: the page sections.
+- `docs/DESIGN.md`: the design system.
 
-See `CLAUDE.md` for the folder layout and conventions.
+## Notes
+
+Press `G` on the site to see the grid, or `Cmd/Ctrl+K` for the quick menu.
+
+The code is here to read. The content, photos and resume are mine, so please don't reuse them.
