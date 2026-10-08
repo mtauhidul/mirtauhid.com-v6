@@ -7,7 +7,7 @@ import { buttonClasses } from "@/components/ui/button";
 import { Crosshairs } from "@/components/ui/guides";
 import { Container } from "@/components/ui/container";
 
-const roles = ["Frontend Focused", "Product Minded", "Solo Builder"];
+const roles = ["AI Native", "Product Minded", "Solo Builder"];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -89,7 +89,7 @@ export function Hero() {
 
         <div className="[container-type:inline-size]">
           <h1 className="display text-[15cqw] md:text-[10.8cqw]">
-            <Line delay={0.3}>Design engineer</Line>
+            <Line delay={0.3}>Frontend engineer</Line>
             <Line delay={0.4}>
               building for <span className="text-accent">the web.</span>
             </Line>

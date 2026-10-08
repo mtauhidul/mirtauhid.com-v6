@@ -254,7 +254,7 @@ export const projects: CaseStudy[] = [
     slug: "draftboard",
     kind: "Productivity",
     context: "Personal project",
-    role: "Frontend design engineer",
+    role: "Frontend engineer",
     year: "2026",
     summary: "A private sketch board that works offline, built on Excalidraw.",
     solution:
@@ -270,7 +270,7 @@ export const projects: CaseStudy[] = [
     slug: "checkin-kiosk",
     kind: "Healthcare",
     context: "",
-    role: "Frontend design engineer",
+    role: "Frontend engineer",
     year: "2025",
     summary: "A simple patient check-in app for forms and health details.",
     solution:
@@ -284,7 +284,7 @@ export const projects: CaseStudy[] = [
     slug: "night-shift",
     kind: "Creative",
     context: "Personal project",
-    role: "Frontend design engineer",
+    role: "Frontend engineer",
     year: "2026",
     summary: "A lofi workspace for late-night focus, music, and calm.",
     solution:
@@ -299,7 +299,7 @@ export const projects: CaseStudy[] = [
     slug: "mailforge-ai",
     kind: "Landing",
     context: "Concept project",
-    role: "Frontend design engineer",
+    role: "Frontend engineer",
     year: "2026",
     summary: "An AI email assistant landing page with light and dark themes.",
     solution:
@@ -314,7 +314,7 @@ export const projects: CaseStudy[] = [
     slug: "compliance-dashboard",
     kind: "Security",
     context: "Concept project",
-    role: "Frontend design engineer",
+    role: "Frontend engineer",
     year: "2026",
     summary: "A dashboard for tracking security findings and compliance work.",
     solution:

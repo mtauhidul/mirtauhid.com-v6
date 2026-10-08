@@ -41,7 +41,7 @@ export default async function OpenGraphImage() {
           }}
         >
           <div style={{ width: 14, height: 14, background: "#c6f432" }} />
-          Frontend design engineer
+          Frontend engineer
         </div>
         <div
           style={{
