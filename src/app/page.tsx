@@ -8,6 +8,7 @@ import { Contact } from "@/components/sections/contact";
 import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
 import { Stack } from "@/components/sections/stack";
+import { Turn } from "@/components/sections/turn";
 import { Work } from "@/components/sections/work";
 import { profile } from "@/content/profile";
 import { siteConfig } from "@/config/site";
@@ -36,6 +37,7 @@ export default function Home() {
       <CommandPalette />
       <main>
         <Hero />
+        <Turn />
         <Work />
         <About />
         <Experience />
